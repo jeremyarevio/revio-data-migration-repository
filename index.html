@@ -783,7 +783,7 @@
     <button class="sidebar-request-btn" onclick="openRequestModal()">
       ＋ Request New System
     </button>
-    <div class="nav-item" onclick="showPanel('home', this)" style="margin-bottom:4px;">
+    <div class="nav-item active" onclick="showPanel('home', this)" style="margin-bottom:4px;">
       <span class="nav-icon">🏠</span> Overview
     </div>
     <div class="sidebar-section-label">Source Systems</div>
@@ -792,7 +792,7 @@
       <span class="nav-icon">📋</span> Alarm 7 SQL
       <span class="nav-badge badge-export">Export</span>
     </div>
-    <div class="nav-item active" onclick="showPanel('alarmbiller', this)">
+    <div class="nav-item" onclick="showPanel('alarmbiller', this)">
       <span class="nav-icon">📋</span> AlarmBiller
       <span class="nav-badge badge-export">Export</span>
     </div>
@@ -848,7 +848,7 @@
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
     </div>
-  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div></div>
+  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-both">Both</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -869,7 +869,7 @@
   <!-- ─────────────────────────────────
        LANDING / HOME
   ──────────────────────────────────── -->
-  <div id="panel-home" class="panel">
+  <div id="panel-home" class="panel active">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon" style="background:var(--rev-orange);">📂</div>
@@ -1043,7 +1043,7 @@
   <!-- ─────────────────────────────────
        ALARMBILLER
   ──────────────────────────────────── -->
-  <div id="panel-alarmbiller" class="panel active">
+  <div id="panel-alarmbiller" class="panel">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon">🔔</div>
@@ -2329,7 +2329,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Synchro</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">API + Export</span>
 
 <p class="lead">Synchro is a managed services platform (MSP/RMM) that supports both API-based access and manual data exports. Depending on the scope of your migration, Rev.io may leverage the Synchro API for direct data retrieval, request exported reports, or use a combination of both approaches to ensure a complete and accurate migration.</p>
@@ -2574,7 +2574,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Service Titan</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">API + Export</span>
 
 <p class="lead">ServiceTitan offers both API access and data exports to support your migration to Rev.io PSA. API access provides the most efficient and comprehensive data transfer, while CSV exports from reporting can supplement or serve as an alternative method. We recommend using both approaches to ensure a complete migration.</p>
@@ -2864,7 +2864,257 @@
       <strong>Test Migration</strong><br>
       A test migration will be performed in a sandbox
     </div>
-  </div></div></div></div></div><!-- /main -->
+  </div></div></div></div><div id="panel-workhorse" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Workhorse</h2>
+      </div>
+      <span class="type-badge both">API + Export</span>
+
+<p class="lead">Workhorse is a field service and workforce management platform. Data can be extracted via API credentials for automated migration, or through manual report exports from the Workhorse portal. Below you'll find instructions for both methods to provide Rev.io with the data needed for a successful migration.</p>
+
+<div class="method-tabs">
+  <button class="method-tab active" onclick="showMethod('workhorse','tab1', this)">API Access</button>
+  <button class="method-tab" onclick="showMethod('workhorse','tab2', this)">Manual Export</button>
+</div>
+
+<div class="method-panel active" id="workhorse-tab1">
+
+  <h3 class="section-title"><span class="dot"></span> Generating API Credentials in Workhorse</h3>
+
+  <div class="callout note">
+    <div class="callout-icon">ℹ️</div>
+    <div>You must have an <strong>Administrator</strong> role in Workhorse to generate API credentials. If you do not have admin access, please contact your Workhorse account owner to complete these steps.</div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Log in to your <strong>Workhorse</strong> account at <strong>app.workhorsesoftware.com</strong> using your administrator credentials.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Navigate to <strong>Settings</strong> (gear icon) in the left-hand navigation menu, then select <strong>Integrations</strong> from the submenu.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Locate the <strong>API Access</strong> section and click <strong>Generate New API Key</strong>. If prompted, provide a descriptive label such as <em>"Rev.io Migration"</em> so the key can be easily identified later.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        Once generated, you will be presented with an <strong>API Key</strong> and an <strong>API Secret</strong>. Copy both values immediately — the API Secret is typically shown only once and cannot be retrieved again.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        Ensure the API key has <strong>read-only</strong> permissions at minimum. If Workhorse provides granular permission scopes, enable access to <strong>Customers</strong>, <strong>Work Orders</strong>, <strong>Invoices</strong>, <strong>Inventory</strong>, and <strong>Contacts</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        Note your <strong>Account ID</strong> or <strong>Tenant Subdomain</strong>, which can be found at the top of the Settings page or in your browser's URL bar (e.g., <em>yourcompany</em>.workhorsesoftware.com).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        Securely share the credentials below with your Rev.io migration team using the provided secure file transfer method or encrypted email.
+      </div>
+    </div>
+  </div>
+
+  <h3 class="section-title"><span class="dot"></span> Credentials to Provide to Rev.io</h3>
+
+  <div class="creds-box">
+    <span class="label">Account ID / Subdomain:</span>
+    <span class="placeholder">e.g., yourcompany</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">API Key:</span>
+    <span class="placeholder">Paste your generated API Key here</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">API Secret:</span>
+    <span class="placeholder">Paste your generated API Secret here</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">API Base URL:</span>
+    <span class="placeholder">e.g., https://api.workhorsesoftware.com/v1</span>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>Never share API credentials via unencrypted channels such as plain-text email or chat. Your Rev.io project manager will provide a secure method for credential transfer.</div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>After the migration is complete, we recommend revoking or rotating the API key created for Rev.io to maintain the security of your Workhorse environment.</div>
+  </div>
+
+</div>
+
+<div class="method-panel" id="workhorse-tab2">
+
+  <h3 class="section-title"><span class="dot"></span> Exporting Data from Workhorse</h3>
+
+  <p>If API access is not available or preferred, you can manually export your data from Workhorse's reporting and data management tools. Please follow the steps below to generate the required export files.</p>
+
+  <div class="callout note">
+    <div class="callout-icon">ℹ️</div>
+    <div>All exports should be saved in <strong>CSV</strong> or <strong>XLSX</strong> format. Ensure date filters cover the <strong>full history</strong> of your account data unless your Rev.io project manager specifies a particular date range.</div>
+  </div>
+
+  <h3 class="section-title"><span class="dot"></span> Required Data Exports</h3>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Export Name</th>
+        <th>Navigation Path</th>
+        <th>Key Fields to Include</th>
+        <th>File Name Convention</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Customer List</strong></td>
+        <td>Customers → All Customers → Export</td>
+        <td>Customer ID, Name, Address, Phone, Email, Account Status, Custom Fields</td>
+        <td>workhorse_customers.csv</td>
+      </tr>
+      <tr>
+        <td><strong>Contacts</strong></td>
+        <td>Customers → Contacts → Export</td>
+        <td>Contact Name, Email, Phone, Role, Associated Customer ID</td>
+        <td>workhorse_contacts.csv</td>
+      </tr>
+      <tr>
+        <td><strong>Service Locations</strong></td>
+        <td>Customers → Service Locations → Export</td>
+        <td>Location ID, Address, City, State, ZIP, Associated Customer ID</td>
+        <td>workhorse_service_locations.csv</td>
+      </tr>
+      <tr>
+        <td><strong>Work Orders</strong></td>
+        <td>Work Orders → All Work Orders → Export</td>
+        <td>Work Order ID, Customer ID, Status, Created Date, Completed Date, Assigned Technician, Description</td>
+        <td>workhorse_work_orders.csv</td>
+      </tr>
+      <tr>
+        <td><strong>Products / Services</strong></td>
+        <td>Settings → Products &amp; Services → Export</td>
+        <td>Product/Service ID, Name, Description, Price, Category, Recurring/One-Time</td>
+        <td>workhorse_products.csv</td>
+      </tr>
+      <tr>
+        <td><strong>Invoices</strong></td>
+        <td>Billing → Invoices → Export</td>
+        <td>Invoice ID, Customer ID, Date, Due Date, Amount, Balance, Status, Line Items</td>
+        <td>workhorse_invoices.csv</td>
+      </tr>
+      <tr>
+        <td><strong>Payments</strong></td>
+        <td>Billing → Payments → Export</td>
+        <td>Payment ID, Customer ID, Date, Amount, Method, Associated Invoice ID</td>
+        <td>workhorse_payments.csv</td>
+      </tr>
+      <tr>
+        <td><strong>Inventory</strong></td>
+        <td>Inventory → All Items → Export</td>
+        <td>Item ID, Name, SKU, Quantity on Hand, Location, Unit Cost</td>
+        <td>workhorse_inventory.csv</td>
+      </tr>
+      <tr>
+        <td><strong>Technicians / Users</strong></td>
+        <td>Settings → Team / Users → Export</td>
+        <td>User ID, Name, Email, Role, Status</td>
+        <td>workhorse_technicians.csv</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="section-title"><span class="dot"></span> Step-by-Step Export Instructions</h3>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Log in to your <strong>Workhorse</strong> account at <strong>app.workhorsesoftware.com</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Navigate to the appropriate section listed in the table above (e.g., <strong>Customers → All Customers</strong>).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Apply any necessary filters. Ensure the date range captures <strong>all historical data</strong> — set the start date to the earliest available and the end date to today.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        Click the <strong>Export</strong> button (typically found in the upper-right area of the list view or accessed via a <strong>⋮ More Actions</strong> menu). Select <strong>CSV</strong> or <strong>Excel (XLSX)</strong> as the format.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        When prompted to select columns, choose <strong>All Fields</strong> to ensure no critical data is omitted. If a selection screen is not presented, the default export should include all visible columns.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        Save each file using the naming convention listed in the table above (e.g., <em>workhorse_customers.csv</em>). This helps the Rev.io team quickly identify each dataset.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        Repeat steps 2–6 for <strong>each data category</strong> listed in the Required Data Exports table.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">8</div>
+      <div class="step-body">
+        Upload all exported files to the <strong>secure folder</strong> provided by your Rev.io project manager, or share them via the designated secure transfer method.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>If any export exceeds Workhorse's row limit, try splitting by date range (e.g., export one year at a time) and label each file accordingly — for example, <em>workhorse_invoices_2022.csv</em> and <em>workhorse_invoices_2023.csv</em>.</div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>Do not modify, reformat, or remove columns from the exported files. The Rev.io migration team needs the raw data exactly as Workhorse provides it to ensure accurate field mapping.</div>
+  </div>
+
+  <div class="callout note">
+    <div class="callout-icon">ℹ️</div>
+    <div>If your Workhorse instance contains custom fields or modules specific to your business, please notify your Rev.io project manager so additional export instructions can be provided.</div>
+  </div>
+
+</div>
+    </div>
+  </div></div><!-- /main -->
 
 <!-- ══════════════════════════════════════
      REQUEST NEW SYSTEM MODAL
