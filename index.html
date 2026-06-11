@@ -848,7 +848,7 @@
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
     </div>
-  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div></div>
+  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -2569,7 +2569,302 @@
 
 </div>
     </div>
-  </div></div><!-- /main -->
+  </div><div id="panel-servicetitan" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Service Titan</h2>
+      </div>
+      <span class="type-badge both">API + Export</span>
+
+<p class="lead">ServiceTitan offers both API access and data exports to support your migration to Rev.io PSA. API access provides the most efficient and comprehensive data transfer, while CSV exports from reporting can supplement or serve as an alternative method. We recommend using both approaches to ensure a complete migration.</p>
+
+<h2 class="section-title"><span class="dot"></span>Choose Your Migration Method</h2>
+
+<div class="method-tabs">
+  <button class="method-tab active" onclick="showMethod('servicetitan','tab1', this)">API Access (Recommended)</button>
+  <button class="method-tab" onclick="showMethod('servicetitan','tab2', this)">Data Export via Reports</button>
+</div>
+
+<div class="method-panel active" id="servicetitan-tab1">
+
+  <h2 class="section-title"><span class="dot"></span>Overview of API Access</h2>
+  <p>ServiceTitan provides a robust REST API that allows Rev.io to securely pull your customer records, job history, invoices, equipment data, memberships, and more. To enable this, you'll need to create an API application integration within your ServiceTitan account and provide Rev.io with the resulting credentials.</p>
+
+  <div class="callout note">
+    <div class="callout-icon">📌</div>
+    <div>You must have an <strong>Admin</strong> or <strong>Integrator</strong> role in ServiceTitan to complete these steps. If you do not have the required permissions, please contact your ServiceTitan administrator.</div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Step-by-Step: Grant Rev.io API Access</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Log in to ServiceTitan</strong><br>
+        Navigate to <a href="https://go.servicetitan.com" target="_blank">go.servicetitan.com</a> and sign in with your admin credentials.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Navigate to the Integrations section</strong><br>
+        From the left-hand navigation menu, go to <strong>Settings &gt; Integrations &gt; API Application</strong>. If you don't see this option, your account may need to have API access enabled — contact ServiceTitan Support to request it.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Connect an API Application</strong><br>
+        Click <strong>"Connect New App"</strong>. In the search field, search for <strong>Rev.io</strong>. If Rev.io is listed as a registered integration partner, select it and click <strong>Connect</strong>. If Rev.io is not listed, you may need to provide Rev.io's App Key (we will supply this — see the callout below).
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Authorize API Permissions</strong><br>
+        When prompted, review and approve the requested data access permissions. Rev.io typically requires read access to the following modules:
+        <ul>
+          <li>Customers &amp; Locations</li>
+          <li>Jobs &amp; Projects</li>
+          <li>Invoices &amp; Estimates</li>
+          <li>Memberships</li>
+          <li>Equipment (Installed Equipment)</li>
+          <li>Technicians &amp; Dispatch</li>
+          <li>Pricebook</li>
+          <li>Tags &amp; Custom Fields</li>
+        </ul>
+        Click <strong>Allow</strong> or <strong>Authorize</strong> to confirm.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Record Your Tenant ID</strong><br>
+        Your <strong>Tenant ID</strong> is required for API authentication. You can find it in the URL bar when logged into ServiceTitan — it appears as a numeric value in the URL (e.g., <code>https://go.servicetitan.com/#/tenant/<strong>123456789</strong>/...</code>). Alternatively, navigate to <strong>Settings &gt; Integrations &gt; API Application</strong> where it may be displayed.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>Generate or Retrieve Your Client ID and Client Secret</strong><br>
+        If you created a custom API app (rather than connecting a partner app), you will be provided with a <strong>Client ID</strong> and <strong>Client Secret</strong>. Copy these immediately — the Client Secret is typically shown only once. Store them securely and share them with Rev.io via the secure method we provide.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        <strong>Send Credentials to Rev.io</strong><br>
+        Provide the following credentials to your Rev.io migration specialist using the secure link or method they have shared with you. <strong>Never send credentials via plain-text email.</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>If Rev.io provides you with an <strong>App Key</strong> to enter during the connection process, your Rev.io migration specialist will share it with you directly. This key identifies Rev.io as the connecting application within ServiceTitan's integration framework.</div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Credentials to Provide to Rev.io</h2>
+
+  <div class="creds-box">
+    <span class="label">Tenant ID</span>
+    <span class="placeholder">e.g., 123456789</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">Client ID</span>
+    <span class="placeholder">e.g., cid.abc123xyz456...</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">Client Secret</span>
+    <span class="placeholder">e.g., cs.xxxxxxxxxxxxxxxx</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">App Key (if applicable)</span>
+    <span class="placeholder">Provided by Rev.io if needed</span>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>Keep your Client Secret confidential. If you suspect it has been compromised, revoke it immediately in ServiceTitan under <strong>Settings &gt; Integrations &gt; API Application</strong> and generate a new one. Notify your Rev.io migration specialist so we can update our configuration.</div>
+  </div>
+
+</div>
+
+<div class="method-panel" id="servicetitan-tab2">
+
+  <h2 class="section-title"><span class="dot"></span>Overview of Data Exports</h2>
+  <p>If API access is not available or you'd like to supplement the migration with specific data sets, ServiceTitan's built-in reporting tools allow you to export data as CSV files. Rev.io can use these exports to build and validate your migration templates.</p>
+
+  <div class="callout note">
+    <div class="callout-icon">📌</div>
+    <div>Exports from ServiceTitan may have row limits depending on your subscription tier. For very large datasets, the API method (Tab 1) is strongly recommended. If you encounter row limits, try narrowing the date range and exporting in batches.</div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Step-by-Step: Export Your Data</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Log in to ServiceTitan</strong><br>
+        Navigate to <a href="https://go.servicetitan.com" target="_blank">go.servicetitan.com</a> and sign in with an account that has access to the Reporting module.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Navigate to Reports</strong><br>
+        From the left-hand menu, go to <strong>Reporting</strong>. You will see a list of report categories including Customers, Jobs, Invoices, Memberships, and more.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Run and Export Each Required Report</strong><br>
+        For each data category listed in the table below, open the corresponding report, configure the date range to capture <strong>all historical data</strong> (or as far back as needed), and click <strong>Run Report</strong>. Once the results populate, click the <strong>Export</strong> button (usually an icon in the upper-right of the report grid) and choose <strong>CSV</strong> format.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Verify Each Export</strong><br>
+        Open each downloaded CSV file briefly to confirm it contains data and the columns are populated. Check that the row count seems reasonable for your business.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Upload to Rev.io</strong><br>
+        Send all exported CSV files to your Rev.io migration specialist using the secure upload link or method provided during your onboarding kickoff.
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Required Exports</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Data Category</th>
+        <th>ServiceTitan Report / Location</th>
+        <th>Key Fields to Include</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Customers &amp; Locations</td>
+        <td>Reporting &gt; Customers &gt; Customer Export</td>
+        <td>Customer name, address, phone, email, location details, customer type, source, tags</td>
+        <td>Include all active and inactive customers if historical data is desired</td>
+      </tr>
+      <tr>
+        <td>Contacts</td>
+        <td>Included in Customer Export</td>
+        <td>Contact name, phone numbers, email, relationship to customer</td>
+        <td>Verify multi-contact customers export all associated contacts</td>
+      </tr>
+      <tr>
+        <td>Jobs &amp; Job History</td>
+        <td>Reporting &gt; Jobs &gt; Job Export</td>
+        <td>Job number, customer, location, job type, status, business unit, created/completed dates, technician, total</td>
+        <td>Set date range to cover your full operating history</td>
+      </tr>
+      <tr>
+        <td>Invoices</td>
+        <td>Reporting &gt; Invoices &gt; Invoice Export</td>
+        <td>Invoice number, job number, customer, line items, amounts, tax, payment status, date</td>
+        <td>Include paid, unpaid, and voided invoices for complete records</td>
+      </tr>
+      <tr>
+        <td>Estimates</td>
+        <td>Reporting &gt; Estimates &gt; Estimate Export</td>
+        <td>Estimate number, customer, job, status (sold/unsold/dismissed), line items, total, date</td>
+        <td>Optional — include if you want to migrate open or historical estimates</td>
+      </tr>
+      <tr>
+        <td>Memberships</td>
+        <td>Reporting &gt; Memberships &gt; Membership Export</td>
+        <td>Membership type, customer, location, status, start/renewal date, billing frequency, price</td>
+        <td>Critical for recurring revenue migration</td>
+      </tr>
+      <tr>
+        <td>Equipment / Installed Equipment</td>
+        <td>Reporting &gt; Equipment &gt; Equipment Export</td>
+        <td>Equipment type, manufacturer, model, serial number, install date, location, warranty info</td>
+        <td>Ensure location linkage is preserved in the export</td>
+      </tr>
+      <tr>
+        <td>Pricebook</td>
+        <td>Settings &gt; Pricebook &gt; Export</td>
+        <td>Service/material/equipment codes, descriptions, prices, categories, tax codes</td>
+        <td>Navigate to Settings &gt; Pricebook and use the built-in export function</td>
+      </tr>
+      <tr>
+        <td>Technicians / Employees</td>
+        <td>Settings &gt; Technicians or Reporting &gt; Payroll</td>
+        <td>Technician name, role, business unit, pay rate, status</td>
+        <td>May require manual compilation if no direct export is available</td>
+      </tr>
+      <tr>
+        <td>Tags &amp; Custom Fields</td>
+        <td>Included in Customer/Job exports or Settings &gt; Tags</td>
+        <td>Tag names, associated records</td>
+        <td>Provide a separate list of all tag names and their intended use if possible</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>
+      <strong>Pro Tip:</strong> When running reports, add as many columns as possible to the report grid before exporting. ServiceTitan exports only the columns visible in the report view. Click <strong>"Customize Columns"</strong> or <strong>"Add Column"</strong> in the report builder to ensure you're capturing all relevant fields.
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>Do <strong>not</strong> modify, reformat, or delete columns in the exported CSV files before sending them to Rev.io. Our migration team needs the raw data exactly as ServiceTitan provides it to ensure accurate field mapping.</div>
+  </div>
+
+</div>
+
+<h2 class="section-title"><span class="dot"></span>What Happens Next?</h2>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <strong>Rev.io Validates Your Data</strong><br>
+      Once we receive your API credentials or exported files, our migration team will perform an initial data review to assess completeness, identify any gaps, and map your ServiceTitan data to Rev.io PSA fields.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <strong>Field Mapping Review</strong><br>
+      We'll share a mapping document with you for review. This ensures your business-specific data (custom tags, job types, business units, membership types, etc.) translates correctly into Rev.io.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <strong>Test Migration</strong><br>
+      A test migration will be performed in a sandbox
+    </div>
+  </div></div></div></div></div><!-- /main -->
 
 <!-- ══════════════════════════════════════
      REQUEST NEW SYSTEM MODAL
@@ -2592,15 +2887,13 @@
           <div class="preview-box-label">Preview</div>
           <div id="previewContent"></div>
         </div>
-        <div id="saveSuccess" class="save-success" style="display:none;">
-          ✅ Guide updated successfully! Refresh the page to see the new system in the sidebar.
-        </div>
+        <div id="saveSuccess" class="save-success" style="display: none;">✅ Saved! GitHub Pages will update in ~60 seconds.</div>
       </div>
     </div>
     <div class="modal-footer">
       <div class="modal-status" id="modalStatus" style="display: none;"><span class="spinner"></span> Saving to GitHub…</div>
       <button class="btn-secondary" onclick="closeRequestModal()">Cancel</button>
-      <button class="btn-primary" id="generateBtn" onclick="generateSystem()" disabled="" style="display: none;">Generate Instructions</button>
+      <button class="btn-primary" id="generateBtn" onclick="generateSystem()" style="display: none;" disabled="">Generate Instructions</button>
       <button class="btn-primary" id="saveBtn" onclick="saveToGuide()" style="display: inline-flex;" disabled="">Save to Guide</button>
     </div>
   </div>
