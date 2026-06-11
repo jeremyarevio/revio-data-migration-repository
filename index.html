@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Data Access & Migration Guide | Rev.io</title>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Access &amp; Migration Guide | Rev.io</title>
 <style>
   :root {
     --rev-orange: #E8511E;
@@ -778,13 +777,13 @@
 <nav id="sidebar">
   <div class="sidebar-header">
     <div class="sidebar-logo">Rev<span>.</span>io</div>
-    <div class="sidebar-subtitle">Data Access & Migration Guide</div>
+    <div class="sidebar-subtitle">Data Access &amp; Migration Guide</div>
   </div>
   <div class="sidebar-nav">
     <button class="sidebar-request-btn" onclick="openRequestModal()">
       ＋ Request New System
     </button>
-    <div class="nav-item active" onclick="showPanel('home', this)" style="margin-bottom:4px;">
+    <div class="nav-item" onclick="showPanel('home', this)" style="margin-bottom:4px;">
       <span class="nav-icon">🏠</span> Overview
     </div>
     <div class="sidebar-section-label">Source Systems</div>
@@ -793,7 +792,7 @@
       <span class="nav-icon">📋</span> Alarm 7 SQL
       <span class="nav-badge badge-export">Export</span>
     </div>
-    <div class="nav-item" onclick="showPanel('alarmbiller', this)">
+    <div class="nav-item active" onclick="showPanel('alarmbiller', this)">
       <span class="nav-icon">📋</span> AlarmBiller
       <span class="nav-badge badge-export">Export</span>
     </div>
@@ -849,7 +848,7 @@
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
     </div>
-  </div>
+  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -870,7 +869,7 @@
   <!-- ─────────────────────────────────
        LANDING / HOME
   ──────────────────────────────────── -->
-  <div id="panel-home" class="panel active">
+  <div id="panel-home" class="panel">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon" style="background:var(--rev-orange);">📂</div>
@@ -937,7 +936,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Alarm 7 SQL</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge export">📤 Report Export</span>
       <p class="lead">
         Alarm 7 SQL is a billing and service CRM built for security alarm dealers, backed by a SQL database with open ODBC connectivity. Data can be exported via the built-in reports engine (recommended for most users) or directly from the database for IT teams needing raw extracts.
@@ -1044,12 +1043,12 @@
   <!-- ─────────────────────────────────
        ALARMBILLER
   ──────────────────────────────────── -->
-  <div id="panel-alarmbiller" class="panel">
+  <div id="panel-alarmbiller" class="panel active">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon">🔔</div>
         <h2>AlarmBiller</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge export">📤 Report Export</span>
       <p class="lead">
         AlarmBiller provides built-in export tools accessible directly from list views and the Reports section. No API setup is required. Follow the methods below to pull all data needed for your Rev.io migration.
@@ -1106,9 +1105,9 @@
       <thead><tr><th>Data Type</th><th>Where to Export</th><th>Notes</th></tr></thead>
       <tbody>
         <tr><td>Customers</td><td>Customers grid → Export</td><td>Include both active and inactive; capture all address and contact fields</td></tr>
-        <tr><td>Sites & Systems</td><td>Customer record detail / Bold Group support</td><td>May require a manual pull or support-assisted extract</td></tr>
+        <tr><td>Sites &amp; Systems</td><td>Customer record detail / Bold Group support</td><td>May require a manual pull or support-assisted extract</td></tr>
         <tr><td>Recurring Billing (RMR)</td><td>RMR grid → Export; or Reports → RMR Report</td><td>Critical for billing continuity — include frequency, amount, and service type</td></tr>
-        <tr><td>Invoices & Credits</td><td>Invoices grid → Export; or Reports → Invoice Report</td><td>Set a wide date range to capture full history</td></tr>
+        <tr><td>Invoices &amp; Credits</td><td>Invoices grid → Export; or Reports → Invoice Report</td><td>Set a wide date range to capture full history</td></tr>
         <tr><td>Payments</td><td>Payments grid → Export; or QuickBooks IIF export</td><td>IIF covers reconciled payments only</td></tr>
         <tr><td>Contracts / Documents</td><td>Customer record → Docs tab</td><td>PDF attachments — download individually or request bulk extract from support</td></tr>
         <tr><td>Financial History (GL-level)</td><td>Setup → QuickBooks → Export</td><td>Best option for complete financial transaction history</td></tr>
@@ -1129,7 +1128,7 @@
       <div class="panel-header-top">
         <div class="system-icon">⚙️</div>
         <h2>ConnectWise Manage</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge api">🔑 API Access</span>
       <p class="lead">
         This guide walks you through creating an API key in ConnectWise Manage so Rev.io can securely pull your data for migration. The process takes about 10 minutes and does not require any software installation.
@@ -1185,7 +1184,7 @@
             <tr><td>Procurement</td><td>Products, Product Catalog</td></tr>
             <tr><td>Service Desk</td><td>Tickets, Boards, Priorities</td></tr>
             <tr><td>Sales</td><td>Opportunities, Activities</td></tr>
-            <tr><td>Time & Expense</td><td>Time Entries, Expense Entries</td></tr>
+            <tr><td>Time &amp; Expense</td><td>Time Entries, Expense Entries</td></tr>
             <tr><td>Schedule</td><td>Schedule Entries</td></tr>
             <tr><td>System</td><td>Members, Locations</td></tr>
           </tbody>
@@ -1237,7 +1236,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🖨️</div>
         <h2>e-automate (ECI)</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ User Access &amp; Report Export</span>
       <p class="lead">
         e-automate does not have a dedicated API-only user type. Instead, you create a standard user account with read permissions through e-admin (on-premise) or the User Management tool (hosted/cloud), then share those credentials with Rev.io.
@@ -1385,7 +1384,7 @@
       <div class="panel-header-top">
         <div class="system-icon">⚡</div>
         <h2>FieldPulse</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ API Access &amp; Report Export</span>
       <p class="lead">
         FieldPulse supports two data access methods: direct API integration (recommended for full migrations) and built-in CSV exports available from the web app. Choose the option that fits your needs below.
@@ -1477,7 +1476,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🛠️</div>
         <h2>HaloPSA</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge api">🔑 API Access</span>
       <p class="lead">
         Rev.io needs read-only API access to your HaloPSA account to pull your existing data — clients, sites, tickets, and supporting reference data — into the Rev.io platform as part of your migration. The process takes about five minutes.
@@ -1572,7 +1571,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🏠</div>
         <h2>HouseCall Pro</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ API Access &amp; CSV Export</span>
       <p class="lead">
         HouseCall Pro supports both a public REST API (MAX plan required) and built-in CSV exports available to all plan levels. Choose the option that fits your account below.
@@ -1664,7 +1663,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Jobber</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ API Access &amp; CSV Export</span>
       <p class="lead">
         Jobber offers two data access methods. The API is recommended for migrations as it provides complete, structured data. CSV exports are available for quick pulls of client lists and reports without any technical setup.
@@ -1690,7 +1689,7 @@
         <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Configure Scopes</strong><p>Select all relevant data types: Clients, Jobs, Invoices, Quotes, Timesheets, Properties. Scopes can be edited freely while the app is in Draft state.</p></div></div>
         <div class="step"><div class="step-num">5</div><div class="step-body"><strong>Generate the Authorization Link for Your Client</strong>
           <p>Build the following URL and send it to your Jobber admin user:</p>
-          <div class="creds-box"><span class="placeholder">https://api.getjobber.com/api/oauth/authorize?response_type=code&client_id=&lt;CLIENT_ID&gt;&redirect_uri=&lt;REDIRECT_URI&gt;</span></div>
+          <div class="creds-box"><span class="placeholder">https://api.getjobber.com/api/oauth/authorize?response_type=code&amp;client_id=&lt;CLIENT_ID&gt;&amp;redirect_uri=&lt;REDIRECT_URI&gt;</span></div>
         </div></div>
       </div>
 
@@ -1755,7 +1754,7 @@
       <div class="panel-header-top">
         <div class="system-icon">☁️</div>
         <h2>Pax8</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ Portal Export &amp; API Access</span>
       <p class="lead">
         Rev.io needs a copy of your existing customer list from Pax8. You can export it directly from the portal (quickest option) or use Pax8's API for a complete programmatic export with all fields.
@@ -1827,7 +1826,7 @@
       <div class="panel-header-top">
         <div class="system-icon">💼</div>
         <h2>QuickBooks Desktop</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge export">📤 Report Export</span>
       <p class="lead">
         Follow each section below to export the data needed for your migration to Rev.io. Save all exports as .CSV files unless otherwise noted, then deliver them using the instructions in Section 5.
@@ -1892,7 +1891,7 @@
       <div class="panel-header-top">
         <div class="system-icon">💚</div>
         <h2>QuickBooks Online</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ API Access &amp; Manual Export</span>
       <p class="lead">
         QuickBooks Online supports full API access via Intuit's developer platform, as well as built-in bulk and individual report exports — no coding required.
@@ -1984,7 +1983,7 @@
       <div class="panel-header-top">
         <div class="system-icon">💬</div>
         <h2>QuoteWerks</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge export">📤 Report Export</span>
       <p class="lead">
         QuoteWerks offers several built-in export methods depending on what data you need. Use the guide below to pull quotes, orders, invoices, products, and contacts for your Rev.io migration.
@@ -2071,7 +2070,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🔐</div>
         <h2>Sedona</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <div class="coming-soon">
         <div class="icon">🚧</div>
         <h3>Instructions Coming Soon</h3>
@@ -2088,7 +2087,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🔧</div>
         <h2>Service Fusion</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ API Access &amp; Report Export</span>
       <p class="lead">
         Service Fusion supports both direct API access and built-in report exports. Use the API for full programmatic data extraction, or use the Reports Dashboard / Reports Center for no-code exports.
@@ -2135,7 +2134,7 @@
         </div></div>
       </div>
 
-      <div class="section-title"><span class="dot"></span>Reports Center (Flexible / Jobs & Estimates)</div>
+      <div class="section-title"><span class="dot"></span>Reports Center (Flexible / Jobs &amp; Estimates)</div>
       <p style="font-size:14px;color:var(--text-body);margin-bottom:12px;">Access from <strong>Reports</strong> tab in your top navigation.</p>
       <div class="steps">
         <div class="step"><div class="step-num">1</div><div class="step-body"><strong>Click Create New Report</strong><p>Select your date range using the calendar — choose a preset timeframe or define a custom range.</p></div></div>
@@ -2199,7 +2198,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🤖</div>
         <h2>Autotask PSA</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ API Access &amp; Report Export</span>
       <p class="lead">
         To connect Autotask to Rev.io, you'll create a dedicated API User — a special account type that doesn't consume a user license and has no UI access. You can also export data directly using LiveReports, the Billing Export Wizard, or dashboard widgets.
@@ -2325,7 +2324,252 @@
     </div>
   </div>
 
-</div><!-- /main -->
+<div id="panel-synchro" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Synchro</h2>
+      </div>
+      <span class="type-badge both">API + Export</span>
+
+<p class="lead">Synchro is a managed services platform (MSP/RMM) that supports both API-based access and manual data exports. Depending on the scope of your migration, Rev.io may leverage the Synchro API for direct data retrieval, request exported reports, or use a combination of both approaches to ensure a complete and accurate migration.</p>
+
+<div class="method-tabs">
+  <button class="method-tab active" onclick="showMethod('synchro','tab1', this)">API Access</button>
+  <button class="method-tab" onclick="showMethod('synchro','tab2', this)">Data Export</button>
+</div>
+
+<div class="method-panel active" id="synchro-tab1">
+
+  <h3 class="section-title"><span class="dot"></span> Granting Rev.io API Access</h3>
+
+  <p>Synchro provides a REST-based API that Rev.io can use to programmatically retrieve your customer, asset, contract, and billing data. Follow the steps below to generate the credentials Rev.io needs.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Log in to Synchro</strong>
+        <p>Sign into your Synchro platform with an account that has <strong>Administrator</strong> privileges. You will need full access to the system settings and API configuration area.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Navigate to API Settings</strong>
+        <p>Go to <strong>Settings &gt; Integrations &gt; API Configuration</strong> (or <strong>Settings &gt; API Access</strong>, depending on your Synchro version). This section manages external application access to your Synchro instance.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Generate a New API Key</strong>
+        <p>Click <strong>"Create New API Key"</strong> or <strong>"Add Application"</strong>. Provide the following details:</p>
+        <ul>
+          <li><strong>Application Name:</strong> <code>Rev.io Migration</code></li>
+          <li><strong>Description:</strong> <code>API access for Rev.io PSA data migration</code></li>
+          <li><strong>Permissions:</strong> Grant <strong>Read-Only</strong> access to all data modules (Customers, Contacts, Assets, Contracts, Invoices, Tickets, and Configuration Items)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Record Your Credentials</strong>
+        <p>After generation, Synchro will display your API Key and API Secret. Copy these immediately — the secret may not be shown again. Also note your Synchro instance URL.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Send Credentials Securely to Rev.io</strong>
+        <p>Provide the following details to your Rev.io migration team using the secure link or method provided by your project manager. <strong>Never send credentials via plain email.</strong></p>
+
+        <div class="creds-box">
+          <span class="label">Synchro Instance URL</span>
+          <span class="placeholder">https://yourcompany.synchromsp.com</span>
+        </div>
+        <div class="creds-box">
+          <span class="label">API Key</span>
+          <span class="placeholder">xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</span>
+        </div>
+        <div class="creds-box">
+          <span class="label">API Secret</span>
+          <span class="placeholder">••••••••••••••••••••••••••••••••</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>Verify API Connectivity</strong>
+        <p>After sharing your credentials, Rev.io will perform a test connection and confirm successful access. If any permission issues arise, your migration specialist will contact you with specific adjustments needed.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>We recommend creating a dedicated API key specifically for the Rev.io migration rather than reusing an existing integration key. This allows you to easily revoke access once the migration is complete without impacting other integrations.</div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>Do not grant <strong>Write</strong> or <strong>Delete</strong> permissions. Rev.io only requires <strong>Read-Only</strong> access for migration purposes. This protects your production data throughout the process.</div>
+  </div>
+
+</div>
+
+<div class="method-panel" id="synchro-tab2">
+
+  <h3 class="section-title"><span class="dot"></span> Exporting Data from Synchro</h3>
+
+  <p>If API access is not feasible, or if Rev.io needs supplementary data beyond what the API provides, you can manually export reports and data files from Synchro. Below are the specific exports Rev.io typically requires for a complete migration.</p>
+
+  <h3 class="section-title"><span class="dot"></span> Required Data Exports</h3>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Export Name</th>
+        <th>Navigation Path</th>
+        <th>Format</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Customer List</td>
+        <td>Customers &gt; All Customers &gt; Export</td>
+        <td>CSV</td>
+        <td>Include all fields; ensure addresses and contact details are included</td>
+      </tr>
+      <tr>
+        <td>Contacts</td>
+        <td>Customers &gt; Contacts &gt; Export</td>
+        <td>CSV</td>
+        <td>Export all contacts with their associated customer/company mapping</td>
+      </tr>
+      <tr>
+        <td>Assets / Configuration Items</td>
+        <td>Assets &gt; All Assets &gt; Export</td>
+        <td>CSV</td>
+        <td>Include serial numbers, warranty dates, and customer associations</td>
+      </tr>
+      <tr>
+        <td>Contracts &amp; Agreements</td>
+        <td>Contracts &gt; All Contracts &gt; Export</td>
+        <td>CSV</td>
+        <td>Include billing frequency, start/end dates, line items, and pricing</td>
+      </tr>
+      <tr>
+        <td>Recurring Invoices / Billing Items</td>
+        <td>Billing &gt; Recurring Items &gt; Export</td>
+        <td>CSV</td>
+        <td>All active recurring charges with amounts and associated customers</td>
+      </tr>
+      <tr>
+        <td>Invoice History</td>
+        <td>Billing &gt; Invoices &gt; Export</td>
+        <td>CSV</td>
+        <td>Last 12–24 months recommended; include payment status</td>
+      </tr>
+      <tr>
+        <td>Tickets / Service History</td>
+        <td>Tickets &gt; All Tickets &gt; Export</td>
+        <td>CSV</td>
+        <td>Optional — include if migrating service history to Rev.io</td>
+      </tr>
+      <tr>
+        <td>Products / Services Catalog</td>
+        <td>Settings &gt; Products &amp; Services &gt; Export</td>
+        <td>CSV</td>
+        <td>Include product names, categories, default pricing, and descriptions</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="section-title"><span class="dot"></span> Export Steps</h3>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Log in to Synchro</strong>
+        <p>Access your Synchro platform with an Administrator or Manager-level account that has visibility into all customer accounts and billing data.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Navigate to Each Module</strong>
+        <p>Using the navigation paths listed in the table above, go to each data module (Customers, Assets, Contracts, Billing, etc.) one at a time.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Set Filters to Include All Records</strong>
+        <p>Before exporting, ensure that any list filters are cleared or set to <strong>"All"</strong> so you capture the complete dataset. For date-ranged data (such as invoices), set the range to cover at least the <strong>last 12–24 months</strong> unless your Rev.io project manager specifies otherwise.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Export as CSV</strong>
+        <p>Click the <strong>"Export"</strong>, <strong>"Download"</strong>, or <strong>"Export to CSV"</strong> button. Select <strong>CSV</strong> format when prompted. If multiple format options exist, CSV is preferred; Excel (.xlsx) is also acceptable.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Name Files Clearly</strong>
+        <p>Rename each exported file using a descriptive naming convention so Rev.io can identify each dataset easily. For example:</p>
+        <ul>
+          <li><code>Synchro_Customers_2024-01-15.csv</code></li>
+          <li><code>Synchro_Contracts_2024-01-15.csv</code></li>
+          <li><code>Synchro_Assets_2024-01-15.csv</code></li>
+          <li><code>Synchro_Invoices_2024-01-15.csv</code></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>Upload to Rev.io</strong>
+        <p>Upload all exported files to the secure file-sharing link provided by your Rev.io project manager. If you have not received a link, contact your migration specialist before sending files.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout note">
+    <div class="callout-icon">📝</div>
+    <div>Some Synchro modules may have export row limits. If an export is truncated, try filtering by date range or customer group to export in batches, then let your Rev.io team know so the files can be combined during processing.</div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>Perform all exports on the <strong>same day</strong> to ensure data consistency across files. If exports are done days apart, customer-to-contract or asset-to-customer relationships may not align properly.</div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>Do <strong>not</strong> modify, reformat, or delete columns from the exported CSV files. Rev.io's import process relies on the original column headers and data structure provided by Synchro. If you notice data quality issues, flag them with your migration specialist rather than making manual corrections.</div>
+  </div>
+
+</div>
+    </div>
+  </div></div><!-- /main -->
 
 <!-- ══════════════════════════════════════
      REQUEST NEW SYSTEM MODAL
@@ -2341,11 +2585,9 @@
     </div>
     <div class="modal-body" id="modalBody">
       <label class="modal-label" for="systemNameInput">Source System Name</label>
-      <input class="modal-input" id="systemNameInput" type="text"
-        placeholder="e.g. Salesforce, NetSuite, Zendesk..."
-        onkeydown="if(event.key==='Enter') generateSystem()" />
+      <input class="modal-input" id="systemNameInput" type="text" placeholder="e.g. Salesforce, NetSuite, Zendesk..." onkeydown="if(event.key==='Enter') generateSystem()">
       <p class="modal-hint">Claude will research this system and generate step-by-step instructions for API access and/or data export.</p>
-      <div id="previewArea" style="display:none;">
+      <div id="previewArea" style="display: none;">
         <div class="preview-box">
           <div class="preview-box-label">Preview</div>
           <div id="previewContent"></div>
@@ -2356,10 +2598,10 @@
       </div>
     </div>
     <div class="modal-footer">
-      <div class="modal-status" id="modalStatus" style="display:none;"></div>
+      <div class="modal-status" id="modalStatus" style="display: none;"><span class="spinner"></span> Saving to GitHub…</div>
       <button class="btn-secondary" onclick="closeRequestModal()">Cancel</button>
-      <button class="btn-primary" id="generateBtn" onclick="generateSystem()">Generate Instructions</button>
-      <button class="btn-primary" id="saveBtn" onclick="saveToGuide()" style="display:none;">Save to Guide</button>
+      <button class="btn-primary" id="generateBtn" onclick="generateSystem()" disabled="" style="display: none;">Generate Instructions</button>
+      <button class="btn-primary" id="saveBtn" onclick="saveToGuide()" style="display: inline-flex;" disabled="">Save to Guide</button>
     </div>
   </div>
 </div>
@@ -2604,5 +2846,6 @@ All method-panel ids should follow: id="${panelId}-tab1"`;
     el.innerHTML = html;
   }
 </script>
-</body>
-</html>
+
+
+</body></html>
