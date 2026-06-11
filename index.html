@@ -2538,62 +2538,49 @@ All method-panel ids should follow: id="${panelId}-tab1"`;
     const panelId = generatedPanelId;
     const saveBtn = document.getElementById('saveBtn');
     saveBtn.disabled = true;
-    setStatus('<span class="spinner"></span> Saving…');
+    setStatus('<span class="spinner"></span> Saving to GitHub…');
 
-    // 1. Inject panel into live DOM before the closing </div><!-- /main -->
+    // 1. Inject panel into live DOM
     const main = document.getElementById('main');
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = generatedPanelHTML;
     main.appendChild(tempDiv.firstElementChild);
 
-    // 2. Add nav item to sidebar (alphabetically would be ideal, append for now)
+    // 2. Add nav item to sidebar
     const nav = document.querySelector('.sidebar-nav');
     const navItem = document.createElement('div');
     navItem.className = 'nav-item';
     navItem.setAttribute('onclick', `showPanel('${panelId}', this)`);
     navItem.innerHTML = `<span class="nav-icon">📋</span> ${name} <span class="nav-badge badge-both">New</span>`;
-    // Insert before Sedona/last pending items
     nav.appendChild(navItem);
 
-    // 3. Get updated HTML and write to file
+    // 3. Commit to GitHub via Cloudflare Worker
     const updatedHTML = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
 
     try {
-      // Try File System Access API (Chrome/Edge)
-      if (window.showOpenFilePicker && !fileHandle) {
-        const handles = await window.showOpenFilePicker({
-          types: [{ description: 'HTML File', accept: { 'text/html': ['.html'] } }],
-          multiple: false
-        });
-        fileHandle = handles[0];
-      }
+      const response = await fetch(PROXY_URL, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          action: 'github_save',
+          content: updatedHTML,
+          systemName: name,
+        })
+      });
 
-      if (fileHandle) {
-        const writable = await fileHandle.createWritable();
-        await writable.write(updatedHTML);
-        await writable.close();
-        setStatus('');
-        document.getElementById('saveSuccess').style.display = 'flex';
-      } else {
-        throw new Error('File System Access API not available');
-      }
-    } catch (err) {
-      // Fallback: download updated file
-      const blob = new Blob([updatedHTML], { type: 'text/html' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'rev-io-data-access-guide.html';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+      const data = await response.json();
+      if (data.error) throw new Error(JSON.stringify(data.error));
+      if (!data.commit) throw new Error('Unexpected response: ' + JSON.stringify(data));
+
       setStatus('');
-      document.getElementById('saveSuccess').style.display = 'flex';
-      document.getElementById('saveSuccess').textContent = '✅ Updated file downloaded — replace your current file with the downloaded version.';
-    }
+      const successEl = document.getElementById('saveSuccess');
+      successEl.style.display = 'flex';
+      successEl.textContent = '✅ Saved! GitHub Pages will update in ~60 seconds.';
 
-    saveBtn.disabled = false;
+    } catch (err) {
+      setStatus('❌ Error saving to GitHub: ' + err.message);
+      saveBtn.disabled = false;
+    }
   }
 
   function setStatus(html) {
