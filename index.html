@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Data Access & Migration Guide | Rev.io</title>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Access &amp; Migration Guide | Rev.io</title>
 <style>
   :root {
     --rev-orange: #E8511E;
@@ -778,7 +777,7 @@
 <nav id="sidebar">
   <div class="sidebar-header">
     <div class="sidebar-logo">Rev<span>.</span>io</div>
-    <div class="sidebar-subtitle">Data Access & Migration Guide</div>
+    <div class="sidebar-subtitle">Data Access &amp; Migration Guide</div>
   </div>
   <div class="sidebar-nav">
     <button class="sidebar-request-btn" onclick="openRequestModal()">
@@ -849,7 +848,7 @@
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
     </div>
-  </div>
+  <div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">New</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -937,7 +936,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Alarm 7 SQL</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge export">📤 Report Export</span>
       <p class="lead">
         Alarm 7 SQL is a billing and service CRM built for security alarm dealers, backed by a SQL database with open ODBC connectivity. Data can be exported via the built-in reports engine (recommended for most users) or directly from the database for IT teams needing raw extracts.
@@ -1049,7 +1048,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🔔</div>
         <h2>AlarmBiller</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge export">📤 Report Export</span>
       <p class="lead">
         AlarmBiller provides built-in export tools accessible directly from list views and the Reports section. No API setup is required. Follow the methods below to pull all data needed for your Rev.io migration.
@@ -1106,9 +1105,9 @@
       <thead><tr><th>Data Type</th><th>Where to Export</th><th>Notes</th></tr></thead>
       <tbody>
         <tr><td>Customers</td><td>Customers grid → Export</td><td>Include both active and inactive; capture all address and contact fields</td></tr>
-        <tr><td>Sites & Systems</td><td>Customer record detail / Bold Group support</td><td>May require a manual pull or support-assisted extract</td></tr>
+        <tr><td>Sites &amp; Systems</td><td>Customer record detail / Bold Group support</td><td>May require a manual pull or support-assisted extract</td></tr>
         <tr><td>Recurring Billing (RMR)</td><td>RMR grid → Export; or Reports → RMR Report</td><td>Critical for billing continuity — include frequency, amount, and service type</td></tr>
-        <tr><td>Invoices & Credits</td><td>Invoices grid → Export; or Reports → Invoice Report</td><td>Set a wide date range to capture full history</td></tr>
+        <tr><td>Invoices &amp; Credits</td><td>Invoices grid → Export; or Reports → Invoice Report</td><td>Set a wide date range to capture full history</td></tr>
         <tr><td>Payments</td><td>Payments grid → Export; or QuickBooks IIF export</td><td>IIF covers reconciled payments only</td></tr>
         <tr><td>Contracts / Documents</td><td>Customer record → Docs tab</td><td>PDF attachments — download individually or request bulk extract from support</td></tr>
         <tr><td>Financial History (GL-level)</td><td>Setup → QuickBooks → Export</td><td>Best option for complete financial transaction history</td></tr>
@@ -1129,7 +1128,7 @@
       <div class="panel-header-top">
         <div class="system-icon">⚙️</div>
         <h2>ConnectWise Manage</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge api">🔑 API Access</span>
       <p class="lead">
         This guide walks you through creating an API key in ConnectWise Manage so Rev.io can securely pull your data for migration. The process takes about 10 minutes and does not require any software installation.
@@ -1185,7 +1184,7 @@
             <tr><td>Procurement</td><td>Products, Product Catalog</td></tr>
             <tr><td>Service Desk</td><td>Tickets, Boards, Priorities</td></tr>
             <tr><td>Sales</td><td>Opportunities, Activities</td></tr>
-            <tr><td>Time & Expense</td><td>Time Entries, Expense Entries</td></tr>
+            <tr><td>Time &amp; Expense</td><td>Time Entries, Expense Entries</td></tr>
             <tr><td>Schedule</td><td>Schedule Entries</td></tr>
             <tr><td>System</td><td>Members, Locations</td></tr>
           </tbody>
@@ -1237,7 +1236,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🖨️</div>
         <h2>e-automate (ECI)</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ User Access &amp; Report Export</span>
       <p class="lead">
         e-automate does not have a dedicated API-only user type. Instead, you create a standard user account with read permissions through e-admin (on-premise) or the User Management tool (hosted/cloud), then share those credentials with Rev.io.
@@ -1385,7 +1384,7 @@
       <div class="panel-header-top">
         <div class="system-icon">⚡</div>
         <h2>FieldPulse</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ API Access &amp; Report Export</span>
       <p class="lead">
         FieldPulse supports two data access methods: direct API integration (recommended for full migrations) and built-in CSV exports available from the web app. Choose the option that fits your needs below.
@@ -1477,7 +1476,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🛠️</div>
         <h2>HaloPSA</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge api">🔑 API Access</span>
       <p class="lead">
         Rev.io needs read-only API access to your HaloPSA account to pull your existing data — clients, sites, tickets, and supporting reference data — into the Rev.io platform as part of your migration. The process takes about five minutes.
@@ -1572,7 +1571,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🏠</div>
         <h2>HouseCall Pro</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ API Access &amp; CSV Export</span>
       <p class="lead">
         HouseCall Pro supports both a public REST API (MAX plan required) and built-in CSV exports available to all plan levels. Choose the option that fits your account below.
@@ -1664,7 +1663,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Jobber</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ API Access &amp; CSV Export</span>
       <p class="lead">
         Jobber offers two data access methods. The API is recommended for migrations as it provides complete, structured data. CSV exports are available for quick pulls of client lists and reports without any technical setup.
@@ -1690,7 +1689,7 @@
         <div class="step"><div class="step-num">4</div><div class="step-body"><strong>Configure Scopes</strong><p>Select all relevant data types: Clients, Jobs, Invoices, Quotes, Timesheets, Properties. Scopes can be edited freely while the app is in Draft state.</p></div></div>
         <div class="step"><div class="step-num">5</div><div class="step-body"><strong>Generate the Authorization Link for Your Client</strong>
           <p>Build the following URL and send it to your Jobber admin user:</p>
-          <div class="creds-box"><span class="placeholder">https://api.getjobber.com/api/oauth/authorize?response_type=code&client_id=&lt;CLIENT_ID&gt;&redirect_uri=&lt;REDIRECT_URI&gt;</span></div>
+          <div class="creds-box"><span class="placeholder">https://api.getjobber.com/api/oauth/authorize?response_type=code&amp;client_id=&lt;CLIENT_ID&gt;&amp;redirect_uri=&lt;REDIRECT_URI&gt;</span></div>
         </div></div>
       </div>
 
@@ -1755,7 +1754,7 @@
       <div class="panel-header-top">
         <div class="system-icon">☁️</div>
         <h2>Pax8</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ Portal Export &amp; API Access</span>
       <p class="lead">
         Rev.io needs a copy of your existing customer list from Pax8. You can export it directly from the portal (quickest option) or use Pax8's API for a complete programmatic export with all fields.
@@ -1827,7 +1826,7 @@
       <div class="panel-header-top">
         <div class="system-icon">💼</div>
         <h2>QuickBooks Desktop</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge export">📤 Report Export</span>
       <p class="lead">
         Follow each section below to export the data needed for your migration to Rev.io. Save all exports as .CSV files unless otherwise noted, then deliver them using the instructions in Section 5.
@@ -1892,7 +1891,7 @@
       <div class="panel-header-top">
         <div class="system-icon">💚</div>
         <h2>QuickBooks Online</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ API Access &amp; Manual Export</span>
       <p class="lead">
         QuickBooks Online supports full API access via Intuit's developer platform, as well as built-in bulk and individual report exports — no coding required.
@@ -1984,7 +1983,7 @@
       <div class="panel-header-top">
         <div class="system-icon">💬</div>
         <h2>QuoteWerks</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge export">📤 Report Export</span>
       <p class="lead">
         QuoteWerks offers several built-in export methods depending on what data you need. Use the guide below to pull quotes, orders, invoices, products, and contacts for your Rev.io migration.
@@ -2071,7 +2070,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🔐</div>
         <h2>Sedona</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <div class="coming-soon">
         <div class="icon">🚧</div>
         <h3>Instructions Coming Soon</h3>
@@ -2088,7 +2087,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🔧</div>
         <h2>Service Fusion</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ API Access &amp; Report Export</span>
       <p class="lead">
         Service Fusion supports both direct API access and built-in report exports. Use the API for full programmatic data extraction, or use the Reports Dashboard / Reports Center for no-code exports.
@@ -2135,7 +2134,7 @@
         </div></div>
       </div>
 
-      <div class="section-title"><span class="dot"></span>Reports Center (Flexible / Jobs & Estimates)</div>
+      <div class="section-title"><span class="dot"></span>Reports Center (Flexible / Jobs &amp; Estimates)</div>
       <p style="font-size:14px;color:var(--text-body);margin-bottom:12px;">Access from <strong>Reports</strong> tab in your top navigation.</p>
       <div class="steps">
         <div class="step"><div class="step-num">1</div><div class="step-body"><strong>Click Create New Report</strong><p>Select your date range using the calendar — choose a preset timeframe or define a custom range.</p></div></div>
@@ -2199,7 +2198,7 @@
       <div class="panel-header-top">
         <div class="system-icon">🤖</div>
         <h2>Autotask PSA</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">✅ API Access &amp; Report Export</span>
       <p class="lead">
         To connect Autotask to Rev.io, you'll create a dedicated API User — a special account type that doesn't consume a user license and has no UI access. You can also export data directly using LiveReports, the Billing Export Wizard, or dashboard widgets.
@@ -2325,7 +2324,270 @@
     </div>
   </div>
 
-</div><!-- /main -->
+<div id="panel-servicetitan" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Service Titan</h2>
+      </div>
+      <span class="type-badge both">API + Export</span>
+
+<p class="lead">Service Titan offers both API access and data exports. For the smoothest migration, we recommend granting Rev.io API access to your Service Titan tenant. If that's not feasible, you can export key data sets manually. Below you'll find instructions for both methods.</p>
+
+<h2 class="section-title"><span class="dot"></span>Choose Your Method</h2>
+
+<div class="method-tabs">
+    <button class="method-tab active" onclick="showMethod('servicetitan','tab1', this)">Method 1: API Access (Recommended)</button>
+    <button class="method-tab" onclick="showMethod('servicetitan','tab2', this)">Method 2: Manual Data Export</button>
+</div>
+
+<div class="method-panel active" id="servicetitan-tab1">
+
+    <h2 class="section-title"><span class="dot"></span>Overview</h2>
+    <p>Service Titan uses an OAuth 2.0-based API accessed through their Integration Partners program. To grant Rev.io access, you'll need to create an API application in your Service Titan developer portal, generate credentials, and share them with our team. Rev.io will then connect securely to pull your customer, location, job, invoice, and equipment data.</p>
+
+    <div class="callout note">
+        <div class="callout-icon">ℹ️</div>
+        <div>You must have <strong>Admin-level access</strong> in Service Titan to complete these steps. If you're not an admin, please forward these instructions to someone on your team who is.</div>
+    </div>
+
+    <h2 class="section-title"><span class="dot"></span>Step-by-Step: Grant API Access</h2>
+
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+                <strong>Access the Service Titan Developer Portal</strong><br>
+                Navigate to <strong>developer.servicetitan.io</strong> and sign in with your Service Titan admin credentials. If this is your first time, you may need to register for a developer account linked to your tenant.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+                <strong>Create a New API Application</strong><br>
+                Click <strong>"Create App"</strong> or <strong>"New Application"</strong>. Provide the following details:
+                <ul>
+                    <li><strong>App Name:</strong> <code>Rev.io Migration</code></li>
+                    <li><strong>Description:</strong> <code>Data migration integration for Rev.io PSA</code></li>
+                    <li><strong>Environment:</strong> Select <strong>Production</strong></li>
+                </ul>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+                <strong>Configure API Scopes / Permissions</strong><br>
+                When prompted for API access, enable <strong>read-only</strong> permissions for the following scopes:
+                <ul>
+                    <li>CRM / Customers</li>
+                    <li>CRM / Locations</li>
+                    <li>Job Booking / Jobs</li>
+                    <li>Job Booking / Appointments</li>
+                    <li>Accounting / Invoices</li>
+                    <li>Accounting / Estimates</li>
+                    <li>Accounting / Payments</li>
+                    <li>Installed Equipment</li>
+                    <li>Memberships</li>
+                    <li>Pricebook</li>
+                    <li>Technician / Employees</li>
+                    <li>Tags</li>
+                </ul>
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+                <strong>Connect the App to Your Tenant</strong><br>
+                After creating the app, you need to connect it to your Service Titan tenant. Go to <strong>Settings &gt; Integrations &gt; API Applications</strong> within your main Service Titan account (not the developer portal). Find the application you created and click <strong>"Connect"</strong> or <strong>"Allow"</strong>. Confirm that the app is listed as <strong>Active</strong>.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+                <strong>Retrieve Your Credentials</strong><br>
+                Return to the developer portal and locate your newly created app. You will need the following three pieces of information:
+                <ul>
+                    <li><strong>Client ID</strong> (also called App Key)</li>
+                    <li><strong>Client Secret</strong> (also called App Secret)</li>
+                    <li><strong>Tenant ID</strong> (your unique Service Titan account identifier)</li>
+                </ul>
+                Your Tenant ID can also be found in your Service Titan URL or under <strong>Settings &gt; Account Info</strong>.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">6</div>
+            <div class="step-body">
+                <strong>Send Credentials to Rev.io Securely</strong><br>
+                Share the credentials below with your Rev.io migration specialist using the secure link or method they've provided. <strong>Never send credentials via plain email.</strong>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title"><span class="dot"></span>Credentials to Provide</h2>
+
+    <div class="creds-box">
+        <span class="label">Client ID (App Key)</span>
+        <span class="placeholder">e.g., abc123xxxxxxxxxxxxxxxx</span>
+    </div>
+    <div class="creds-box">
+        <span class="label">Client Secret (App Secret)</span>
+        <span class="placeholder">e.g., sk_live_xxxxxxxxxxxxxxxx</span>
+    </div>
+    <div class="creds-box">
+        <span class="label">Tenant ID</span>
+        <span class="placeholder">e.g., 123456789</span>
+    </div>
+
+    <div class="callout tip">
+        <div class="callout-icon">💡</div>
+        <div>Your Rev.io migration specialist will provide a secure file-sharing link for transmitting these credentials. If you haven't received one, please reach out to your project contact before proceeding.</div>
+    </div>
+
+    <div class="callout warn">
+        <div class="callout-icon">⚠️</div>
+        <div>The Client Secret is shown only once when generated. Copy it immediately and store it in a safe place. If lost, you'll need to regenerate it from the developer portal.</div>
+    </div>
+
+</div>
+
+<div class="method-panel" id="servicetitan-tab2">
+
+    <h2 class="section-title"><span class="dot"></span>Overview</h2>
+    <p>If API access isn't an option, you can export data directly from Service Titan's reporting and list views. Rev.io will use these files to build your migration upload templates. Please export each data set listed below as a <strong>CSV</strong> file.</p>
+
+    <div class="callout note">
+        <div class="callout-icon">ℹ️</div>
+        <div>When exporting, always select <strong>"All"</strong> records rather than a filtered subset, and ensure date ranges cover your full operating history (or at minimum, the last 2–3 years). This ensures Rev.io has a complete picture for migration.</div>
+    </div>
+
+    <h2 class="section-title"><span class="dot"></span>Required Exports</h2>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Data Set</th>
+                <th>Where to Find It</th>
+                <th>Key Fields to Include</th>
+                <th>File Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Customers</td>
+                <td>CRM &gt; Customers &gt; Export</td>
+                <td>Customer ID, Name, Email, Phone, Address, Customer Type, Source, Tags, Notes</td>
+                <td><code>st_customers.csv</code></td>
+            </tr>
+            <tr>
+                <td>Locations</td>
+                <td>CRM &gt; Locations &gt; Export</td>
+                <td>Location ID, Customer ID, Address, City, State, Zip, Tax Zone, Zone, Notes</td>
+                <td><code>st_locations.csv</code></td>
+            </tr>
+            <tr>
+                <td>Jobs</td>
+                <td>Reports &gt; Job Reports &gt; Job Export</td>
+                <td>Job ID, Customer, Location, Business Unit, Job Type, Status, Created Date, Completed Date, Technician, Total, Tags</td>
+                <td><code>st_jobs.csv</code></td>
+            </tr>
+            <tr>
+                <td>Invoices</td>
+                <td>Reports &gt; Accounting Reports &gt; Invoice Export</td>
+                <td>Invoice #, Job #, Customer, Date, Due Date, Subtotal, Tax, Total, Balance, Status, Line Items</td>
+                <td><code>st_invoices.csv</code></td>
+            </tr>
+            <tr>
+                <td>Estimates</td>
+                <td>Reports &gt; Sales Reports &gt; Estimate Export</td>
+                <td>Estimate #, Customer, Location, Status, Created Date, Total, Sold Date, Items</td>
+                <td><code>st_estimates.csv</code></td>
+            </tr>
+            <tr>
+                <td>Memberships</td>
+                <td>Memberships &gt; All Memberships &gt; Export</td>
+                <td>Membership ID, Customer, Location, Type, Status, Start Date, Next Billing Date, Recurring Amount</td>
+                <td><code>st_memberships.csv</code></td>
+            </tr>
+            <tr>
+                <td>Equipment (Installed)</td>
+                <td>CRM &gt; Locations &gt; Equipment tab (or Reports &gt; Equipment Report)</td>
+                <td>Equipment ID, Location, Customer, Type, Brand, Model, Serial #, Install Date, Warranty Expiration</td>
+                <td><code>st_equipment.csv</code></td>
+            </tr>
+            <tr>
+                <td>Pricebook</td>
+                <td>Pricebook &gt; Export</td>
+                <td>Item Code, Name, Description, Category, Price, Cost, Active/Inactive</td>
+                <td><code>st_pricebook.csv</code></td>
+            </tr>
+            <tr>
+                <td>Payments</td>
+                <td>Reports &gt; Accounting Reports &gt; Payment Export</td>
+                <td>Payment ID, Invoice #, Customer, Date, Amount, Payment Type, Status</td>
+                <td><code>st_payments.csv</code></td>
+            </tr>
+            <tr>
+                <td>Employees / Technicians</td>
+                <td>Settings &gt; Employees &gt; Export (or Reports)</td>
+                <td>Employee ID, Name, Role, Business Unit, Active Status, Email, Phone</td>
+                <td><code>st_employees.csv</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 class="section-title"><span class="dot"></span>How to Export Data</h2>
+
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+                <strong>Navigate to the Report or List View</strong><br>
+                Using the table above, go to the appropriate section in Service Titan for each data set. For most data, you'll find an export option in the <strong>Reports</strong> module or within the list view of each section.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+                <strong>Set Filters &amp; Date Range</strong><br>
+                Remove any filters so that <strong>all records</strong> are included. Set the date range to cover your full history — or at minimum, the period specified by your Rev.io migration specialist. Ensure both <strong>active and inactive</strong> records are included where applicable.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+                <strong>Add All Available Columns</strong><br>
+                Before exporting, customize the columns/fields shown in the report or list view. Add as many fields as possible — especially the key fields listed in the table above. More data is always better; Rev.io will map only what's needed.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+                <strong>Export as CSV</strong><br>
+                Click the <strong>Export</strong> button (usually represented by a download icon or found in a <strong>"⋮" more options</strong> menu). Select <strong>CSV</strong> as the format. Save the file using the naming convention in the table above.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+                <strong>Upload to Rev.io</strong><br>
+                Upload all exported CSV files to the secure folder provided by your Rev.io migration specialist. Ensure all 10 files are included before notifying your project contact.
+            </div>
+        </div>
+    </div>
+
+    <div class="callout tip">
+        <div class="callout-icon">💡</div>
+        <div>Some Service Titan reports have row limits on exports. If a report cuts off, try narrowing the date range and exporting in batches (e.g., by year). Label each file accordingly, such as <code>st_jobs_2022.csv</code>, <code>st_jobs_2023.csv</code>, etc.</div>
+    </div>
+
+    <div class="callout warn">
+        <div class="callout-icon">⚠️</div>
+        <div>Do <strong>not</strong> modify, reformat, or delete columns from the exported files. Rev.io needs the raw data exactly as Service Titan produces it. Altering the files may cause mapping errors and delay your migration.</div>
+    </div>
+
+</div>
+    </div>
+  </div></div><!-- /main -->
 
 <!-- ══════════════════════════════════════
      REQUEST NEW SYSTEM MODAL
@@ -2341,11 +2603,9 @@
     </div>
     <div class="modal-body" id="modalBody">
       <label class="modal-label" for="systemNameInput">Source System Name</label>
-      <input class="modal-input" id="systemNameInput" type="text"
-        placeholder="e.g. Salesforce, NetSuite, Zendesk..."
-        onkeydown="if(event.key==='Enter') generateSystem()" />
+      <input class="modal-input" id="systemNameInput" type="text" placeholder="e.g. Salesforce, NetSuite, Zendesk..." onkeydown="if(event.key==='Enter') generateSystem()">
       <p class="modal-hint">Claude will research this system and generate step-by-step instructions for API access and/or data export.</p>
-      <div id="previewArea" style="display:none;">
+      <div id="previewArea" style="display: none;">
         <div class="preview-box">
           <div class="preview-box-label">Preview</div>
           <div id="previewContent"></div>
@@ -2356,10 +2616,10 @@
       </div>
     </div>
     <div class="modal-footer">
-      <div class="modal-status" id="modalStatus" style="display:none;"></div>
+      <div class="modal-status" id="modalStatus" style="display: none;"><span class="spinner"></span> Saving to GitHub…</div>
       <button class="btn-secondary" onclick="closeRequestModal()">Cancel</button>
-      <button class="btn-primary" id="generateBtn" onclick="generateSystem()">Generate Instructions</button>
-      <button class="btn-primary" id="saveBtn" onclick="saveToGuide()" style="display:none;">Save to Guide</button>
+      <button class="btn-primary" id="generateBtn" onclick="generateSystem()" disabled="" style="display: none;">Generate Instructions</button>
+      <button class="btn-primary" id="saveBtn" onclick="saveToGuide()" style="display: inline-flex;" disabled="">Save to Guide</button>
     </div>
   </div>
 </div>
@@ -2597,5 +2857,6 @@ All method-panel ids should follow: id="${panelId}-tab1"`;
     el.innerHTML = html;
   }
 </script>
-</body>
-</html>
+
+
+</body></html>
