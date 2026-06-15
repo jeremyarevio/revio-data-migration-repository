@@ -769,7 +769,7 @@
   }
 </style>
 </head>
-<body>
+<body data-new-gr-c-s-check-loaded="14.1302.0" data-gr-ext-installed="">
 
 <!-- ══════════════════════════════════════
      SIDEBAR
@@ -848,7 +848,7 @@
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
     </div>
-  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div></div>
+  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('buildops', this)"><span class="nav-icon">📋</span> Buildops <span class="nav-badge badge-both">Both</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -2869,7 +2869,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Zoho</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">API + Export</span>
 
 <p class="lead">Zoho offers both API access and manual data exports. For the smoothest migration, we recommend enabling API access so Rev.io can programmatically retrieve your customer, billing, and service data. Manual exports are available as a supplement or alternative if API access is not feasible.</p>
@@ -3167,7 +3167,319 @@
 <div class="method-panel" id="zoho-tab3">
   <h2 class="section-title">
     </h2></div>
-  </div></div></div><!-- /main -->
+  </div></div><div id="panel-buildops" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Buildops</h2>
+      </div>
+      <span class="type-badge both">API + Export</span>
+
+<p class="lead">BuildOps is a cloud-based field service management platform designed for commercial contractors. To migrate your data into Rev.io PSA, we can leverage the BuildOps API for structured data extraction and supplement with manual exports from the BuildOps reporting interface. Below you'll find instructions for both methods.</p>
+
+<h2 class="section-title"><span class="dot"></span>What Data Can Be Migrated</h2>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>API</th>
+      <th>Export</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Customers / Locations</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>Includes billing &amp; service addresses</td>
+    </tr>
+    <tr>
+      <td>Contacts</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>Primary and secondary contacts</td>
+    </tr>
+    <tr>
+      <td>Jobs / Work Orders</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>Historical and open jobs</td>
+    </tr>
+    <tr>
+      <td>Proposals / Estimates</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>Includes line-item detail</td>
+    </tr>
+    <tr>
+      <td>Invoices</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>For financial history and open balances</td>
+    </tr>
+    <tr>
+      <td>Technicians / Users</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>User roles and assignments</td>
+    </tr>
+    <tr>
+      <td>Equipment / Assets</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>Serial numbers, model info, location ties</td>
+    </tr>
+    <tr>
+      <td>Service Agreements</td>
+      <td>✅</td>
+      <td>✅</td>
+      <td>Recurring contract details</td>
+    </tr>
+    <tr>
+      <td>Tags / Categories</td>
+      <td>✅</td>
+      <td>⚠️</td>
+      <td>Limited in exports; API preferred</td>
+    </tr>
+    <tr>
+      <td>Attachments / Photos</td>
+      <td>⚠️</td>
+      <td>❌</td>
+      <td>May require separate coordination</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="method-tabs">
+  <button class="method-tab active" onclick="showMethod('buildops','tab1', this)">Method 1: API Access</button>
+  <button class="method-tab" onclick="showMethod('buildops','tab2', this)">Method 2: Data Exports</button>
+</div>
+
+<div class="method-panel active" id="buildops-tab1">
+
+  <h2 class="section-title"><span class="dot"></span>Method 1: Grant Rev.io API Access</h2>
+
+  <p>BuildOps provides a GraphQL-based API that allows Rev.io to programmatically extract your data. To enable this, you'll need to generate API credentials and share them securely with our migration team.</p>
+
+  <div class="callout note">
+    <div class="callout-icon">ℹ️</div>
+    <div>API access in BuildOps is typically available on Pro and Enterprise plans. If you're unsure whether your plan includes API access, contact your BuildOps account representative or check <strong>Settings &gt; Integrations</strong>.</div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Log in to BuildOps as an Administrator</strong><br>
+        Navigate to <a href="https://app.buildops.com" target="_blank">app.buildops.com</a> and sign in with an account that has full admin privileges. API credential management requires administrator-level access.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Navigate to Integrations Settings</strong><br>
+        Click on your <strong>profile icon</strong> or the <strong>gear icon</strong> in the left sidebar, then go to <strong>Settings &gt; Integrations</strong>. Look for the <strong>API Access</strong> or <strong>Developer</strong> section.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Generate API Credentials</strong><br>
+        Click <strong>"Create API Key"</strong> or <strong>"Generate New Token"</strong>. Provide a descriptive name such as <em>"Rev.io Migration - [Your Company Name]"</em>. Ensure the key has <strong>read-only</strong> permissions across all data objects (Customers, Jobs, Invoices, Equipment, etc.).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Copy and Store the Credentials</strong><br>
+        Once generated, copy the API key and any associated secret immediately. BuildOps may only display the secret once. Store these values temporarily in a secure location.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Send Credentials Securely to Rev.io</strong><br>
+        Share the following credentials with your Rev.io migration project manager using an encrypted method (e.g., a secure link from your password manager, an encrypted email, or the secure upload portal provided by Rev.io). <strong>Never send credentials in plain-text email.</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="creds-box">
+    <span class="label">BuildOps Account / Tenant URL:</span>
+    <span class="placeholder">https://app.buildops.com/your-tenant</span>
+
+    <span class="label">API Key:</span>
+    <span class="placeholder">xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</span>
+
+    <span class="label">API Secret / Token:</span>
+    <span class="placeholder">••••••••••••••••••••••••••••••••</span>
+
+    <span class="label">Admin Contact Email:</span>
+    <span class="placeholder">admin@yourcompany.com</span>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>We recommend creating a dedicated read-only API key specifically for this migration. Once the migration is complete, you can revoke the key from the same Integrations settings page to maintain security.</div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>If BuildOps has recently changed their API access model or you cannot locate the API settings, please contact BuildOps support at <strong>support@buildops.com</strong> and request assistance enabling API access for a third-party data migration. Share any documentation they provide with your Rev.io project manager.</div>
+  </div>
+
+</div>
+
+<div class="method-panel" id="buildops-tab2">
+
+  <h2 class="section-title"><span class="dot"></span>Method 2: Manual Data Exports</h2>
+
+  <p>If API access is unavailable or you prefer to provide data files directly, BuildOps allows you to export key datasets from its reporting and list views. Follow the steps below to generate the exports Rev.io needs.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Log in to BuildOps as an Administrator</strong><br>
+        Navigate to <a href="https://app.buildops.com" target="_blank">app.buildops.com</a> and sign in with admin credentials to ensure you have access to all data and reporting features.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Export Customer Data</strong><br>
+        Go to <strong>Customers</strong> from the left navigation. Use the filter options to select <strong>All Customers</strong> (ensure no filters are limiting results). Click the <strong>Export</strong> or <strong>Download</strong> icon (typically a downward arrow or "⋯" menu) and choose <strong>CSV</strong> format. Save the file as <em>buildops_customers.csv</em>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Export Jobs / Work Orders</strong><br>
+        Navigate to <strong>Jobs</strong> or <strong>Work Orders</strong>. Set the date range to capture <strong>all historical data</strong> (we recommend going back to the earliest available date). Export as <strong>CSV</strong> and save as <em>buildops_jobs.csv</em>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Export Invoices</strong><br>
+        Go to <strong>Invoicing</strong> or <strong>Billing</strong> section. Select <strong>All Invoices</strong> with no date restriction (or the widest range available). Export as <strong>CSV</strong> and save as <em>buildops_invoices.csv</em>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Export Equipment / Assets</strong><br>
+        Navigate to <strong>Equipment</strong> or <strong>Assets</strong> from the sidebar. Ensure all records are visible (remove any location or customer filters). Export as <strong>CSV</strong> and save as <em>buildops_equipment.csv</em>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>Export Proposals / Estimates</strong><br>
+        Go to <strong>Proposals</strong> and select all available records. Export as <strong>CSV</strong> and save as <em>buildops_proposals.csv</em>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        <strong>Export Service Agreements</strong><br>
+        Navigate to <strong>Service Agreements</strong> or <strong>Maintenance Plans</strong>. Export all active and expired agreements as <strong>CSV</strong> and save as <em>buildops_agreements.csv</em>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">8</div>
+      <div class="step-body">
+        <strong>Export Technicians / Team Members</strong><br>
+        Go to <strong>Settings &gt; Team</strong> or <strong>Users</strong>. If a direct export option is available, download the list as CSV. If not, provide a screenshot or manually compiled list of technician names, roles, and email addresses.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">9</div>
+      <div class="step-body">
+        <strong>Run Additional Reports (If Available)</strong><br>
+        Check the <strong>Reports</strong> section for any additional reports that may capture data not covered above, such as <em>Revenue by Customer</em>, <em>Job Costing Detail</em>, or <em>Aging Reports</em>. Export any relevant reports as CSV.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">10</div>
+      <div class="step-body">
+        <strong>Upload Files to Rev.io</strong><br>
+        Collect all exported CSV files and upload them to the secure file-sharing link provided by your Rev.io project manager. If you haven't received a link, reach out to your project manager to request one.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>When exporting lists, always remove filters and expand the date range to the maximum to ensure you capture all records. If BuildOps limits the number of rows per export, you may need to export in batches (e.g., by year or by customer group) and note this for your Rev.io project manager.</div>
+  </div>
+
+  <div class="callout note">
+    <div class="callout-icon">ℹ️</div>
+    <div>BuildOps may also support data exports through their <strong>QuickBooks or accounting integration sync logs</strong>. If you have an active accounting integration, let your Rev.io project manager know — this can provide an additional data validation source.</div>
+  </div>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Export File</th>
+        <th>Source Location in BuildOps</th>
+        <th>Suggested Filename</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Customers</td>
+        <td>Customers &gt; All Customers &gt; Export</td>
+        <td>buildops_customers.csv</td>
+      </tr>
+      <tr>
+        <td>Jobs / Work Orders</td>
+        <td>Jobs &gt; All Jobs &gt; Export</td>
+        <td>buildops_jobs.csv</td>
+      </tr>
+      <tr>
+        <td>Invoices</td>
+        <td>Invoicing &gt; All Invoices &gt; Export</td>
+        <td>buildops_invoices.csv</td>
+      </tr>
+      <tr>
+        <td>Equipment / Assets</td>
+        <td>Equipment &gt; All &gt; Export</td>
+        <td>buildops_equipment.csv</td>
+      </tr>
+      <tr>
+        <td>Proposals</td>
+        <td>Proposals &gt; All &gt; Export</td>
+        <td>buildops_proposals.csv</td>
+      </tr>
+      <tr>
+        <td>Service Agreements</td>
+        <td>Service Agreements &gt; All &gt; Export</td>
+        <td>buildops_agreements.csv</td>
+      </tr>
+      <tr>
+        <td>Team / Technicians</td>
+        <td>Settings &gt; Team &gt; Export</td>
+        <td>buildops_team.csv</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>Do <strong>not</strong> modify, reformat, or delete columns from the exported CSV files. Rev.io's migration team needs the raw data exactly as BuildOps provides it. If you notice any issues with the exports (e.g., truncated data or missing columns), please flag this with your project manager before uploading.</div>
+  </div>
+
+</div>
+
+<h2 class="section-title"><span class="dot"></span>What Happens Next</h2>
+
+<p>Once Rev.io receives your API credentials or
+    </p></div>
+  </div></div><!-- /main -->
 
 <!-- ══════════════════════════════════════
      REQUEST NEW SYSTEM MODAL
@@ -3444,4 +3756,4 @@ All method-panel ids should follow: id="${panelId}-tab1"`;
 </script>
 
 
-</body></html>
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration></html>
