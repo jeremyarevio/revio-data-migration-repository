@@ -3565,7 +3565,7 @@
       if (panel.id === 'panel-home') return;
       const header = panel.querySelector('.panel-header-top');
       if (!header) return;
-      if (header.querySelector('.btn-export-pdf')) return; // already present
+      const existing = header.querySelector('.btn-export-pdf');       if (existing) existing.remove();
       const btn = document.createElement('button');
       btn.className = 'btn-export-pdf';
       btn.innerHTML = '&#128438; Export PDF';
