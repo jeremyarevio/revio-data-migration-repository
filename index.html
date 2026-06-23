@@ -769,7 +769,7 @@
   }
 </style>
 </head>
-<body data-new-gr-c-s-check-loaded="14.1302.0" data-gr-ext-installed="">
+<body data-new-gr-c-s-check-loaded="14.1304.0" data-gr-ext-installed="">
 
 <!-- ══════════════════════════════════════
      SIDEBAR
@@ -848,7 +848,7 @@
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
     </div>
-  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('buildops', this)"><span class="nav-icon">📋</span> Buildops <span class="nav-badge badge-both">Both</span></div></div>
+  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('buildops', this)"><span class="nav-icon">📋</span> Buildops <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('jetbuilt', this)"><span class="nav-icon">📋</span> Jetbuilt <span class="nav-badge badge-both">Both</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -3172,7 +3172,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Buildops</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">API + Export</span>
 
 <p class="lead">BuildOps is a cloud-based field service management platform designed for commercial contractors. To migrate your data into Rev.io PSA, we can leverage the BuildOps API for structured data extraction and supplement with manual exports from the BuildOps reporting interface. Below you'll find instructions for both methods.</p>
@@ -3479,7 +3479,331 @@
 
 <p>Once Rev.io receives your API credentials or
     </p></div>
-  </div></div><!-- /main -->
+  </div><div id="panel-jetbuilt" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Jetbuilt</h2>
+      </div>
+      <span class="type-badge both">API + Export</span>
+
+<p class="lead">Jetbuilt is a cloud-based project management and proposal platform popular with AV integrators and low-voltage contractors. For your migration to Rev.io PSA, we can ingest data via the Jetbuilt API <strong>and</strong> through CSV/Excel exports from the platform. Below you'll find instructions for both methods.</p>
+
+<h2 class="section-title"><span class="dot"></span>Choose Your Method</h2>
+
+<div class="method-tabs">
+  <button class="method-tab active" onclick="showMethod('jetbuilt','tab1', this)">Method 1: API Access</button>
+  <button class="method-tab" onclick="showMethod('jetbuilt','tab2', this)">Method 2: Data Export</button>
+</div>
+
+<!-- ===================== METHOD 1: API ACCESS ===================== -->
+<div class="method-panel active" id="jetbuilt-tab1">
+
+  <h2 class="section-title"><span class="dot"></span>Overview</h2>
+  <p>Jetbuilt offers a REST API that allows Rev.io to programmatically retrieve your projects, clients, products, and labor data. You will need to generate an API key from your Jetbuilt account and share it with the Rev.io migration team securely.</p>
+
+  <div class="callout note">
+    <div class="callout-icon">ℹ️</div>
+    <div>API access requires a Jetbuilt plan that includes API functionality. If you are unsure whether your plan supports API access, check with your Jetbuilt account representative or visit <strong>Settings &gt; Integrations</strong> in your dashboard.</div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Step-by-Step: Generate Your API Key</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Log in to your <strong>Jetbuilt</strong> account at <a href="https://app.jetbuilt.com" target="_blank" rel="noopener">app.jetbuilt.com</a> using an account with <strong>Administrator</strong> privileges.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Click your <strong>profile icon</strong> or company name in the top-right corner, then select <strong>Settings</strong> from the dropdown menu.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        In the left sidebar, navigate to <strong>Integrations</strong> (sometimes listed under <strong>Company Settings &gt; Integrations</strong>).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        Locate the <strong>API Access</strong> section. If an API key has not been generated previously, click <strong>Generate API Key</strong>. If a key already exists, you can use the existing key or regenerate a new one.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        Copy the <strong>API Key</strong> that is displayed. You will also need your <strong>Company Subdomain</strong> or <strong>Account ID</strong> — this is typically visible in your browser URL bar (e.g., <code>yourcompany.jetbuilt.com</code>).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        Securely share the credentials below with your Rev.io migration team using the secure link or method provided during onboarding. <strong>Do not send API keys via plain-text email.</strong>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Credentials to Provide</h2>
+
+  <div class="creds-box">
+    <span class="label">Jetbuilt Account / Subdomain:</span>
+    <span class="placeholder">yourcompany.jetbuilt.com</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">API Key:</span>
+    <span class="placeholder">xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">Admin User Email:</span>
+    <span class="placeholder">admin@yourcompany.com</span>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>Regenerating your API key will immediately invalidate the previous key. If you have other active integrations using the Jetbuilt API, coordinate with your team before regenerating.</div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Data Accessible via API</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Data Type</th>
+        <th>API Endpoint</th>
+        <th>Used In Rev.io PSA For</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Clients / Companies</td>
+        <td><code>/clients</code></td>
+        <td>Account &amp; Contact records</td>
+      </tr>
+      <tr>
+        <td>Contacts</td>
+        <td><code>/clients/{id}/contacts</code></td>
+        <td>Contact records linked to accounts</td>
+      </tr>
+      <tr>
+        <td>Projects</td>
+        <td><code>/projects</code></td>
+        <td>Projects &amp; Opportunities</td>
+      </tr>
+      <tr>
+        <td>Project Phases</td>
+        <td><code>/projects/{id}/phases</code></td>
+        <td>Project phases &amp; milestones</td>
+      </tr>
+      <tr>
+        <td>Products / Line Items</td>
+        <td><code>/projects/{id}/items</code></td>
+        <td>Products, inventory items &amp; pricing</td>
+      </tr>
+      <tr>
+        <td>Labor Entries</td>
+        <td><code>/projects/{id}/labor</code></td>
+        <td>Labor rates &amp; time estimates</td>
+      </tr>
+      <tr>
+        <td>Proposals</td>
+        <td><code>/projects/{id}/proposals</code></td>
+        <td>Historical quotes &amp; proposals</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>The Rev.io migration team will pull data in read-only mode. No changes will be made to your Jetbuilt account during the extraction process.</div>
+  </div>
+
+</div>
+
+<!-- ===================== METHOD 2: DATA EXPORT ===================== -->
+<div class="method-panel" id="jetbuilt-tab2">
+
+  <h2 class="section-title"><span class="dot"></span>Overview</h2>
+  <p>If API access is not available on your Jetbuilt plan, or if you prefer to provide data manually, you can export key reports and lists from Jetbuilt as CSV or Excel files. The Rev.io team will use these files to map and import your data.</p>
+
+  <h2 class="section-title"><span class="dot"></span>Export 1: Client List</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Log in to <strong>Jetbuilt</strong> and navigate to the <strong>Clients</strong> section from the main navigation menu.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Ensure no restrictive filters are applied — you want the <strong>complete client list</strong>. If filters are active, click <strong>Clear Filters</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Click the <strong>Export</strong> or <strong>Download</strong> icon (typically a downward arrow or spreadsheet icon) located near the top-right of the client list.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        Choose <strong>CSV</strong> or <strong>Excel (.xlsx)</strong> format and save the file as <code>jetbuilt_clients_export.csv</code>.
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Export 2: Project List &amp; Details</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Navigate to the <strong>Projects</strong> section from the main navigation.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Set the filter to include <strong>All Statuses</strong> (Active, Won, Lost, Archived) to ensure a complete history is captured.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Click the <strong>Export</strong> button and download the project list as <strong>CSV</strong> or <strong>Excel</strong>. Save as <code>jetbuilt_projects_export.csv</code>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>For detailed line-item data:</strong> Open each key project individually, navigate to the <strong>Items</strong> or <strong>Bill of Materials</strong> tab, and use the <strong>Export</strong> option to download the item list. Name each file descriptively (e.g., <code>jetbuilt_project_12345_items.csv</code>).
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>If you have a large number of projects, prioritize exporting line-item details for <strong>active</strong> and <strong>recently won</strong> projects. The Rev.io team will advise which historical projects are worth migrating in detail.</div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Export 3: Product / Item Library</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Navigate to <strong>Settings &gt; Item Database</strong> (or <strong>Product Library</strong>, depending on your Jetbuilt version).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        If category or manufacturer filters are applied, clear them to show your <strong>full catalog</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Click <strong>Export</strong> and download as CSV or Excel. Save as <code>jetbuilt_products_export.csv</code>.
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Export 4: Labor Rates &amp; Roles</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Navigate to <strong>Settings &gt; Labor Rates</strong> (or <strong>Company Settings &gt; Labor</strong>).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        If an export option is available, download the labor rates table. If not, take a <strong>screenshot</strong> or manually compile the rates into a spreadsheet with columns for <strong>Role Name</strong>, <strong>Hourly Rate</strong>, and <strong>Description</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Save the file as <code>jetbuilt_labor_rates.csv</code>.
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Required Export Files Summary</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>File Name</th>
+        <th>Source Location in Jetbuilt</th>
+        <th>Key Fields</th>
+        <th>Priority</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>jetbuilt_clients_export.csv</code></td>
+        <td>Clients section</td>
+        <td>Company name, address, phone, email, contacts</td>
+        <td>Required</td>
+      </tr>
+      <tr>
+        <td><code>jetbuilt_projects_export.csv</code></td>
+        <td>Projects section</td>
+        <td>Project name, client, status, value, dates</td>
+        <td>Required</td>
+      </tr>
+      <tr>
+        <td><code>jetbuilt_project_*_items.csv</code></td>
+        <td>Individual project &gt; Items tab</td>
+        <td>Product, manufacturer, model, qty, cost, price</td>
+        <td>Recommended</td>
+      </tr>
+      <tr>
+        <td><code>jetbuilt_products_export.csv</code></td>
+        <td>Settings &gt; Item Database</td>
+        <td>Product name, manufacturer, model, cost, MSRP, category</td>
+        <td>Required</td>
+      </tr>
+      <tr>
+        <td><code>jetbuilt_labor_rates.csv</code></td>
+        <td>Settings &gt; Labor Rates</td>
+        <td>Role name, hourly rate, description</td>
+        <td>Recommended</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>Do not modify the column headers in exported files. The Rev.io migration team relies on the original Jetbuilt column names for accurate field mapping. If you need to add notes, use a separate column at the end of the spreadsheet.</div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>How to Submit Your Files</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Collect all exported files into a single folder or ZIP archive.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Upload the files using the <strong>secure file upload link</strong> provided by your Rev.io onboarding specialist.
+    </div>
+  </div></div></div></div></div></div><!-- /main -->
 
 <!-- ══════════════════════════════════════
      REQUEST NEW SYSTEM MODAL
@@ -3756,4 +4080,5 @@ All method-panel ids should follow: id="${panelId}-tab1"`;
 </script>
 
 
-</body><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration></html>
+<grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration>
+</body></html>
