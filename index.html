@@ -769,7 +769,7 @@
   }
 </style>
 </head>
-<body data-new-gr-c-s-check-loaded="14.1304.0" data-gr-ext-installed="">
+<body data-new-gr-c-s-check-loaded="14.1307.0" data-gr-ext-installed="">
 
 <!-- ══════════════════════════════════════
      SIDEBAR
@@ -848,7 +848,7 @@
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
     </div>
-  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('buildops', this)"><span class="nav-icon">📋</span> Buildops <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('jetbuilt', this)"><span class="nav-icon">📋</span> Jetbuilt <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-both">Both</span></div></div>
+  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('buildops', this)"><span class="nav-icon">📋</span> Buildops <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('jetbuilt', this)"><span class="nav-icon">📋</span> Jetbuilt <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('freshdesk', this)"><span class="nav-icon">📋</span> Freshdesk <span class="nav-badge badge-both">Both</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -3808,7 +3808,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Workhorse</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">API + Export</span>
 
 <p class="lead">Workhorse is a billing and operational support system used by telecommunications providers. To ensure a smooth migration to Rev.io PSA, we can leverage both API access and data exports from your Workhorse environment. Below you'll find instructions for both methods — your Rev.io migration team will advise which approach (or combination) is best for your specific situation.</p>
@@ -4077,7 +4077,358 @@
   </div>
 </div>
     </div>
-  </div></div><!-- /main -->
+  </div><div id="panel-freshdesk" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Freshdesk</h2>
+      </div>
+      <span class="type-badge both">API + Export</span>
+
+<p class="lead">Freshdesk supports both API access and manual data exports. Providing API credentials allows Rev.io to programmatically retrieve your tickets, contacts, companies, and other records. Manual exports are also available for key data sets and can serve as a supplement or alternative to API access.</p>
+
+<h2 class="section-title"><span class="dot"></span>Choose Your Method</h2>
+
+<div class="method-tabs">
+  <button class="method-tab active" onclick="showMethod('freshdesk','tab1', this)">API Access</button>
+  <button class="method-tab" onclick="showMethod('freshdesk','tab2', this)">Manual Data Export</button>
+</div>
+
+<div class="method-panel active" id="freshdesk-tab1">
+
+  <h2 class="section-title"><span class="dot"></span>Granting Rev.io API Access</h2>
+
+  <div class="callout note">
+    <div class="callout-icon">ℹ️</div>
+    <div>Only Freshdesk administrators can retrieve API keys. If you are not an admin, please forward these instructions to your Freshdesk account administrator.</div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Log in to Freshdesk</strong><br>
+        Navigate to <strong>https://&lt;your-domain&gt;.freshdesk.com</strong> and sign in with an administrator account.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Open your profile settings</strong><br>
+        Click your <strong>profile avatar</strong> in the top-right corner of the page, then select <strong>Profile Settings</strong> from the dropdown menu.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Locate your API key</strong><br>
+        On the Profile Settings page, look for the <strong>Your API Key</strong> field in the right-hand sidebar. Click <strong>"View API Key"</strong> to reveal the full key.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Copy the API key</strong><br>
+        Copy the displayed API key. This key is unique to your user account and carries the same permissions as your login.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Identify your Freshdesk domain</strong><br>
+        Your domain is the subdomain portion of your Freshdesk URL. For example, if your URL is <strong>https://acmecorp.freshdesk.com</strong>, your domain is <strong>acmecorp</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>Send credentials to Rev.io securely</strong><br>
+        Provide the following information to your Rev.io migration specialist using the secure method they have designated (e.g., encrypted email or secure portal upload).
+      </div>
+    </div>
+  </div>
+
+  <div class="creds-box">
+    <span class="label">Freshdesk Domain:</span>
+    <span class="placeholder">e.g., acmecorp</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">API Key:</span>
+    <span class="placeholder">e.g., xXzAbCdEfGhIjKlMnOpQr</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">Admin Email Address:</span>
+    <span class="placeholder">e.g., admin@acmecorp.com</span>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>We recommend creating a dedicated Freshdesk agent account for Rev.io (e.g., <strong>revio-migration@yourcompany.com</strong>) with full admin privileges. This ensures migration activity is logged separately and the key can be revoked after migration is complete.</div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>Never share your API key over unsecured channels such as plain-text email or chat. Your API key grants full read/write access equivalent to your user account. If you suspect the key has been compromised, regenerate it immediately from your Profile Settings.</div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Data Accessible via API</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Data Type</th>
+        <th>API Endpoint</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tickets</td>
+        <td>/api/v2/tickets</td>
+        <td>Includes conversations, attachments, and custom fields</td>
+      </tr>
+      <tr>
+        <td>Contacts</td>
+        <td>/api/v2/contacts</td>
+        <td>Customer contact records with email, phone, and custom fields</td>
+      </tr>
+      <tr>
+        <td>Companies</td>
+        <td>/api/v2/companies</td>
+        <td>Organization/company records linked to contacts</td>
+      </tr>
+      <tr>
+        <td>Agents</td>
+        <td>/api/v2/agents</td>
+        <td>Agent profiles and group assignments</td>
+      </tr>
+      <tr>
+        <td>Groups</td>
+        <td>/api/v2/groups</td>
+        <td>Support team/group definitions</td>
+      </tr>
+      <tr>
+        <td>Products</td>
+        <td>/api/v2/products</td>
+        <td>Product catalog used in ticket categorization</td>
+      </tr>
+      <tr>
+        <td>Canned Responses</td>
+        <td>/api/v2/canned_responses</td>
+        <td>Pre-defined reply templates</td>
+      </tr>
+      <tr>
+        <td>Solutions (Knowledge Base)</td>
+        <td>/api/v2/solutions</td>
+        <td>KB categories, folders, and articles</td>
+      </tr>
+      <tr>
+        <td>Time Entries</td>
+        <td>/api/v2/time_entries</td>
+        <td>Time tracked against tickets</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="method-panel" id="freshdesk-tab2">
+
+  <h2 class="section-title"><span class="dot"></span>Exporting Data Manually from Freshdesk</h2>
+
+  <div class="callout note">
+    <div class="callout-icon">ℹ️</div>
+    <div>Manual exports require Freshdesk administrator access. Exports are generated as CSV files and delivered to your email. Large exports may take several minutes to process.</div>
+  </div>
+
+  <h3>Exporting Tickets</h3>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Navigate to the Tickets list</strong><br>
+        Go to <strong>Tickets</strong> from the left-hand navigation menu in Freshdesk.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Apply filters (optional)</strong><br>
+        If you want to export a specific subset, use the filter options at the top to narrow by date range, status, group, or other criteria. For a full migration, select <strong>All Tickets</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Initiate the export</strong><br>
+        Click the <strong>Export</strong> button (or the three-dot menu icon, then <strong>Export</strong>) located above the ticket list. Choose <strong>CSV</strong> as the format.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Select fields to export</strong><br>
+        Freshdesk will present a field selection dialog. Select <strong>all available fields</strong> to ensure Rev.io has the most complete data set. Be sure to include custom fields.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Download the file</strong><br>
+        Freshdesk will process the export and send a download link to your registered email address. Click the link to download the CSV file.
+      </div>
+    </div>
+  </div>
+
+  <h3>Exporting Contacts &amp; Companies</h3>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Navigate to Contacts or Companies</strong><br>
+        Click <strong>Contacts</strong> in the left-hand navigation. To export companies, switch to the <strong>Companies</strong> tab.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Click Export</strong><br>
+        Click the <strong>Export</strong> button at the top of the list view. Choose to export all contacts/companies and select <strong>all fields</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Download the CSV</strong><br>
+        A download link will be emailed to you. Save the file and forward it to your Rev.io migration specialist.
+      </div>
+    </div>
+  </div>
+
+  <h3>Exporting Knowledge Base Articles</h3>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Navigate to Solutions</strong><br>
+        Click <strong>Solutions</strong> (or <strong>Knowledge Base</strong>) in the left-hand navigation.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Export articles</strong><br>
+        Freshdesk does not offer a native bulk KB export on all plans. If available, use the export option within each category or folder. Otherwise, Rev.io can retrieve these via the API if you provide API access.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>For a comprehensive migration, we recommend exporting <strong>all</strong> of the following data sets and sending them to Rev.io together. This helps avoid repeated follow-ups and speeds up the migration timeline.</div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Recommended Exports Checklist</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Export</th>
+        <th>Location in Freshdesk</th>
+        <th>Format</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>All Tickets (with conversations)</td>
+        <td>Tickets → Export</td>
+        <td>CSV</td>
+        <td>☐ Completed</td>
+      </tr>
+      <tr>
+        <td>Contacts</td>
+        <td>Contacts → Export</td>
+        <td>CSV</td>
+        <td>☐ Completed</td>
+      </tr>
+      <tr>
+        <td>Companies</td>
+        <td>Contacts → Companies → Export</td>
+        <td>CSV</td>
+        <td>☐ Completed</td>
+      </tr>
+      <tr>
+        <td>Agents List</td>
+        <td>Admin → Agents (manual or screenshot)</td>
+        <td>CSV / Screenshot</td>
+        <td>☐ Completed</td>
+      </tr>
+      <tr>
+        <td>Groups</td>
+        <td>Admin → Groups (manual or screenshot)</td>
+        <td>CSV / Screenshot</td>
+        <td>☐ Completed</td>
+      </tr>
+      <tr>
+        <td>Canned Responses</td>
+        <td>Admin → Canned Responses</td>
+        <td>Manual copy or API</td>
+        <td>☐ Completed</td>
+      </tr>
+      <tr>
+        <td>Knowledge Base Articles</td>
+        <td>Solutions → Export (if available)</td>
+        <td>CSV / HTML</td>
+        <td>☐ Completed</td>
+      </tr>
+      <tr>
+        <td>Time Entries</td>
+        <td>Included in Ticket export or via API</td>
+        <td>CSV</td>
+        <td>☐ Completed</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>Freshdesk CSV exports of tickets may <strong>not include full conversation threads or attachments</strong>. If preserving complete ticket history and file attachments is important for your migration, we strongly recommend also providing API access so Rev.io can retrieve the full data programmatically.</div>
+  </div>
+
+</div>
+
+<h2 class="section-title"><span class="dot"></span>What Happens Next?</h2>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <strong>Rev.io reviews your data</strong><br>
+      Once we receive your API credentials and/or exported files, our migration team will perform an initial data assessment and identify any mapping considerations.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <strong>Field mapping &amp; validation</strong><br>
+      We will share a field mapping document with you to confirm how your Freshdesk data fields translate into Rev.io PSA. This is your opportunity to flag any custom fields or special handling requirements.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <strong>Test migration</strong><br>
+      A test migration will be performed in a Rev.io sandbox environment. You will be invited to review the results before we proceed to the production migration.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <strong>Production migration</strong><br>
+      After your approval, we execute the final migration and confirm all data has been transferred successfully. Post-migration, you can revoke the Freshde
+    </div>
+  </div></div></div></div></div><!-- /main -->
 
 <!-- ══════════════════════════════════════
      REQUEST NEW SYSTEM MODAL
