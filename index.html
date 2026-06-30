@@ -768,7 +768,20 @@
     .type-badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   }
 </style>
-</head>
+<style type="text/css">
+             @font-face {
+                font-family: "NunitoSans";
+                src: url("chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/assets/fonts/NunitoSans-Medium.ttf") format('truetype');
+                font-weight: 500;
+                font-style: normal;
+             }
+             @font-face {
+                font-family: "NunitoSans";
+                src: url("chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/assets/fonts/NunitoSans-Light.ttf") format('truetype');
+                font-weight: 300;
+                font-style: normal;
+             }
+         </style></head>
 <body data-new-gr-c-s-check-loaded="14.1307.0" data-gr-ext-installed="">
 
 <!-- ══════════════════════════════════════
@@ -848,7 +861,7 @@
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
     </div>
-  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('buildops', this)"><span class="nav-icon">📋</span> Buildops <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('jetbuilt', this)"><span class="nav-icon">📋</span> Jetbuilt <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('freshdesk', this)"><span class="nav-icon">📋</span> Freshdesk <span class="nav-badge badge-both">Both</span></div></div>
+  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('buildops', this)"><span class="nav-icon">📋</span> Buildops <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('jetbuilt', this)"><span class="nav-icon">📋</span> Jetbuilt <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('freshdesk', this)"><span class="nav-icon">📋</span> Freshdesk <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -4082,7 +4095,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Freshdesk</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">API + Export</span>
 
 <p class="lead">Freshdesk supports both API access and manual data exports. Providing API credentials allows Rev.io to programmatically retrieve your tickets, contacts, companies, and other records. Manual exports are also available for key data sets and can serve as a supplement or alternative to API access.</p>
@@ -4428,7 +4441,295 @@
       <strong>Production migration</strong><br>
       After your approval, we execute the final migration and confirm all data has been transferred successfully. Post-migration, you can revoke the Freshde
     </div>
-  </div></div></div></div></div><!-- /main -->
+  </div></div></div></div><div id="panel-servicepro" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Service Pro</h2>
+      </div>
+      <span class="type-badge both">API + Export</span>
+
+<p class="lead">Service Pro by MSI Data is a field service management platform used for work orders, scheduling, and service contract management. To migrate your data into Rev.io PSA, we can leverage Service Pro's API for direct data extraction as well as manual data exports from the reporting module. Below you'll find instructions for both methods.</p>
+
+<h2 class="section-title"><span class="dot"></span>Choose Your Migration Method</h2>
+
+<div class="method-tabs">
+  <button class="method-tab active" onclick="showMethod('servicepro','tab1', this)">API Access</button>
+  <button class="method-tab" onclick="showMethod('servicepro','tab2', this)">Manual Data Export</button>
+</div>
+
+<div class="method-panel active" id="servicepro-tab1">
+
+  <h2 class="section-title"><span class="dot"></span>Granting Rev.io API Access</h2>
+
+  <p>Service Pro provides a REST API that allows authorized integrations to extract customer, equipment, work order, and service contract data. Follow the steps below to create API credentials and share them securely with the Rev.io migration team.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Log in as an Administrator</strong><br>
+        Sign into your Service Pro instance using an account with full administrative privileges. You must have access to the <em>System Administration</em> area to configure API settings.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Navigate to API Configuration</strong><br>
+        Go to <strong>Administration &gt; System Settings &gt; API Configuration</strong>. If you do not see this option, contact MSI Data support to ensure the API module is enabled on your license.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Create a New API User</strong><br>
+        Click <strong>Add API User</strong> and fill in the following details:
+        <ul>
+          <li><strong>Username:</strong> Enter a descriptive name such as <code>revio-migration</code></li>
+          <li><strong>Description:</strong> "Rev.io PSA data migration integration"</li>
+          <li><strong>Permissions:</strong> Grant <em>Read-Only</em> access to all data modules (Customers, Equipment, Work Orders, Service Contracts, Inventory, Invoicing)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Generate API Key &amp; Secret</strong><br>
+        After saving the API user, click <strong>Generate Credentials</strong>. The system will display an API Key and API Secret. Copy both values immediately — the secret will not be shown again.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Identify Your API Base URL</strong><br>
+        Your Service Pro API endpoint is typically formatted as:<br>
+        <code>https://[your-instance].servicepro.com/api/v1/</code><br>
+        You can confirm this under <strong>Administration &gt; System Settings &gt; API Configuration &gt; Endpoint URL</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>Whitelist Rev.io IP Addresses (if applicable)</strong><br>
+        If your Service Pro instance uses IP-based access restrictions, add the Rev.io migration server IPs to your allowlist. Your Rev.io project manager will provide these addresses.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        <strong>Share Credentials Securely with Rev.io</strong><br>
+        Send the following information to your Rev.io migration team using the secure link or portal provided during onboarding. <strong>Never send credentials via plain-text email.</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="creds-box">
+    <span class="label">API Base URL</span>
+    <span class="placeholder">https://[your-instance].servicepro.com/api/v1/</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">API Username</span>
+    <span class="placeholder">revio-migration</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">API Key</span>
+    <span class="placeholder">xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">API Secret</span>
+    <span class="placeholder">••••••••••••••••••••••••••••••••</span>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>
+      <strong>Do not share credentials via email.</strong> Use the secure file-sharing link provided by your Rev.io project manager. If you believe credentials have been compromised, regenerate them immediately in Service Pro and notify your Rev.io contact.
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>
+      <strong>Read-Only access is sufficient.</strong> Rev.io will never write data back to your Service Pro instance. Granting read-only permissions ensures your production data remains untouched throughout the migration process.
+    </div>
+  </div>
+
+</div>
+
+<div class="method-panel" id="servicepro-tab2">
+
+  <h2 class="section-title"><span class="dot"></span>Exporting Data from Service Pro</h2>
+
+  <p>If API access is unavailable or you prefer to provide data files directly, you can export the necessary datasets from Service Pro's reporting and list management tools. Rev.io requires the following exports in <strong>CSV</strong> or <strong>Excel (.xlsx)</strong> format.</p>
+
+  <h2 class="section-title"><span class="dot"></span>Required Data Exports</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Dataset</th>
+        <th>Navigation Path</th>
+        <th>Key Fields to Include</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Customers</td>
+        <td>Customers &gt; Customer List &gt; Export</td>
+        <td>Customer ID, Name, Address, Phone, Email, Account Status, Customer Type, Tax ID</td>
+      </tr>
+      <tr>
+        <td>Locations / Sites</td>
+        <td>Customers &gt; Locations &gt; Export</td>
+        <td>Location ID, Customer ID, Site Name, Address, Contact Info, Notes</td>
+      </tr>
+      <tr>
+        <td>Equipment / Assets</td>
+        <td>Equipment &gt; Equipment List &gt; Export</td>
+        <td>Equipment ID, Customer ID, Location ID, Model, Serial Number, Install Date, Warranty Expiration, Status</td>
+      </tr>
+      <tr>
+        <td>Service Contracts</td>
+        <td>Contracts &gt; Contract List &gt; Export</td>
+        <td>Contract ID, Customer ID, Start Date, End Date, Billing Frequency, Contract Value, Coverage Details</td>
+      </tr>
+      <tr>
+        <td>Work Orders (Open)</td>
+        <td>Work Orders &gt; All Work Orders &gt; Filter: Open &gt; Export</td>
+        <td>WO Number, Customer ID, Location, Priority, Status, Assigned Tech, Description, Created Date, Scheduled Date</td>
+      </tr>
+      <tr>
+        <td>Work Order History</td>
+        <td>Reports &gt; Work Order History Report &gt; Export</td>
+        <td>WO Number, Customer ID, Completion Date, Technician, Labor Hours, Parts Used, Resolution Notes</td>
+      </tr>
+      <tr>
+        <td>Inventory / Parts</td>
+        <td>Inventory &gt; Parts List &gt; Export</td>
+        <td>Part Number, Description, Quantity on Hand, Unit Cost, Vendor, Warehouse Location</td>
+      </tr>
+      <tr>
+        <td>Invoices / Billing History</td>
+        <td>Reports &gt; Invoice Report &gt; Export</td>
+        <td>Invoice Number, Customer ID, Date, Line Items, Amounts, Tax, Payment Status</td>
+      </tr>
+      <tr>
+        <td>Technicians / Resources</td>
+        <td>Administration &gt; User Management &gt; Export</td>
+        <td>Tech ID, Name, Email, Role, Skills, Active Status</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-title"><span class="dot"></span>Export Steps</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Navigate to the Dataset</strong><br>
+        Using the navigation paths listed above, open the relevant list view or report in Service Pro.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Configure Columns &amp; Filters</strong><br>
+        Ensure all key fields listed in the table above are visible as columns in your view. Remove any active filters so that the complete dataset is included — unless noted otherwise (e.g., open work orders only).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Set the Date Range</strong><br>
+        For historical data such as work order history and invoices, set the date range to cover the full period you wish to migrate. Rev.io recommends exporting at least <strong>24 months</strong> of historical data for trend analysis and reporting continuity.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Export to CSV or Excel</strong><br>
+        Click the <strong>Export</strong> or <strong>Download</strong> button (typically found in the toolbar or under a gear/settings icon). Select <strong>CSV</strong> or <strong>Excel (.xlsx)</strong> as the format. Save the file with a descriptive name, e.g., <code>ServicePro_Customers_Export_2024.csv</code>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Verify the Export</strong><br>
+        Open each exported file and confirm that data appears complete, column headers are present, and no rows are truncated. Service Pro may limit exports to a certain number of rows — if a dataset is large, you may need to export in batches using date or alphabetical filters.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>Upload Files to Rev.io</strong><br>
+        Upload all exported files using the secure file-sharing link provided by your Rev.io project manager. Ensure each file is clearly labeled with the dataset name and export date.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout note">
+    <div class="callout-icon">📝</div>
+    <div>
+      <strong>Large Datasets:</strong> If any single export exceeds 50,000 rows, Service Pro may truncate the results. In this case, split the export into smaller date ranges or alphabetical segments and note this in your upload so the Rev.io team can reassemble the complete dataset.
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>
+      <strong>Custom Fields:</strong> If your Service Pro instance uses custom fields (UDFs) that contain important business data, make sure these columns are included in your list views before exporting. Let your Rev.io project manager know about any custom fields so they can be properly mapped during migration.
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>
+      <strong>Do not modify exported files.</strong> Please send raw exports without editing, reformatting, or removing columns. The Rev.io migration team needs the original data structure to ensure accurate field mapping and data integrity.
+    </div>
+  </div>
+
+</div>
+
+<h2 class="section-title"><span class="dot"></span>What Happens Next?</h2>
+
+<p>Once Rev.io receives your API credentials or exported data files, our migration team will:</p>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <strong>Data Assessment</strong> — Review all received data for completeness, quality, and structure. We'll identify any gaps or questions within 3–5 business days.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <strong>Field Mapping</strong> — Map Service Pro fields to corresponding Rev.io PSA fields. We'll share a mapping document for your review and approval before proceeding.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <strong>Test Migration</strong> — Perform a trial migration into a Rev.io staging environment. You'll have the opportunity to review migrated data and flag any issues.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <strong>Final Migration</strong> — Once approved, we execute the production migration and coordinate the cutover with your team on a scheduled date.
+    </div>
+  </div>
+</div>
+
+<div class="callout note">
+  <div class="callout-icon">📝</div>
+  <div>
+    <strong>Questions?</strong> If you're unsure about any step or need assistance locating a specific feature in Service Pro, reach out to your Rev.io project manager. We're here to make this process as smooth as possible.
+  </div>
+</div>
+    </div>
+  </div></div><!-- /main -->
 
 <!-- ══════════════════════════════════════
      REQUEST NEW SYSTEM MODAL
@@ -4706,4 +5007,4 @@ All method-panel ids should follow: id="${panelId}-tab1"`;
 
 
 <grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration>
-</body></html>
+<div id="rev_driver_sb" class="collapsed" style="transition: 0.4s;"><iframe src="chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/index.html" id="rev_driver" title="rev_driver_extension_in_page" name="revdriver_opened_by_user_false"></iframe><div id="nav_btns" style="top: 459px;"><span id="right_arr" title="Minimize">❯</span><span id="remove_sb" title="Remove" class="crossed"></span></div><div id="sidebar-logo" style="top: 459px;"><img id="sidebar-logo-img" src="chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/assets/images/sidebar-logo.png?v=4.6.1"></div></div><div id="settings_shadow"></div></body></html>
