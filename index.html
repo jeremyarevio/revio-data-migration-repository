@@ -861,7 +861,7 @@
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
     </div>
-  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('buildops', this)"><span class="nav-icon">📋</span> Buildops <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('jetbuilt', this)"><span class="nav-icon">📋</span> Jetbuilt <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('freshdesk', this)"><span class="nav-icon">📋</span> Freshdesk <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div></div>
+  <div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('buildops', this)"><span class="nav-icon">📋</span> Buildops <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('jetbuilt', this)"><span class="nav-icon">📋</span> Jetbuilt <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('freshdesk', this)"><span class="nav-icon">📋</span> Freshdesk <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('mhelpdesk', this)"><span class="nav-icon">📋</span> MHelpdesk <span class="nav-badge badge-both">Both</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -4446,7 +4446,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Service Pro</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">API + Export</span>
 
 <p class="lead">Service Pro by MSI Data is a field service management platform used for work orders, scheduling, and service contract management. To migrate your data into Rev.io PSA, we can leverage Service Pro's API for direct data extraction as well as manual data exports from the reporting module. Below you'll find instructions for both methods.</p>
@@ -4727,6 +4727,291 @@
   <div>
     <strong>Questions?</strong> If you're unsure about any step or need assistance locating a specific feature in Service Pro, reach out to your Rev.io project manager. We're here to make this process as smooth as possible.
   </div>
+</div>
+    </div>
+  </div><div id="panel-mhelpdesk" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>MHelpdesk</h2>
+      </div>
+      <span class="type-badge both">API + Export</span>
+
+<p class="lead">MHelpDesk is a field service management platform that stores customer records, job histories, invoicing data, and scheduling information. Rev.io can migrate your data using either API access or manual data exports. We recommend providing both to ensure complete coverage of all data types.</p>
+
+<h2 class="section-title"><span class="dot"></span>Choose Your Migration Method</h2>
+
+<div class="method-tabs">
+    <button class="method-tab active" onclick="showMethod('mhelpdesk','tab1', this)">Method 1: API Access</button>
+    <button class="method-tab" onclick="showMethod('mhelpdesk','tab2', this)">Method 2: Data Exports</button>
+    <button class="method-tab" onclick="showMethod('mhelpdesk','tab3', this)">Method 3: Both (Recommended)</button>
+</div>
+
+<div class="method-panel active" id="mhelpdesk-tab1">
+    <h2 class="section-title"><span class="dot"></span>Granting Rev.io API Access</h2>
+
+    <div class="callout note">
+        <div class="callout-icon">ℹ️</div>
+        <div>MHelpDesk provides a REST API that allows Rev.io to programmatically extract your customer data, jobs, invoices, and related records. You will need an active MHelpDesk subscription with administrative privileges to generate API credentials.</div>
+    </div>
+
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+                <strong>Log in to MHelpDesk</strong><br>
+                Navigate to <a href="https://www.mhelpdesk.com" target="_blank">www.mhelpdesk.com</a> and sign in using your administrator account credentials.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+                <strong>Navigate to API Settings</strong><br>
+                Click on your <strong>account name</strong> or <strong>profile icon</strong> in the upper-right corner, then select <strong>Settings</strong>. From the Settings menu, look for <strong>Integrations</strong> or <strong>API Access</strong> in the left sidebar.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+                <strong>Generate or Locate Your API Key</strong><br>
+                Within the API or Integrations section, locate your existing API key or generate a new one. If generating a new key, provide a descriptive name such as <em>"Rev.io Migration"</em> so you can identify it later.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+                <strong>Copy Your API Credentials</strong><br>
+                You will need to provide Rev.io with the following credentials. Copy each value carefully—API keys are case-sensitive.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+                <strong>Send Credentials Securely to Rev.io</strong><br>
+                Share your credentials with your Rev.io migration specialist using the secure method they have provided (e.g., encrypted email or secure portal). <strong>Never send API keys via unencrypted channels such as standard email or chat.</strong>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title"><span class="dot"></span>Credentials to Provide</h2>
+
+    <div class="creds-box">
+        <span class="label">API Key:</span>
+        <span class="placeholder">Paste your MHelpDesk API key here</span>
+    </div>
+    <div class="creds-box">
+        <span class="label">Account Email:</span>
+        <span class="placeholder">The email address associated with your MHelpDesk admin account</span>
+    </div>
+    <div class="creds-box">
+        <span class="label">Account/Company ID:</span>
+        <span class="placeholder">Your MHelpDesk account or company identifier (if applicable)</span>
+    </div>
+    <div class="creds-box">
+        <span class="label">Subdomain / URL:</span>
+        <span class="placeholder">e.g., yourcompany.mhelpdesk.com (if applicable)</span>
+    </div>
+
+    <div class="callout warn">
+        <div class="callout-icon">⚠️</div>
+        <div>Do not regenerate or revoke the API key while the migration is in progress. Doing so will interrupt Rev.io's access and may require restarting portions of the data extraction.</div>
+    </div>
+</div>
+
+<div class="method-panel" id="mhelpdesk-tab2">
+    <h2 class="section-title"><span class="dot"></span>Exporting Data from MHelpDesk</h2>
+
+    <div class="callout note">
+        <div class="callout-icon">ℹ️</div>
+        <div>If API access is unavailable or if Rev.io requests supplementary data files, you can export your data directly from MHelpDesk. We recommend exporting all available data categories to ensure a thorough migration.</div>
+    </div>
+
+    <h2 class="section-title"><span class="dot"></span>Export: Customers</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+                <strong>Navigate to Customers</strong><br>
+                From the main navigation menu, click on <strong>Customers</strong> to view your full customer list.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+                <strong>Export Customer Data</strong><br>
+                Look for an <strong>Export</strong> or <strong>Download</strong> button (often represented as a CSV/Excel icon) near the top-right of the customer list. Click it and select <strong>CSV</strong> or <strong>Excel</strong> format. Ensure all filters are cleared so the export includes your complete customer database.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+                <strong>Save the File</strong><br>
+                Save the downloaded file with a clear name such as <em>MHelpDesk_Customers_Export.csv</em>.
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title"><span class="dot"></span>Export: Jobs / Work Orders</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+                <strong>Navigate to Jobs</strong><br>
+                From the main navigation, click on <strong>Jobs</strong> or <strong>Work Orders</strong>.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+                <strong>Set Date Range</strong><br>
+                Adjust filters to include <strong>all job statuses</strong> (open, completed, cancelled) and set the date range to cover your entire history. Rev.io typically requests all historical data.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+                <strong>Export</strong><br>
+                Click the <strong>Export</strong> button and download the file in CSV or Excel format. Save as <em>MHelpDesk_Jobs_Export.csv</em>.
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title"><span class="dot"></span>Export: Invoices &amp; Billing</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+                <strong>Navigate to Invoices</strong><br>
+                Go to <strong>Invoices</strong> or <strong>Billing</strong> from the main menu.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+                <strong>Set Filters and Export</strong><br>
+                Clear all filters or set the broadest possible date range to include all invoices. Click <strong>Export</strong> and save the file as <em>MHelpDesk_Invoices_Export.csv</em>.
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title"><span class="dot"></span>Export: Staff / Technicians</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+                <strong>Navigate to Staff Settings</strong><br>
+                Go to <strong>Settings</strong> → <strong>Staff</strong> or <strong>Team Members</strong>.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+                <strong>Export Staff List</strong><br>
+                If an export option is available, download the staff/technician list. If no direct export exists, Rev.io can work with a manually compiled list—contact your migration specialist for a template.
+            </div>
+        </div>
+    </div>
+
+    <h2 class="section-title"><span class="dot"></span>Required Export Files Summary</h2>
+
+    <table class="data-table">
+        <thead>
+            <tr>
+                <th>Data Category</th>
+                <th>Suggested Filename</th>
+                <th>Format</th>
+                <th>Priority</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Customers</td>
+                <td>MHelpDesk_Customers_Export</td>
+                <td>CSV or Excel</td>
+                <td>Required</td>
+            </tr>
+            <tr>
+                <td>Jobs / Work Orders</td>
+                <td>MHelpDesk_Jobs_Export</td>
+                <td>CSV or Excel</td>
+                <td>Required</td>
+            </tr>
+            <tr>
+                <td>Invoices / Billing</td>
+                <td>MHelpDesk_Invoices_Export</td>
+                <td>CSV or Excel</td>
+                <td>Required</td>
+            </tr>
+            <tr>
+                <td>Staff / Technicians</td>
+                <td>MHelpDesk_Staff_Export</td>
+                <td>CSV or Excel</td>
+                <td>Recommended</td>
+            </tr>
+            <tr>
+                <td>Service Items / Price List</td>
+                <td>MHelpDesk_Services_Export</td>
+                <td>CSV or Excel</td>
+                <td>Recommended</td>
+            </tr>
+            <tr>
+                <td>Custom Fields / Notes</td>
+                <td>MHelpDesk_CustomFields_Export</td>
+                <td>CSV or Excel</td>
+                <td>If applicable</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout tip">
+        <div class="callout-icon">💡</div>
+        <div>If MHelpDesk limits exports to a certain number of records at a time, you may need to export in batches by date range. Label each file clearly (e.g., <em>Jobs_2022_Q1.csv</em>, <em>Jobs_2022_Q2.csv</em>) and send all files together.</div>
+    </div>
+</div>
+
+<div class="method-panel" id="mhelpdesk-tab3">
+    <h2 class="section-title"><span class="dot"></span>Providing Both API Access and Data Exports</h2>
+
+    <div class="callout tip">
+        <div class="callout-icon">💡</div>
+        <div>For the most complete and accurate migration, Rev.io recommends providing <strong>both</strong> API access and manual data exports. The API enables Rev.io to pull structured, real-time data programmatically, while exports serve as a backup and can capture data that may not be fully available through the API (such as custom reports, attachments, or archived records).</div>
+    </div>
+
+    <div class="steps">
+        <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+                <strong>Set Up API Access First</strong><br>
+                Follow the steps in the <strong>Method 1: API Access</strong> tab above to generate and share your API credentials with Rev.io.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+                <strong>Complete All Data Exports</strong><br>
+                Follow the steps in the <strong>Method 2: Data Exports</strong> tab above to export Customers, Jobs, Invoices, Staff, and any other available data categories.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+                <strong>Upload Exports to Rev.io</strong><br>
+                Send all exported files to your Rev.io migration specialist via the secure file transfer method they provide. Include a brief note listing which exports are included.
+            </div>
+        </div>
+        <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+                <strong>Confirm with Your Migration Specialist</strong><br>
+                Once both the API credentials and export files have been delivered, confirm with your Rev.io contact so they can begin the data validation and mapping process.
+            </div>
+        </div>
+    </div>
+
+    <div class="callout warn">
+        <div class="callout-icon">⚠️</div>
+        <div>Please do not delete, archive, or modify records in MHelpDesk during the active migration period. Changes made after data extraction may not be captured and could result in discrepancies in your migrated data.</div>
+    </div>
 </div>
     </div>
   </div></div><!-- /main -->
