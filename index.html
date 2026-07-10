@@ -731,6 +731,14 @@
   }
 
   @media print {
+    html, #main, .panel.printing, .panel-header, .method-panel { background: white !important; color: #1A2035 !important; }
+    .system-icon { display: none !important; }
+    .panel-header-top { gap: 8px; }
+    .callout.note { border-color: #E8511E !important; }
+    .callout.warn { border-color: #D29922 !important; }
+    .callout.tip { border-color: #3B82F6 !important; }
+    * { outline: none !important; }
+    .callout-review { display: none !important; }
     #sidebar, .top-header, .method-tabs, .btn-export-pdf,
     .sidebar-request-btn, .modal-overlay { display: none !important; }
     #main { margin-left: 0 !important; }
