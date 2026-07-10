@@ -780,7 +780,20 @@
                 font-weight: 300;
                 font-style: normal;
              }
-         </style></head>
+         </style><style id="claude-agent-animation-styles">
+      @keyframes claude-pulse {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+      #claude-agent-glow-border-inner {
+        animation: claude-pulse 2s ease-in-out infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #claude-agent-glow-border-inner {
+          animation: none;
+        }
+      }
+    </style></head>
 <body data-new-gr-c-s-check-loaded="14.1307.0" data-gr-ext-installed="">
 
 <!-- ══════════════════════════════════════
@@ -2580,7 +2593,7 @@
   </div>
 
 </div>
-    </div>
+    </div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div>
   </div><div id="panel-servicetitan" class="panel">
     <div class="panel-header">
       <div class="panel-header-top">
@@ -2876,7 +2889,7 @@
       <strong>Test Migration</strong><br>
       A test migration will be performed in a sandbox
     </div>
-  </div></div></div></div><div id="panel-zoho" class="panel">
+  </div></div></div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div></div><div id="panel-zoho" class="panel">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
@@ -3179,7 +3192,7 @@
 <div class="method-panel" id="zoho-tab3">
   <h2 class="section-title">
     </h2></div>
-  </div></div><div id="panel-buildops" class="panel">
+  </div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div></div><div id="panel-buildops" class="panel">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
@@ -3490,7 +3503,7 @@
 <h2 class="section-title"><span class="dot"></span>What Happens Next</h2>
 
 <p>Once Rev.io receives your API credentials or
-    </p></div>
+    </p></div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div>
   </div><div id="panel-jetbuilt" class="panel">
     <div class="panel-header">
       <div class="panel-header-top">
@@ -3815,7 +3828,7 @@
       <div class="step-body">
         Upload the files using the <strong>secure file upload link</strong> provided by your Rev.io onboarding specialist.
     </div>
-  </div></div></div></div></div><div id="panel-workhorse" class="panel">
+  </div></div></div></div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div></div><div id="panel-workhorse" class="panel">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
@@ -4214,7 +4227,7 @@
       <strong>Production migration</strong><br>
       After your approval, we execute the final migration and confirm all data has been transferred successfully. Post-migration, you can revoke the Freshde
     </div>
-  </div></div></div></div><div id="panel-servicepro" class="panel">
+  </div></div></div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div></div><div id="panel-servicepro" class="panel">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
@@ -4501,7 +4514,7 @@
     <strong>Questions?</strong> If you're unsure about any step or need assistance locating a specific feature in Service Pro, reach out to your Rev.io project manager. We're here to make this process as smooth as possible.
   </div>
 </div>
-    </div>
+    </div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div>
   </div><div id="panel-mhelpdesk" class="panel">
     <div class="panel-header">
       <div class="panel-header-top">
@@ -4524,7 +4537,7 @@
     <h2 class="section-title"><span class="dot"></span>Granting Rev.io API Access</h2>
 
     <div class="callout note">
-        <div class="callout-icon">ℹ️</div>
+        <div class="callout-icon">ℹ️<br><br><strong>Plan requirement:</strong> API access in MHelpdesk is only available on the <strong>Professional plan ($149/user/month)</strong>. Confirm your current subscription tier supports API access before proceeding.</div>
         <div>MHelpDesk provides a REST API that allows Rev.io to programmatically extract your customer data, jobs, invoices, and related records. You will need an active MHelpDesk subscription with administrative privileges to generate API credentials.</div>
     </div>
 
@@ -4786,7 +4799,7 @@
         <div>Please do not delete, archive, or modify records in MHelpDesk during the active migration period. Changes made after data extraction may not be captured and could result in discrepancies in your migrated data.</div>
     </div>
 </div>
-    </div>
+    </div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div>
   </div></div><!-- /main -->
 
 <!-- ══════════════════════════════════════
@@ -4935,8 +4948,13 @@ Do NOT include the outer panel div or panel-header div — just the inner conten
 All method-tab onclick attributes should follow this pattern: showMethod('${panelId}','tab1', this)
 All method-panel ids should follow: id="${panelId}-tab1"`;
 
-    const userPrompt = `Please provide client-facing instructions for ${name}. Include: (1) how to grant Rev.io API access with step-by-step credential setup, OR (2) steps for exporting reports/data for Rev.io to use for migration uploads — or both if the system supports it. Format per the system prompt.`;
-
+    const userPrompt = `Generate accurate, client-facing migration instructions for ${name}. Follow these rules strictly:
+1. Only include an API access section if ${name} has a well-documented, publicly available REST API for third-party data access. If you are not highly confident the API exists and is accessible to third parties, omit the API tab and use export-only.
+2. For UI navigation steps (menus, buttons, field names), only include steps you are highly confident are accurate for the current version of this software. If uncertain, write: "Contact ${name} support to locate this setting."
+3. If API access requires a specific plan or subscription tier, state this clearly.
+4. Never fabricate endpoint URLs, field names, or navigation paths you are not certain exist.
+5. If the system has no public third-party API, use type-badge export and provide export steps only.
+Format per the system prompt.`;
     try {
       const response = await fetch(PROXY_URL, {
         method: 'POST',
@@ -5093,5 +5111,18 @@ window.addEventListener('load', function() {
       return result;
     };
   }
+});
+</script><div id="claude-agent-glow-border" style="position: fixed; inset: 0px; pointer-events: none; z-index: 2147483646; opacity: 1; transition: opacity 0.3s ease-in-out;"><div id="claude-agent-glow-border-inner" style="position: absolute; inset: 0px; will-change: opacity; box-shadow: rgba(217, 119, 87, 0.7) 0px 0px 15px inset, rgba(217, 119, 87, 0.5) 0px 0px 25px inset, rgba(217, 119, 87, 0.2) 0px 0px 35px inset;"></div></div><div id="claude-phantom-cursor" aria-hidden="true" style="position: fixed; top: 0px; left: 0px; pointer-events: none; z-index: 2147483646; transform: translate3d(756px, 414px, 0px); transition: transform 180ms cubic-bezier(0.2, 0, 0, 1); will-change: transform;"><svg id="claude-phantom-cursor-plain" width="20" height="26" viewBox="0 0 20 26" style="position: absolute; top: 0px; left: 0px; overflow: visible;"><path d="M0 0 L0 18 L4.5 14 L7.5 21.5 L11 20 L8 13 L14 13 Z" stroke="white" stroke-width="3" stroke-linejoin="round" fill="white"></path><path d="M0 0 L0 18 L4.5 14 L7.5 21.5 L11 20 L8 13 L14 13 Z" fill="#111"></path></svg><svg id="claude-phantom-cursor-styled" width="20" height="26" viewBox="0 0 20 26" style="position: absolute; top: 0px; left: 0px; overflow: visible; filter: drop-shadow(rgba(217, 119, 87, 0.9) 0px 0px 4px) drop-shadow(rgba(217, 119, 87, 0.45) 0px 0px 10px);"><path d="M0 0 L0 18 L4.5 14 L7.5 21.5 L11 20 L8 13 L14 13 Z" stroke="#D97757" stroke-width="3" stroke-linejoin="round" fill="#D97757"></path><path d="M0 0 L0 18 L4.5 14 L7.5 21.5 L11 20 L8 13 L14 13 Z" fill="#FAF9F5"></path></svg></div><script id="save-patch">
+window.addEventListener('load', function() {
+  var _origSave = window.saveToGuide;
+  if (!_origSave) return;
+  window.saveToGuide = async function() {
+    if (window.generatedPanelHTML) {
+      var sysName = document.getElementById('systemNameInput') ? document.getElementById('systemNameInput').value.trim() : 'this system';
+      var callout = '<div class="callout warn callout-review" style="margin:16px 0 0 0;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Confirm accuracy with ' + sysName + '\'s documentation or support team before sharing with clients.</div></div>';
+      window.generatedPanelHTML = window.generatedPanelHTML.replace('</div>\n  </div>', callout + '\n  </div>');
+    }
+    return await _origSave.apply(this, arguments);
+  };
 });
 </script></body></html>
