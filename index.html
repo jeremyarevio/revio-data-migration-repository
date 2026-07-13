@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -804,7 +805,7 @@
         }
       }
     </style></head>
-<body data-new-gr-c-s-check-loaded="14.1307.0" data-gr-ext-installed="">
+<body data-new-gr-c-s-check-loaded="14.1310.0" data-gr-ext-installed="">
 
 <!-- ══════════════════════════════════════
      SIDEBAR
@@ -841,7 +842,7 @@
   <div class="nav-item" onclick="showPanel('alarm7sql', this)">
       <span class="nav-icon">📋</span> Alarm 7 SQL
       <span class="nav-badge badge-export">Export</span>
-    </div><div class="nav-item active" onclick="showPanel('alarmbiller', this)">
+    </div><div class="nav-item" onclick="showPanel('alarmbiller', this)">
       <span class="nav-icon">📋</span> AlarmBiller
       <span class="nav-badge badge-export">Export</span>
     </div><div class="nav-item" onclick="showPanel('autotask', this)">
@@ -883,7 +884,7 @@
     </div><div class="nav-item" onclick="showPanel('servicefusion', this)">
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
-    </div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div></div>
+    </div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item active" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -1078,7 +1079,7 @@
   <!-- ─────────────────────────────────
        ALARMBILLER
   ──────────────────────────────────── -->
-  <div id="panel-alarmbiller" class="panel active">
+  <div id="panel-alarmbiller" class="panel">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon">🔔</div>
@@ -2604,7 +2605,7 @@
 
 </div>
     </div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div>
-  </div><div id="panel-servicetitan" class="panel">
+  </div><div id="panel-servicetitan" class="panel active">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
@@ -4810,7 +4811,326 @@
     </div>
 </div>
     </div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div>
-  </div></div><!-- /main -->
+  </div><div id="panel-servicetitan" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Service Titan</h2>
+      </div>
+      
+
+<span class="type-badge both">API + Export</span>
+
+<p class="lead">ServiceTitan is a comprehensive field service management platform used by residential and commercial contractors. This guide walks you through extracting your customer, location, job, invoice, and equipment data for migration into Rev.io PSA. ServiceTitan offers a well-documented REST API (available on certain plan tiers) as well as manual data export capabilities through its reporting features.</p>
+
+<h2 class="section-title"><span class="dot"></span>Before You Begin</h2>
+
+<div class="callout warn">
+  <div class="callout-icon">⚠️</div>
+  <div>
+    <strong>API Access Requires Pro or Higher Plan:</strong> ServiceTitan's open API (v2) is available to customers on eligible plan tiers and requires an approved integration. If you are unsure whether your account has API access, contact your ServiceTitan account representative or check your subscription details under <strong>Settings &gt; Integrations</strong>.
+  </div>
+</div>
+
+<div class="callout note">
+  <div class="callout-icon">📌</div>
+  <div>
+    <strong>Data You'll Need to Migrate:</strong> Customers, Locations, Contacts, Jobs/Projects, Invoices, Estimates, Equipment (installed equipment records), Memberships, and Technician/Employee records. Prioritize extracting customers, locations, and job history first.
+  </div>
+</div>
+
+<div class="method-tabs">
+  <button class="method-tab active" onclick="showMethod('servicetitan','tab1', this)">API Access (Recommended)</button>
+  <button class="method-tab" onclick="showMethod('servicetitan','tab2', this)">Manual Export via Reports</button>
+</div>
+
+<div class="method-panel active" id="servicetitan-tab1">
+
+  <h2 class="section-title"><span class="dot"></span>Step 1: Register as an Integration Partner or Obtain API Access</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        ServiceTitan's API is accessed through their <strong>Developer Portal</strong>. Navigate to <a href="https://developer.servicetitan.io" target="_blank" rel="noopener">developer.servicetitan.io</a> to review documentation and register your integration application.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        You will need to create an <strong>App</strong> in the developer portal. During the registration process, ServiceTitan will provide you with a <strong>Client ID</strong> and <strong>Client Secret</strong> for your application.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        In your ServiceTitan instance, a user with <strong>Admin</strong> privileges must navigate to <strong>Settings &gt; Integrations &gt; API Application Access</strong> and authorize the application by granting it the necessary permissions (scopes) for data access.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        You will also need your <strong>Tenant ID</strong>, which identifies your specific ServiceTitan account. This can be found in the developer portal or by contacting ServiceTitan support.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>
+      If Rev.io is performing the migration on your behalf, you may need to authorize Rev.io's application within your ServiceTitan instance. Your Rev.io migration specialist will provide the specific app details to authorize.
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Step 2: Record Your API Credentials</h2>
+
+  <p>Securely store the following credentials and share them with your Rev.io migration team through a secure channel:</p>
+
+  <div class="creds-box">
+    <span class="label">Tenant ID</span>
+    <span class="placeholder">e.g., 1234567890</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">Client ID</span>
+    <span class="placeholder">e.g., cid.abc123xyz456...</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">Client Secret</span>
+    <span class="placeholder">e.g., cs2.abcdefghij...</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">App Key</span>
+    <span class="placeholder">e.g., ak1.xxxxxxxxxxxxxxxx</span>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>
+      <strong>Never share credentials via email or chat.</strong> Use a secure credential-sharing tool such as a password vault or your Rev.io migration team's secure upload portal.
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Step 3: Authentication &amp; API Base URL</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        ServiceTitan uses <strong>OAuth 2.0 Client Credentials</strong> flow for authentication. You will exchange your Client ID and Client Secret for an access token by making a POST request to the authentication endpoint documented at <a href="https://developer.servicetitan.io" target="_blank" rel="noopener">developer.servicetitan.io</a>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        The API base URL follows the pattern: <code>https://api.servicetitan.io</code> with your Tenant ID included in request headers or URL paths as specified in the documentation.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Access tokens are <strong>time-limited</strong>. Your migration scripts should handle token refresh automatically. Refer to the developer portal for token expiration details.
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Step 4: Key API Endpoints for Data Extraction</h2>
+
+  <p>ServiceTitan's API v2 organizes endpoints by functional module. The following table lists the key data categories and their corresponding API modules. Refer to the <a href="https://developer.servicetitan.io" target="_blank" rel="noopener">official API documentation</a> for exact endpoint paths, query parameters, and pagination details.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Data Category</th>
+        <th>API Module</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Customers</td>
+        <td>CRM</td>
+        <td>Customer records including name, contact info, and customer type</td>
+      </tr>
+      <tr>
+        <td>Locations</td>
+        <td>CRM</td>
+        <td>Service locations linked to customers with full address details</td>
+      </tr>
+      <tr>
+        <td>Contacts</td>
+        <td>CRM</td>
+        <td>Contact details (phone, email) associated with customers</td>
+      </tr>
+      <tr>
+        <td>Jobs</td>
+        <td>Job Planning &amp; Management</td>
+        <td>Job records including status, type, dates, and assigned technicians</td>
+      </tr>
+      <tr>
+        <td>Appointments</td>
+        <td>Job Planning &amp; Management</td>
+        <td>Scheduled appointments with arrival windows and assignments</td>
+      </tr>
+      <tr>
+        <td>Invoices</td>
+        <td>Accounting</td>
+        <td>Invoice records with line items, totals, and payment status</td>
+      </tr>
+      <tr>
+        <td>Estimates</td>
+        <td>Sales / Estimates</td>
+        <td>Estimate records with items, pricing, and approval status</td>
+      </tr>
+      <tr>
+        <td>Installed Equipment</td>
+        <td>Installed Equipment</td>
+        <td>Equipment/asset records tied to customer locations</td>
+      </tr>
+      <tr>
+        <td>Memberships</td>
+        <td>Memberships</td>
+        <td>Recurring service agreements and membership details</td>
+      </tr>
+      <tr>
+        <td>Technicians / Employees</td>
+        <td>Settings</td>
+        <td>Technician and employee records with roles and business units</td>
+      </tr>
+      <tr>
+        <td>Tags / Custom Fields</td>
+        <td>Various</td>
+        <td>Tags and custom fields applied to customers, jobs, or locations</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout note">
+    <div class="callout-icon">📌</div>
+    <div>
+      <strong>Pagination:</strong> ServiceTitan API responses are paginated. Most endpoints support <code>page</code> and <code>pageSize</code> parameters, with a typical maximum page size of 50–250 records. Your extraction scripts must iterate through all pages to capture complete datasets.
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>
+      <strong>Rate Limiting:</strong> ServiceTitan enforces API rate limits. If you encounter HTTP 429 responses, implement exponential backoff in your extraction process. Check the developer documentation for current rate limit thresholds.
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Step 5: Validate Extracted Data</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        After extracting data via the API, compare record counts against what you see in ServiceTitan's UI. For example, check total customer count under the <strong>Customers</strong> section and compare it to the number of records returned by the API.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Spot-check 10–15 records across each data category to verify that field values (names, addresses, phone numbers, job totals) match between ServiceTitan and your extracted data.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Pay special attention to <strong>inactive or archived records</strong>. Confirm whether the API filters returned only active records, and decide with your Rev.io migration team whether to include historical/inactive data.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="method-panel" id="servicetitan-tab2">
+
+  <h2 class="section-title"><span class="dot"></span>Step 1: Access ServiceTitan Reporting</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Log in to your ServiceTitan account with an <strong>Admin</strong> or user account that has access to <strong>Reports</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Navigate to the <strong>Reports</strong> section from the main navigation menu. ServiceTitan provides a robust reporting engine that allows you to generate and export data across multiple categories.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout note">
+    <div class="callout-icon">📌</div>
+    <div>
+      ServiceTitan's reporting interface and available report templates may vary depending on your plan tier and the modules enabled on your account. If you cannot locate a specific report referenced below, contact ServiceTitan support for guidance.
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Step 2: Export Customer &amp; Location Data</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        In the <strong>Reports</strong> section, look for a report related to <strong>Customers</strong> or <strong>Customer Export</strong>. You may need to create a custom report if a suitable default report is not available.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Configure the report to include the following columns (where available): <strong>Customer ID, Customer Name, Customer Type (Residential/Commercial), Primary Phone, Email, Service Address, City, State, ZIP Code, Customer Since Date, Tags, and Customer Status</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Set the date range to capture <strong>all historical data</strong> or adjust based on the migration scope agreed upon with your Rev.io team.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        Click <strong>Export</strong> (typically available as a CSV or Excel download option) and save the file with a descriptive name such as <code>servicetitan_customers_export.csv</code>.
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Step 3: Export Job &amp; Invoice Data</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Navigate to a <strong>Job Report</strong> within the Reports section. Look for reports under categories such as <strong>Operations</strong> or <strong>Job Costing</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Include the following fields: <strong>Job Number, Job Type, Job Status, Customer Name, Location, Business Unit, Scheduled Date, Completed Date, Technician(s), Job Total, and any relevant tags or custom fields</strong>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Export the report as CSV and save as <code>servicetitan_jobs_export.csv</code>.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        Repeat the process for <strong>Invoice</strong> data using an invoice-focused report. Include: <strong>Invoice Number, Invoice Date, Customer, Location, Job Number, Line Items/Descriptions, Subtotal, Tax, Total, Payment Status, and Balance</strong>. Save as <code>servicetitan_invoices_export.csv</code>.
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Step 4: Export Equipment &amp; Membership Data</h2>
+
+  <div class="steps">
+    </div></div></div></div></div><!-- /main -->
 
 <!-- ══════════════════════════════════════
      REQUEST NEW SYSTEM MODAL
@@ -5135,4 +5455,4 @@ window.addEventListener('load', function() {
     return await _origSave.apply(this, arguments);
   };
 });
-</script></body></html>
+</script></body><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration></html>
