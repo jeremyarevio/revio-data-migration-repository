@@ -805,7 +805,7 @@
         }
       }
     </style></head>
-<body data-new-gr-c-s-check-loaded="14.1310.0" data-gr-ext-installed="">
+<body data-new-gr-c-s-check-loaded="14.1315.0" data-gr-ext-installed="">
 
 <!-- ══════════════════════════════════════
      SIDEBAR
@@ -884,7 +884,7 @@
     </div><div class="nav-item" onclick="showPanel('servicefusion', this)">
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
-    </div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item active" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div></div>
+    </div><div class="nav-item active" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-export">Export</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -2605,7 +2605,7 @@
 
 </div>
     </div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div>
-  </div><div id="panel-servicetitan" class="panel active">
+  </div><div id="panel-servicetitan" class="panel">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
@@ -4238,7 +4238,7 @@
       <strong>Production migration</strong><br>
       After your approval, we execute the final migration and confirm all data has been transferred successfully. Post-migration, you can revoke the Freshde
     </div>
-  </div></div></div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div></div><div id="panel-servicepro" class="panel">
+  </div></div></div><div class="callout warn callout-review" style="margin: 16px 0px 0px;"><span class="callout-icon">⚠️</span><div><strong>Draft — verify before use:</strong> These steps were AI-generated. Please confirm accuracy with the vendor's current documentation or support team before sharing with clients.</div></div></div><div id="panel-servicepro" class="panel active">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
@@ -4251,11 +4251,11 @@
 <h2 class="section-title"><span class="dot"></span>Choose Your Migration Method</h2>
 
 <div class="method-tabs">
-  <button class="method-tab active" onclick="showMethod('servicepro','tab1', this)">API Access</button>
-  <button class="method-tab" onclick="showMethod('servicepro','tab2', this)">Manual Data Export</button>
+  <button class="method-tab" onclick="showMethod('servicepro','tab1', this)">API Access</button>
+  <button class="method-tab active" onclick="showMethod('servicepro','tab2', this)">Manual Data Export</button>
 </div>
 
-<div class="method-panel active" id="servicepro-tab1">
+<div class="method-panel" id="servicepro-tab1">
 
   <h2 class="section-title"><span class="dot"></span>Granting Rev.io API Access</h2>
 
@@ -4353,7 +4353,7 @@
 
 </div>
 
-<div class="method-panel" id="servicepro-tab2">
+<div class="method-panel active" id="servicepro-tab2">
 
   <h2 class="section-title"><span class="dot"></span>Exporting Data from Service Pro</h2>
 
@@ -4816,7 +4816,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Service Titan</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       
 
 <span class="type-badge both">API + Export</span>
@@ -5130,7 +5130,345 @@
   <h2 class="section-title"><span class="dot"></span>Step 4: Export Equipment &amp; Membership Data</h2>
 
   <div class="steps">
-    </div></div></div></div></div><!-- /main -->
+    </div></div></div></div><div id="panel-servicepro" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Service Pro</h2>
+      </div>
+      <span class="type-badge export">File Export</span>
+
+<p class="lead">Service Pro (by MSI Data / now part of Astea) is a field service management platform. Data migration from Service Pro is accomplished through file exports, as the platform does not provide a well-documented, publicly available REST API for third-party data extraction. Below you'll find guidance on exporting your key data sets for migration into Rev.io PSA.</p>
+
+<h2 class="section-title"><span class="dot"></span>What You'll Need</h2>
+
+<div class="callout note">
+  <div class="callout-icon">ℹ️</div>
+  <div>
+    <strong>Before you begin:</strong> You will need administrative access to your Service Pro instance to perform data exports. If you do not have admin-level permissions, contact your internal Service Pro administrator or Service Pro support to obtain the necessary access.
+  </div>
+</div>
+
+<div class="creds-box">
+  <span class="label">Service Pro Admin Login</span>
+  <span class="placeholder">your-admin-username</span>
+</div>
+<div class="creds-box">
+  <span class="label">Service Pro Password</span>
+  <span class="placeholder">••••••••••••</span>
+</div>
+<div class="creds-box">
+  <span class="label">Service Pro Instance / Environment URL</span>
+  <span class="placeholder">https://your-company.servicepro.com</span>
+</div>
+
+<h2 class="section-title"><span class="dot"></span>Data to Export</h2>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Rev.io PSA Entity</th>
+      <th>Service Pro Source</th>
+      <th>Export Format</th>
+      <th>Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Customers / Accounts</td>
+      <td>Customer records</td>
+      <td>CSV / Excel</td>
+      <td>🔴 High</td>
+    </tr>
+    <tr>
+      <td>Contacts</td>
+      <td>Customer contacts</td>
+      <td>CSV / Excel</td>
+      <td>🔴 High</td>
+    </tr>
+    <tr>
+      <td>Locations / Sites</td>
+      <td>Service locations</td>
+      <td>CSV / Excel</td>
+      <td>🔴 High</td>
+    </tr>
+    <tr>
+      <td>Equipment / Assets</td>
+      <td>Equipment records</td>
+      <td>CSV / Excel</td>
+      <td>🔴 High</td>
+    </tr>
+    <tr>
+      <td>Work Orders / Tickets</td>
+      <td>Work orders / Service calls</td>
+      <td>CSV / Excel</td>
+      <td>🟡 Medium</td>
+    </tr>
+    <tr>
+      <td>Technicians / Resources</td>
+      <td>Technician / employee records</td>
+      <td>CSV / Excel</td>
+      <td>🟡 Medium</td>
+    </tr>
+    <tr>
+      <td>Parts / Inventory</td>
+      <td>Parts catalog &amp; inventory</td>
+      <td>CSV / Excel</td>
+      <td>🟡 Medium</td>
+    </tr>
+    <tr>
+      <td>Service History</td>
+      <td>Completed work order history</td>
+      <td>CSV / Excel</td>
+      <td>🟢 Low</td>
+    </tr>
+    <tr>
+      <td>Contracts / Agreements</td>
+      <td>Service contracts / PM schedules</td>
+      <td>CSV / Excel</td>
+      <td>🟡 Medium</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="section-title"><span class="dot"></span>Export Methods</h2>
+
+<div class="method-tabs">
+  <button class="method-tab active" onclick="showMethod('servicepro','tab1', this)">Built-In Reporting &amp; Export</button>
+  <button class="method-tab" onclick="showMethod('servicepro','tab2', this)">Database-Level Export</button>
+</div>
+
+<div class="method-panel active" id="servicepro-tab1">
+  <h3>Option A: Using Service Pro's Built-In Reporting Tools</h3>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>
+      Service Pro includes reporting and list-view functionality that allows administrators to export data. The exact menu paths may vary depending on your version (cloud vs. on-premise) and configuration. The steps below provide general guidance.
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Log in to Service Pro</strong> with your administrator credentials.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Navigate to the module</strong> containing the data you need (e.g., Customers, Equipment, Work Orders). Typically these are accessible from the main navigation menu or sidebar.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Open the list view</strong> for the relevant entity. If available, use filters to ensure you are capturing all records (e.g., set date ranges to include all historical data, remove status filters that may hide closed records).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Look for an Export or Download option</strong> — many list views in Service Pro offer the ability to export the displayed data to Excel or CSV format. This is commonly found as an icon (spreadsheet icon) or a button near the top of the list view.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Select all relevant columns</strong> before exporting. If the list view allows column customization, ensure you include key identifiers such as Customer ID, Equipment Serial Number, Work Order Number, addresses, and any custom fields critical to your operations.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>Export and save</strong> the file as CSV (preferred) or Excel. Name files descriptively (e.g., <code>ServicePro_Customers_Export_2024.csv</code>).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        <strong>Repeat for each data entity</strong> listed in the table above, prioritizing high-priority items first.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout note">
+    <div class="callout-icon">ℹ️</div>
+    <div>
+      <strong>Using Reports for Bulk Export:</strong> If the standard list views don't include all the fields you need, check whether Service Pro has a <strong>Reports</strong> or <strong>Custom Reports</strong> section. Custom reports often allow you to select specific fields across related entities and export the results. Contact Service Pro support to locate the reporting module if you cannot find it in your navigation.
+    </div>
+  </div>
+</div>
+
+<div class="method-panel" id="servicepro-tab2">
+  <h3>Option B: Direct Database Export (On-Premise Deployments)</h3>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>
+      <strong>This option applies only to on-premise Service Pro installations</strong> where you have direct access to the underlying SQL Server database. This approach requires database administration skills and should be performed by your IT team or database administrator. Always work from a <strong>backup copy</strong> of the database — never modify production data.
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Create a backup</strong> of your Service Pro database before proceeding. Work only against the backup or a read-only replica.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Connect to the database</strong> using SQL Server Management Studio (SSMS) or a similar tool with your DBA credentials.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Identify the relevant tables.</strong> Common table areas to look for include customer/account tables, site/location tables, equipment/asset tables, work order tables, labor and parts transaction tables, and technician/resource tables. Contact Service Pro support or consult your implementation documentation for the exact schema, as table names vary by version and configuration.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <strong>Write SELECT queries</strong> to extract the data you need. Include all relevant columns and JOIN related tables where necessary (e.g., joining work orders to customers to include customer name and address).
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <strong>Export query results to CSV.</strong> In SSMS, you can right-click the results grid and choose <em>Save Results As…</em> or use the Import/Export Wizard to save directly to CSV files.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <strong>Validate the exports</strong> — open each CSV and confirm row counts match expected record counts in Service Pro. Spot-check several records for data accuracy.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>
+      If your organization used a third-party reporting tool (such as Crystal Reports or SSRS) integrated with Service Pro, you may already have report definitions that pull the data you need. These can be repurposed to generate export-ready files.
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title"><span class="dot"></span>Key Fields to Include</h2>
+
+<p>When exporting, ensure the following critical fields are captured for each entity:</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Entity</th>
+      <th>Critical Fields</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Customers</td>
+      <td>Customer ID, Company Name, Billing Address, Phone, Email, Status, Account Type, Payment Terms</td>
+    </tr>
+    <tr>
+      <td>Contacts</td>
+      <td>Contact Name, Email, Phone, Associated Customer ID, Role/Title</td>
+    </tr>
+    <tr>
+      <td>Locations / Sites</td>
+      <td>Site ID, Site Name, Full Address, Associated Customer ID, Site Notes</td>
+    </tr>
+    <tr>
+      <td>Equipment</td>
+      <td>Equipment ID, Serial Number, Model, Manufacturer, Install Date, Associated Customer ID, Associated Site ID, Warranty Info</td>
+    </tr>
+    <tr>
+      <td>Work Orders</td>
+      <td>Work Order Number, Customer ID, Site ID, Equipment ID, Status, Priority, Created Date, Scheduled Date, Completed Date, Description, Assigned Technician</td>
+    </tr>
+    <tr>
+      <td>Technicians</td>
+      <td>Technician ID, Name, Email, Phone, Skills/Certifications, Status</td>
+    </tr>
+    <tr>
+      <td>Parts / Inventory</td>
+      <td>Part Number, Description, Unit Cost, Quantity on Hand, Vendor, Category</td>
+    </tr>
+    <tr>
+      <td>Contracts</td>
+      <td>Contract ID, Customer ID, Start Date, End Date, Contract Type, Coverage Details, Billing Frequency, Amount</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 class="section-title"><span class="dot"></span>Export Validation Checklist</h2>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <strong>Row count verification</strong> — Compare the number of rows in each export file against the record counts shown in Service Pro's list views or summary dashboards.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <strong>Spot-check 5–10 records</strong> per entity by looking them up in Service Pro and comparing field values to the exported data.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <strong>Check for special characters</strong> — Ensure company names, addresses, and descriptions with commas, quotes, or line breaks exported correctly in CSV format.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <strong>Verify date formats</strong> — Confirm all date fields are in a consistent format (e.g., <code>YYYY-MM-DD</code>) and have not been altered by Excel auto-formatting.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <strong>Confirm relational IDs</strong> — Ensure Customer IDs referenced in Work Orders, Equipment, and Contacts match the Customer IDs in your Customers export. This linkage is critical for accurate data migration.
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title"><span class="dot"></span>Submitting Your Data</h2>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <strong>Organize your files</strong> — Place all export files in a single folder, clearly named by entity (e.g., <code>Customers.csv</code>, <code>WorkOrders.csv</code>, <code>Equipment.csv</code>).
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <strong>Compress the folder</strong> into a single ZIP file for easy transfer.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <strong>Upload via the secure link</strong> provided by your Rev.io PSA onboarding specialist. Do not send data files via unencrypted email.
+    </div>
+  </div>
+</div>
+
+<div class="callout warn">
+  <div class="callout-icon">⚠️</div>
+  <div>
+    <strong>Data sensitivity:</strong> Export files may contain sensitive customer information, financial data, and personally identifiable information (PII). Handle all files according to your organization's data security
+    </div>
+  </div></div></div></div><!-- /main -->
 
 <!-- ══════════════════════════════════════
      REQUEST NEW SYSTEM MODAL
@@ -5455,4 +5793,4 @@ window.addEventListener('load', function() {
     return await _origSave.apply(this, arguments);
   };
 });
-</script></body><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration></html>
+</script><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration></body></html>
