@@ -823,7 +823,7 @@
                 font-style: normal;
              }
          </style></head>
-<body data-new-gr-c-s-check-loaded="14.1315.0" data-gr-ext-installed="" mouseup_handler="true" mouseup_event="true">
+<body data-new-gr-c-s-check-loaded="14.1322.0" data-gr-ext-installed="" mouseup_handler="true" mouseup_event="true">
 
 <!-- ══════════════════════════════════════
      SIDEBAR
@@ -857,7 +857,7 @@
     
     
     
-  <div class="nav-item" onclick="showPanel('alarm7sql', this)">
+  <div class="nav-item" onclick="showPanel('accelo', this)"><span class="nav-icon">📋</span> Accelo <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('alarm7sql', this)">
       <span class="nav-icon">📋</span> Alarm 7 SQL
       <span class="nav-badge badge-export">Export</span>
     </div><div class="nav-item" onclick="showPanel('alarmbiller', this)">
@@ -902,7 +902,7 @@
     </div><div class="nav-item" onclick="showPanel('servicefusion', this)">
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
-    </div><div class="nav-item active" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('accelo', this)"><span class="nav-icon">📋</span> Accelo <span class="nav-badge badge-both">Both</span></div></div>
+    </div><div class="nav-item active" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('jobber', this)"><span class="nav-icon">📋</span> Jobber <span class="nav-badge badge-both">Both</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -5491,7 +5491,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Accelo</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge both">API + Export</span>
 
 <p class="lead">Accelo is a cloud-based professional services automation platform that manages client work, projects, tickets, retainers, and billing. Data can be extracted via Accelo's documented REST API or through CSV exports from the platform's reporting and list views.</p>
@@ -5808,6 +5808,320 @@
   <div class="callout warn">
     <div class="callout-icon">⚠️</div>
     <div>Some CSV exports from list views may have row limits. If your dataset is large, verify the row count in the exported file matches the total count shown in Accelo. If truncation occurs, use date-range filters to export data in smaller batches, or use the Reports feature for larger datasets.</div>
+    </div>
+  </div></div></div><div id="panel-jobber" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Jobber</h2>
+      </div>
+      
+
+<span class="type-badge both">API + Export</span>
+
+<p class="lead">Jobber is a field service management platform used by home service businesses to manage clients, quotes, jobs, invoices, and scheduling. Data can be extracted via Jobber's GraphQL API or through CSV exports from the web application. The API is available on <strong>Grow</strong> and <strong>Plus</strong> plans (formerly Connect and Grow) — confirm your plan includes API access before proceeding.</p>
+
+<h2 class="section-title"><span class="dot"></span>What Data Can Be Migrated</h2>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Data Type</th>
+      <th>API (GraphQL)</th>
+      <th>CSV Export</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Clients &amp; Properties</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>Includes contact details, billing addresses, and property/service addresses</td>
+    </tr>
+    <tr>
+      <td>Quotes</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>Quote line items, status, and associated client</td>
+    </tr>
+    <tr>
+      <td>Jobs</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>Job details, assigned team members, scheduling info</td>
+    </tr>
+    <tr>
+      <td>Invoices</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>Invoice line items, payment status, and totals</td>
+    </tr>
+    <tr>
+      <td>Team/Employee Data</td>
+      <td>✔</td>
+      <td>Limited</td>
+      <td>User roles and contact info</td>
+    </tr>
+    <tr>
+      <td>Custom Fields</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>Custom fields attached to clients, properties, or jobs</td>
+    </tr>
+    <tr>
+      <td>Payment Records</td>
+      <td>✔</td>
+      <td>✔</td>
+      <td>Payment history linked to invoices</td>
+    </tr>
+    <tr>
+      <td>Notes &amp; Attachments</td>
+      <td>Partial</td>
+      <td>Limited</td>
+      <td>Internal notes available; file attachments may require manual download</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout note">
+  <div class="callout-icon">ℹ</div>
+  <div>Jobber uses a <strong>GraphQL API</strong>, not a traditional REST API. Queries must be structured in GraphQL syntax. Familiarity with GraphQL is required for API-based extraction.</div>
+</div>
+
+<h2 class="section-title"><span class="dot"></span>Choose Your Export Method</h2>
+
+<div class="method-tabs">
+  <button class="method-tab active" onclick="showMethod('jobber','tab1', this)">Method 1: GraphQL API</button>
+  <button class="method-tab" onclick="showMethod('jobber','tab2', this)">Method 2: CSV Export</button>
+</div>
+
+<div class="method-panel active" id="jobber-tab1">
+
+  <h2 class="section-title"><span class="dot"></span>Prerequisites</h2>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠</div>
+    <div>API access requires a <strong>Grow</strong> or <strong>Plus</strong> plan (or higher). If you are on a Core/Lite plan, you will need to use Method 2 (CSV Export) or upgrade your plan. Verify your plan under <strong>Settings &gt; Subscription</strong>.</div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Create a Jobber Developer App</h3>
+        <p>Jobber's API uses OAuth 2.0 for authentication. You must register a developer application to obtain credentials:</p>
+        <ul>
+          <li>Navigate to <a href="https://developer.getjobber.com" target="_blank" rel="noopener">developer.getjobber.com</a> and sign in with your Jobber account.</li>
+          <li>Click <strong>Create App</strong> (or "New App").</li>
+          <li>Provide an application name (e.g., "Rev.io PSA Migration") and a redirect URI.</li>
+          <li>Once created, you will receive a <strong>Client ID</strong> and <strong>Client Secret</strong>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Record Your API Credentials</h3>
+        <p>Store the following credentials securely. You will provide these to the migration team:</p>
+        <div class="creds-box">
+          <span class="label">Client ID:</span> <span class="placeholder">xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</span>
+        </div>
+        <div class="creds-box">
+          <span class="label">Client Secret:</span> <span class="placeholder">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
+        </div>
+        <div class="creds-box">
+          <span class="label">Access Token:</span> <span class="placeholder">Generated after OAuth 2.0 authorization flow</span>
+        </div>
+        <div class="creds-box">
+          <span class="label">Refresh Token:</span> <span class="placeholder">Generated after OAuth 2.0 authorization flow</span>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Complete the OAuth 2.0 Authorization Flow</h3>
+        <p>Jobber requires an OAuth 2.0 authorization code grant flow:</p>
+        <ul>
+          <li>Direct the Jobber account owner to the authorization URL provided in the Jobber developer documentation.</li>
+          <li>After the account owner approves access, Jobber will redirect to your specified URI with an authorization code.</li>
+          <li>Exchange the authorization code for an <strong>Access Token</strong> and <strong>Refresh Token</strong>.</li>
+          <li>Access tokens are short-lived — use the refresh token to obtain new access tokens as needed.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>Verify API Access</h3>
+        <p>Test your connection by sending a simple GraphQL query to Jobber's API endpoint:</p>
+        <div class="creds-box">
+          <span class="label">API Endpoint:</span> <span class="placeholder">https://api.getjobber.com/api/graphql</span>
+        </div>
+        <p>Send a test query requesting a small set of client records. If you receive a valid JSON response with client data, your credentials are working correctly.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h3>Provide Credentials to Migration Team</h3>
+        <p>Share the Client ID, Client Secret, Access Token, and Refresh Token with the Rev.io PSA migration team via a secure channel. Do <strong>not</strong> send credentials via unencrypted email.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>Jobber's GraphQL API supports pagination using cursors. For large datasets, the migration team will handle paginated queries automatically. Refer to <a href="https://developer.getjobber.com" target="_blank" rel="noopener">Jobber's Developer Documentation</a> for rate limits and query structure details.</div>
+  </div>
+
+</div>
+
+<div class="method-panel" id="jobber-tab2">
+
+  <h2 class="section-title"><span class="dot"></span>Exporting Data via CSV</h2>
+
+  <p>Jobber provides built-in CSV export capabilities for most core data types. This method works on all plans and does not require developer credentials.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h3>Export Clients</h3>
+        <ul>
+          <li>Log in to Jobber at <a href="https://app.getjobber.com" target="_blank" rel="noopener">app.getjobber.com</a>.</li>
+          <li>Navigate to <strong>Clients</strong> from the left-hand sidebar.</li>
+          <li>Click the <strong>More Actions</strong> button (or the "⋯" menu) near the top of the client list.</li>
+          <li>Select <strong>Export to CSV</strong> (or "Export Clients").</li>
+          <li>Choose whether to export all clients or apply filters first (e.g., active clients only).</li>
+          <li>The CSV file will download to your computer or be sent to your email.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h3>Export Quotes</h3>
+        <ul>
+          <li>Navigate to <strong>Quotes</strong> from the left-hand sidebar.</li>
+          <li>Apply any desired filters (e.g., date range, status).</li>
+          <li>Look for the <strong>Export</strong> or <strong>More Actions</strong> option and select <strong>Export to CSV</strong>.</li>
+        </ul>
+        <div class="callout note">
+          <div class="callout-icon">ℹ</div>
+          <div>If an export option is not visible for quotes, navigate to <strong>Reports</strong> and look for a quotes-related report that supports CSV export. Contact Jobber support if you cannot locate this option.</div>
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h3>Export Jobs</h3>
+        <ul>
+          <li>Navigate to the <strong>Reports</strong> section from the left-hand sidebar.</li>
+          <li>Select a job-related report (e.g., "Job Costing" or "Job Summary").</li>
+          <li>Set the date range to cover all historical data you wish to migrate.</li>
+          <li>Click <strong>Export</strong> or <strong>Download CSV</strong>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <h3>Export Invoices &amp; Payments</h3>
+        <ul>
+          <li>Navigate to <strong>Reports</strong> from the left-hand sidebar.</li>
+          <li>Select the <strong>Invoice</strong> or <strong>Revenue</strong> report (e.g., "Invoicing Summary", "Billing Summary", or "Taxation").</li>
+          <li>Set the appropriate date range to include all relevant billing history.</li>
+          <li>Click <strong>Export</strong> or <strong>Download CSV</strong>.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <h3>Export Timesheet / Visit Data (if applicable)</h3>
+        <ul>
+          <li>Navigate to <strong>Reports</strong> and select the <strong>Timesheets</strong> or <strong>Visits</strong> report.</li>
+          <li>Set the date range and export to CSV.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <h3>Verify &amp; Submit Files</h3>
+        <p>Open each exported CSV to verify the data is complete and properly formatted. Confirm the following:</p>
+        <ul>
+          <li>All expected records are present (cross-reference row counts with Jobber list counts).</li>
+          <li>Custom fields appear as columns in the export where applicable.</li>
+          <li>No truncated or missing data in key columns (names, addresses, amounts).</li>
+        </ul>
+        <p>Upload all CSV files to the secure folder provided by the Rev.io PSA migration team.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>For the most complete dataset, export from the <strong>Reports</strong> section rather than individual list views. Reports typically include more fields and support broader date ranges.</div>
+  </div>
+
+</div>
+
+<h2 class="section-title"><span class="dot"></span>Recommended Export Checklist</h2>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>File Name</th>
+      <th>Source Location</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>clients.csv</td>
+      <td>Clients &gt; More Actions &gt; Export</td>
+      <td>☐ Exported</td>
+    </tr>
+    <tr>
+      <td>quotes.csv</td>
+      <td>Quotes &gt; Export (or Reports)</td>
+      <td>☐ Exported</td>
+    </tr>
+    <tr>
+      <td>jobs.csv</td>
+      <td>Reports &gt; Job Report &gt; Export</td>
+      <td>☐ Exported</td>
+    </tr>
+    <tr>
+      <td>invoices.csv</td>
+      <td>Reports &gt; Invoice/Revenue Report &gt; Export</td>
+      <td>☐ Exported</td>
+    </tr>
+    <tr>
+      <td>payments.csv</td>
+      <td>Reports &gt; Payment/Billing Report &gt; Export</td>
+      <td>☐ Exported</td>
+    </tr>
+    <tr>
+      <td>timesheets.csv</td>
+      <td>Reports &gt; Timesheets &gt; Export</td>
+      <td>☐ Exported</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout warn">
+  <div class="callout-icon">⚠</div>
+  <div><strong>Important:</strong> Jobber CSV exports may not include file attachments, images, or documents stored within jobs and clients. If you need to migrate attached files, these will need to be downloaded manually or identified for the migration team to retrieve via the API.</div>
+</div>
+
+<div class="callout note">
+  <div class="callout-icon">ℹ</div>
+  <div>If any navigation paths described above do not match your version of Jobber, contact <a href="https://help.getjobber.com" target="_blank" rel="noopener">Jobber Support</a> to confirm the correct location for data exports
     </div>
   </div></div></div></div><!-- /main -->
 
@@ -6134,4 +6448,4 @@ window.addEventListener('load', function() {
     return await _origSave.apply(this, arguments);
   };
 });
-</script><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration><div id="rev_driver_sb" class="collapsed" style="transition: 0.4s;"><iframe src="chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/index.html" id="rev_driver" title="rev_driver_extension_in_page" name="revdriver_opened_by_user_false"></iframe><div id="nav_btns" style="top: 253px;"><span id="right_arr" title="Minimize">❯</span><span id="remove_sb" title="Remove" class="crossed"></span></div><div id="sidebar-logo" style="top: 253px;"><img id="sidebar-logo-img" src="chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/assets/images/sidebar-logo.png?v=4.6.1"></div></div><div id="settings_shadow"></div><div id="chrome-extension-pull-out-tab-host"></div><div id="chrome-extension-search-anywhere-popup-host" data-hidden=""></div></body><div role="status" aria-live="polite" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; border: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); white-space: nowrap;"></div><div role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; border: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); white-space: nowrap;"></div></html>
+</script><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration><div id="rev_driver_sb" class="collapsed" style="transition: 0.4s;"><iframe src="chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/index.html" id="rev_driver" title="rev_driver_extension_in_page" name="revdriver_opened_by_user_false"></iframe><div id="nav_btns" style="top: 253px;"><span id="right_arr" title="Minimize">❯</span><span id="remove_sb" title="Remove" class="crossed"></span></div><div id="sidebar-logo" style="top: 253px;"><img id="sidebar-logo-img" src="chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/assets/images/sidebar-logo.png?v=4.6.1"></div></div><div id="settings_shadow"></div><div id="chrome-extension-pull-out-tab-host"></div><div id="chrome-extension-search-anywhere-popup-host" data-hidden=""></div><div role="status" aria-live="polite" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; border: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); white-space: nowrap;"></div><div role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; border: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); white-space: nowrap;"></div></body></html>
