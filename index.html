@@ -823,7 +823,7 @@
                 font-style: normal;
              }
          </style></head>
-<body data-new-gr-c-s-check-loaded="14.1322.0" data-gr-ext-installed="" mouseup_handler="true" mouseup_event="true">
+<body data-new-gr-c-s-check-loaded="14.1324.0" data-gr-ext-installed="" mouseup_handler="true" mouseup_event="true">
 
 <!-- ══════════════════════════════════════
      SIDEBAR
@@ -884,7 +884,7 @@
     </div><div class="nav-item" onclick="showPanel('jetbuilt', this)"><span class="nav-icon">📋</span> Jetbuilt <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('jobber', this)">
       <span class="nav-icon">📋</span> Jobber
       <span class="nav-badge badge-both">Both</span>
-    </div><div class="nav-item" onclick="showPanel('mhelpdesk', this)"><span class="nav-icon">📋</span> MHelpdesk <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('pax8', this)">
+    </div><div class="nav-item" onclick="showPanel('jobber', this)"><span class="nav-icon">📋</span> Jobber <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('mhelpdesk', this)"><span class="nav-icon">📋</span> MHelpdesk <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('pax8', this)">
       <span class="nav-icon">📋</span> Pax8
       <span class="nav-badge badge-both">Both</span>
     </div><div class="nav-item" onclick="showPanel('qbd', this)">
@@ -902,7 +902,7 @@
     </div><div class="nav-item" onclick="showPanel('servicefusion', this)">
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
-    </div><div class="nav-item active" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('jobber', this)"><span class="nav-icon">📋</span> Jobber <span class="nav-badge badge-both">Both</span></div></div>
+    </div><div class="nav-item active" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('mondaycom', this)"><span class="nav-icon">📋</span> Monday.com <span class="nav-badge badge-both">Both</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -5814,7 +5814,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>Jobber</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       
 
 <span class="type-badge both">API + Export</span>
@@ -6122,6 +6122,309 @@
 <div class="callout note">
   <div class="callout-icon">ℹ</div>
   <div>If any navigation paths described above do not match your version of Jobber, contact <a href="https://help.getjobber.com" target="_blank" rel="noopener">Jobber Support</a> to confirm the correct location for data exports
+    </div>
+  </div></div></div><div id="panel-mondaycom" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Monday.com</h2>
+      </div>
+      <span class="type-badge both">API + Export</span>
+
+<p class="lead">Monday.com is a flexible work management platform used for project tracking, CRM workflows, task management, and more. Data is organized into Workspaces, Boards, Groups, Items, and Subitems. Both API access and manual data exports are available to extract your information for migration into Rev.io PSA.</p>
+
+<h2 class="section-title"><span class="dot"></span>Understanding Your Monday.com Data</h2>
+<p>Monday.com structures data differently than traditional PSA tools. Here's how key concepts map:</p>
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Monday.com Concept</th>
+      <th>Description</th>
+      <th>Rev.io PSA Mapping</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Boards</td>
+      <td>Primary containers for data, similar to spreadsheets or databases</td>
+      <td>Varies by board purpose (Customers, Tickets, Projects, etc.)</td>
+    </tr>
+    <tr>
+      <td>Items</td>
+      <td>Individual rows/records within a board</td>
+      <td>Customer records, tickets, tasks, etc.</td>
+    </tr>
+    <tr>
+      <td>Columns</td>
+      <td>Fields/properties on each item (text, status, date, people, etc.)</td>
+      <td>Mapped to corresponding Rev.io PSA fields</td>
+    </tr>
+    <tr>
+      <td>Subitems</td>
+      <td>Child items nested under a parent item</td>
+      <td>Sub-tasks, line items, or related records</td>
+    </tr>
+    <tr>
+      <td>Groups</td>
+      <td>Sections within a board used to categorize items</td>
+      <td>Categories, statuses, or custom groupings</td>
+    </tr>
+    <tr>
+      <td>Updates</td>
+      <td>Comments and activity log entries on items</td>
+      <td>Notes, ticket comments, activity history</td>
+    </tr>
+    <tr>
+      <td>People Column</td>
+      <td>Team member assignments on items</td>
+      <td>Assigned technicians, account managers</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout note">
+  <div class="callout-icon"></div>
+  <div>Because Monday.com is highly customizable, your boards may be configured in many different ways. Before migrating, create an inventory of all boards you need to export and document what each board represents (CRM contacts, projects, tickets, etc.).</div>
+</div>
+
+<h2 class="section-title"><span class="dot"></span>Choose Your Access Method</h2>
+
+<div class="method-tabs">
+  <button class="method-tab active" onclick="showMethod('mondaycom','tab1', this)">API Access (Recommended)</button>
+  <button class="method-tab" onclick="showMethod('mondaycom','tab2', this)">Board Export (CSV/Excel)</button>
+</div>
+
+<div class="method-panel active" id="mondaycom-tab1">
+  <h3>API Access via Monday.com GraphQL API</h3>
+  <p>Monday.com provides a well-documented <strong>GraphQL API</strong> (not REST) that allows programmatic access to boards, items, columns, updates, users, and more. This is the recommended method for large-scale or complex migrations.</p>
+
+  <div class="callout warn">
+    <div class="callout-icon"></div>
+    <div><strong>Plan Requirement:</strong> API access is available on all Monday.com plans, including the free tier. However, API rate limits vary by plan. Pro and Enterprise plans have higher rate limits. If you have a large volume of data, ensure your plan supports sufficient API throughput.</div>
+  </div>
+
+  <div class="callout note">
+    <div class="callout-icon"></div>
+    <div><strong>Important:</strong> Monday.com uses a <strong>GraphQL API</strong>, not a traditional REST API. All requests are sent as POST requests to a single endpoint. Your migration team will need to construct GraphQL queries to retrieve the specific data needed.</div>
+  </div>
+
+  <h4>Step 1: Generate Your API Token</h4>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">Log in to your Monday.com account with an <strong>Admin</strong> account. The API token inherits the permissions of the user who generates it, so an Admin account ensures access to all boards.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">Click your <strong>profile avatar</strong> in the bottom-left corner of the screen, then select <strong>"Administration"</strong> (if you are an admin) or <strong>"Developer"</strong> options. Alternatively, navigate to your avatar and select <strong>"Developers"</strong> to go directly to the developer area.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">In the developer area, look for <strong>"My Access Tokens"</strong> or navigate to: <em>Profile Avatar → Administration → Connections → API</em>. You can also access your personal API token by clicking your avatar → <strong>"Developer"</strong> → <strong>"My Access Tokens"</strong> section.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">Copy your <strong>personal API token</strong>. This token is unique to your user account and provides access to all data your account can see.</div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon"></div>
+    <div>If the navigation paths above don't match your current Monday.com interface version, click your profile avatar and look for any option labeled <strong>"Developers"</strong>, <strong>"API"</strong>, or <strong>"Admin"</strong>. You can also visit <strong>monday.com/developers/apps</strong> directly while logged in. Contact Monday.com support if you cannot locate the API token setting.</div>
+  </div>
+
+  <h4>Step 2: Record Your API Credentials</h4>
+  <div class="creds-box">
+    <span class="label">API Endpoint:</span>
+    <span class="placeholder">https://api.monday.com/v2</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">API Token:</span>
+    <span class="placeholder">your-personal-api-token</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">API Version:</span>
+    <span class="placeholder">2024-10 (or current stable version)</span>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon"></div>
+    <div><strong>Security:</strong> Your API token grants full access to your Monday.com account data. Treat it like a password. Do not share it via email or unsecured channels. Use your Rev.io PSA onboarding team's secure credential submission process.</div>
+  </div>
+
+  <h4>Step 3: Identify Boards and Data to Migrate</h4>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">Create an inventory of all Monday.com boards that contain data you want to migrate. Note the <strong>Board ID</strong> for each — you can find this in the URL when viewing a board (e.g., <code>monday.com/boards/<strong>1234567890</strong></code>).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">For each board, document what type of data it contains and how it should map to Rev.io PSA (e.g., "Client Tracker" board → Customers, "Support Requests" board → Tickets).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">Note any boards that contain <strong>Subitems</strong>, as these require separate API queries to extract.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">Identify any <strong>file columns</strong> or <strong>document attachments</strong> that need to be migrated, as these require additional API calls to download.</div>
+    </div>
+  </div>
+
+  <h4>Key Data Available via API</h4>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Data Type</th>
+        <th>GraphQL Query Target</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Boards</td>
+        <td><code>boards</code></td>
+        <td>Returns board metadata, columns, and settings</td>
+      </tr>
+      <tr>
+        <td>Items (Records)</td>
+        <td><code>items_page</code></td>
+        <td>Paginated query for items within a board</td>
+      </tr>
+      <tr>
+        <td>Subitems</td>
+        <td><code>subitems</code> (nested on items)</td>
+        <td>Queried as a relation on parent items</td>
+      </tr>
+      <tr>
+        <td>Column Values</td>
+        <td><code>column_values</code> (nested on items)</td>
+        <td>All field data for each item</td>
+      </tr>
+      <tr>
+        <td>Updates/Comments</td>
+        <td><code>updates</code></td>
+        <td>Activity feed and comments on items</td>
+      </tr>
+      <tr>
+        <td>Users</td>
+        <td><code>users</code></td>
+        <td>Team members and their details</td>
+      </tr>
+      <tr>
+        <td>Workspaces</td>
+        <td><code>workspaces</code></td>
+        <td>Organizational containers for boards</td>
+      </tr>
+      <tr>
+        <td>Tags</td>
+        <td><code>tags</code></td>
+        <td>Tags applied across boards</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout note">
+    <div class="callout-icon"></div>
+    <div><strong>Rate Limits:</strong> Monday.com's API uses a complexity-based rate limiting system rather than simple request counts. Each query consumes a certain number of "complexity points" based on how much data is requested. Monitor your complexity usage to avoid throttling. Details are available in Monday.com's official API documentation at <strong>developer.monday.com</strong>.</div>
+  </div>
+</div>
+
+<div class="method-panel" id="mondaycom-tab2">
+  <h3>Manual Board Export (CSV/Excel)</h3>
+  <p>Each Monday.com board can be individually exported to Excel or CSV format. This method is suitable for smaller migrations or when API access is not feasible.</p>
+
+  <div class="callout note">
+    <div class="callout-icon"></div>
+    <div>Monday.com does not offer a single bulk export of all boards at once. Each board must be exported individually. Plan your time accordingly if you have many boards.</div>
+  </div>
+
+  <h4>Exporting a Board</h4>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">Log in to Monday.com and navigate to the <strong>board</strong> you want to export.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">Click the <strong>three-dot menu (⋯)</strong> in the upper-right area of the board (sometimes labeled <strong>"Board Options"</strong> or accessible near the board name).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">Look for an option labeled <strong>"Export board to Excel"</strong> or similar. Click it to begin the export. Monday.com will generate a downloadable <strong>.xlsx</strong> file.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">Once the file is ready, your browser will download it automatically or you will receive a notification with a download link.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">Repeat this process for <strong>every board</strong> that contains data you need to migrate.</div>
+    </div>
+  </div>
+
+  <div class="callout tip">
+    <div class="callout-icon"></div>
+    <div>If you don't see the export option, it may be restricted by your Monday.com plan or your user permissions. Contact your Monday.com account administrator or Monday.com support for assistance.</div>
+  </div>
+
+  <h4>What's Included in Exports</h4>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Included</th>
+        <th>Not Included</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Item names and all column values</td>
+        <td>File attachments and uploaded documents</td>
+      </tr>
+      <tr>
+        <td>Group names (as a column)</td>
+        <td>Updates/comments on items</td>
+      </tr>
+      <tr>
+        <td>Status, date, number, text columns</td>
+        <td>Activity log and change history</td>
+      </tr>
+      <tr>
+        <td>People column (user names)</td>
+        <td>Automations and integration configurations</td>
+      </tr>
+      <tr>
+        <td>Subitem data (may export as separate rows)</td>
+        <td>Board views, dashboards, and charts</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <div class="callout-icon"></div>
+    <div><strong>Subitems:</strong> Depending on your board setup, subitems may or may not be included in the Excel export. If subitems are critical, verify they appear in your exported file. If not, you may need to export the Subitems board separately or use the API method.</div>
+  </div>
+
+  <h4>Exporting Updates/Comments</h4>
+  <p>Item updates (comments and activity notes) are <strong>not included</strong> in the standard board export. If you need to preserve these:</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">Use the <strong>API method</strong> (Tab 1) to query updates programmatically — this is the only reliable way to extract comment history in bulk.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">Alternatively, for a small number of critical items, you can manually copy and paste updates from individual item detail views, though this is not practical at scale.</div>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title"><span class="dot"></span>Data Preparation Checklist</h2>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
     </div>
   </div></div></div></div><!-- /main -->
 
