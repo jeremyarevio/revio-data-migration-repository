@@ -875,7 +875,7 @@
     </div><div class="nav-item" onclick="showPanel('fieldpulse', this)">
       <span class="nav-icon">📋</span> FieldPulse
       <span class="nav-badge badge-both">Both</span>
-    </div><div class="nav-item" onclick="showPanel('freshdesk', this)"><span class="nav-icon">📋</span> Freshdesk <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('halopsa', this)">
+    </div><div class="nav-item" onclick="showPanel('fieldpulse', this)"><span class="nav-icon">📋</span> FieldPulse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('freshdesk', this)"><span class="nav-icon">📋</span> Freshdesk <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('halopsa', this)">
       <span class="nav-icon">📋</span> HaloPSA
       <span class="nav-badge badge-api">API</span>
     </div><div class="nav-item" onclick="showPanel('housecallpro', this)">
@@ -902,7 +902,7 @@
     </div><div class="nav-item" onclick="showPanel('servicefusion', this)">
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
-    </div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('fieldpulse', this)"><span class="nav-icon">📋</span> FieldPulse <span class="nav-badge badge-export">Export</span></div></div>
+    </div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('riverrock', this)"><span class="nav-icon">📋</span> RiverRock Systems <span class="nav-badge badge-export">Export</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -6433,7 +6433,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>FieldPulse</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge export">File Export</span>
 
 <p class="lead">FieldPulse is a field service management platform for contractors and service businesses. Data migration is performed via file exports from the FieldPulse web application. FieldPulse does not offer a well-documented, publicly available REST API for third-party data extraction, so we will rely on built-in export functionality and any available reporting tools.</p>
@@ -6799,7 +6799,215 @@
       <div class="step-num">3</div>
       <div class="step-body">
     </div>
-  </div></div></div></div></div></div><!-- /main -->
+  </div></div></div></div></div><div id="panel-riverrock" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>RiverRock</h2>
+      </div>
+      <span class="type-badge export">File Export</span>
+
+<p class="lead">RiverRock is a niche practice management / billing platform. It does not offer a well-documented, publicly available REST API for third-party data access. All data migration will be performed through file exports from the RiverRock interface and subsequent import into Rev.io PSA.</p>
+
+<h2 class="section-title"><span class="dot"></span>What You'll Need Before You Start</h2>
+
+<div class="callout note">
+  <div class="callout-icon">📋</div>
+  <div>
+    <strong>Gather these items before beginning your export:</strong>
+    <ul>
+      <li>Administrator-level login credentials for your RiverRock instance</li>
+      <li>A list of all data categories you need to migrate (customers, invoices, products/services, payment history, etc.)</li>
+      <li>Access to a local or network drive with sufficient storage for exported files</li>
+      <li>The Rev.io PSA import template spreadsheets (provided by your migration specialist)</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="section-title"><span class="dot"></span>Data Export from RiverRock</h2>
+
+<div class="callout warn">
+  <div class="callout-icon">⚠️</div>
+  <div>
+    <strong>UI paths may vary by version.</strong> RiverRock interfaces can differ between deployments and versions. The general guidance below reflects common patterns, but if you cannot locate a specific menu or option, <strong>contact RiverRock support directly</strong> to confirm the correct navigation path for your version.
+  </div>
+</div>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <strong>Log in as an administrator.</strong>
+      <p>Ensure your account has full administrative privileges. Export functionality is typically restricted to admin-level users.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <strong>Locate the reporting or data export area.</strong>
+      <p>Look for a <em>Reports</em>, <em>Data Management</em>, or <em>Export</em> section in the main navigation or administration menu. If you cannot find this area, contact RiverRock support to locate the data export setting for your version.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <strong>Export each data category separately.</strong>
+      <p>For a complete migration to Rev.io PSA, you will need to export the following data sets individually. Select CSV format whenever the option is available:</p>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data Category</th>
+            <th>Key Fields to Include</th>
+            <th>Rev.io PSA Target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Customers / Accounts</td>
+            <td>Account ID, Name, Address, Phone, Email, Status</td>
+            <td>Customers</td>
+          </tr>
+          <tr>
+            <td>Contacts</td>
+            <td>Contact Name, Email, Phone, Associated Account</td>
+            <td>Contacts</td>
+          </tr>
+          <tr>
+            <td>Products / Services</td>
+            <td>Product ID, Name, Description, Price, Category</td>
+            <td>Products &amp; Services</td>
+          </tr>
+          <tr>
+            <td>Invoices / Billing History</td>
+            <td>Invoice #, Date, Amount, Customer ID, Line Items, Status</td>
+            <td>Billing Records</td>
+          </tr>
+          <tr>
+            <td>Payments</td>
+            <td>Payment ID, Date, Amount, Method, Invoice Reference</td>
+            <td>Payment History</td>
+          </tr>
+          <tr>
+            <td>Service Subscriptions</td>
+            <td>Subscription ID, Customer ID, Product, Start Date, Recurring Amount</td>
+            <td>Recurring Services</td>
+          </tr>
+          <tr>
+            <td>Tickets / Work Orders</td>
+            <td>Ticket #, Subject, Status, Assigned To, Created Date, Customer ID</td>
+            <td>Tickets</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <strong>Choose CSV or Excel format.</strong>
+      <p>When prompted for an export format, select <strong>CSV (.csv)</strong> as the preferred option. Excel (.xlsx) is also acceptable. Avoid PDF or other non-tabular formats.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <strong>Verify date ranges and filters.</strong>
+      <p>Before finalizing each export, ensure that no date or status filters are inadvertently limiting your data. Set date ranges to cover the <strong>full history</strong> you wish to migrate unless your Rev.io migration specialist advises otherwise.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-body">
+      <strong>Save exported files to a secure location.</strong>
+      <p>Download each file and save it with a clear, descriptive name (e.g., <code>riverrock_customers_export_2024.csv</code>). Store all files in a single dedicated folder.</p>
+    </div>
+  </div>
+</div>
+
+<div class="callout tip">
+  <div class="callout-icon">💡</div>
+  <div>
+    <strong>If built-in export options are limited:</strong> Many RiverRock deployments include a reporting engine that allows custom report generation. You can often build a custom report that includes the fields you need, then export that report to CSV. Contact RiverRock support and ask specifically about <em>"exporting customer, billing, and service data to CSV for third-party migration."</em>
+  </div>
+</div>
+
+<h2 class="section-title"><span class="dot"></span>Validate Your Exported Data</h2>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <strong>Open each CSV file and spot-check.</strong>
+      <p>Open the files in Excel or Google Sheets. Verify that column headers are present, data is not truncated, and row counts align with what you expect from RiverRock.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <strong>Check for referential integrity.</strong>
+      <p>Ensure that Customer IDs in your invoices and services files match the Customer IDs in your customer export. Mismatched or missing IDs will cause import issues.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <strong>Note any special characters or encoding issues.</strong>
+      <p>If you see garbled text (especially in names or addresses), re-export using UTF-8 encoding if the option is available, or note the affected records for manual correction.</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title"><span class="dot"></span>Prepare Files for Rev.io PSA Import</h2>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <strong>Obtain the Rev.io PSA import templates.</strong>
+      <p>Your Rev.io migration specialist will provide standardized import templates for each data category. Download and review them before mapping your data.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <strong>Map RiverRock fields to Rev.io PSA fields.</strong>
+      <p>Using the table above as a guide, align each column from your RiverRock exports to the corresponding column in the Rev.io template. Your migration specialist can assist with any fields that do not have a direct match.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <strong>Populate the Rev.io templates.</strong>
+      <p>Copy your RiverRock data into the appropriate Rev.io template columns. Do not alter the template headers or column order.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <strong>Submit completed files to your migration specialist.</strong>
+      <p>Upload the completed templates to the secure file-sharing location provided by your Rev.io onboarding team. They will perform a validation pass and contact you with any questions before executing the import.</p>
+    </div>
+  </div>
+</div>
+
+<div class="callout tip">
+  <div class="callout-icon">💡</div>
+  <div>
+    <strong>Need help with your RiverRock export?</strong> If you encounter difficulty locating export options or are unsure which data sets to include, contact RiverRock support directly and reference a "full data export for platform migration." Your Rev.io migration specialist is also available to advise on which data categories are critical for your specific deployment.
+  </div>
+</div>
+    </div>
+  </div></div><!-- /main -->
 
 <!-- ══════════════════════════════════════
      REQUEST NEW SYSTEM MODAL
