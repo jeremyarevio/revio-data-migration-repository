@@ -822,6 +822,19 @@
                 font-weight: 300;
                 font-style: normal;
              }
+         </style><script src="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/js/recordConsoleEvents.js"></script><style type="text/css">
+             @font-face {
+                font-family: "NunitoSans";
+                src: url("chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/assets/fonts/NunitoSans-Medium.ttf") format('truetype');
+                font-weight: 500;
+                font-style: normal;
+             }
+             @font-face {
+                font-family: "NunitoSans";
+                src: url("chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/assets/fonts/NunitoSans-Light.ttf") format('truetype');
+                font-weight: 300;
+                font-style: normal;
+             }
          </style></head>
 <body data-new-gr-c-s-check-loaded="14.1332.0" data-gr-ext-installed="" mouseup_handler="true" mouseup_event="true">
 
@@ -869,7 +882,7 @@
     </div><div class="nav-item" onclick="showPanel('buildops', this)"><span class="nav-icon">📋</span> Buildops <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('connectwise', this)">
       <span class="nav-icon">📋</span> ConnectWise
       <span class="nav-badge badge-api">API</span>
-    </div><div class="nav-item" onclick="showPanel('eautomate', this)">
+    </div><div class="nav-item" onclick="showPanel('dtoolscloud', this)"><span class="nav-icon">📋</span> D-Tools Cloud <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('eautomate', this)">
       <span class="nav-icon">📋</span> eAutomate
       <span class="nav-badge badge-both">Both</span>
     </div><div class="nav-item" onclick="showPanel('fieldpulse', this)">
@@ -902,7 +915,7 @@
     </div><div class="nav-item" onclick="showPanel('servicefusion', this)">
       <span class="nav-icon">📋</span> Service Fusion
       <span class="nav-badge badge-both">Both</span>
-    </div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('dtoolscloud', this)"><span class="nav-icon">📋</span> D-Tools Cloud <span class="nav-badge badge-export">Export</span></div></div>
+    </div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicepro', this)"><span class="nav-icon">📋</span> Service Pro <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('servicetitan', this)"><span class="nav-icon">📋</span> Service Titan <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('synchro', this)"><span class="nav-icon">📋</span> Synchro <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('workhorse', this)"><span class="nav-icon">📋</span> Workhorse <span class="nav-badge badge-export">Export</span></div><div class="nav-item" onclick="showPanel('zoho', this)"><span class="nav-icon">📋</span> Zoho <span class="nav-badge badge-both">Both</span></div><div class="nav-item" onclick="showPanel('methodcrm', this)"><span class="nav-icon">📋</span> Method CRM <span class="nav-badge badge-both">Both</span></div></div>
 </nav>
 
 <!-- ══════════════════════════════════════
@@ -7012,7 +7025,7 @@
       <div class="panel-header-top">
         <div class="system-icon">📋</div>
         <h2>D-Tools Cloud</h2>
-      </div>
+      <button class="btn-export-pdf">🖶 Export PDF</button></div>
       <span class="type-badge export">File Export</span>
 
 <p class="lead">D-Tools Cloud is a project management and system design platform tailored for AV integrators and low-voltage contractors. It does not offer a publicly documented REST API for third-party data extraction. Migration will be performed via file exports from the D-Tools Cloud web interface.</p>
@@ -7321,6 +7334,294 @@
 <div class="creds-box">
   <span class="label">Rev.io PSA Migration Team:</span>
   <span class="placeholder">Contact your onboarding specialist</span>
+</div>
+    </div>
+  </div><div id="panel-methodcrm" class="panel">
+    <div class="panel-header">
+      <div class="panel-header-top">
+        <div class="system-icon">📋</div>
+        <h2>Method CRM</h2>
+      </div>
+      
+
+<span class="type-badge both">API + Export</span>
+
+<p class="lead">Method CRM is a customizable CRM platform built for QuickBooks users. It offers a public REST-style API for third-party integrations as well as manual data export capabilities. Below you'll find instructions for both approaches to extract your data for migration into Rev.io PSA.</p>
+
+<h2 class="section-title"><span class="dot"></span>What You'll Need</h2>
+
+<div class="callout note">
+  <div class="callout-icon">📋</div>
+  <div>
+    <strong>Before you begin,</strong> confirm you have administrative access to your Method CRM account. API access is available on Method CRM plans that include the API add-on — check with your Method CRM account representative or visit Method's pricing page to confirm your plan includes API access.
+  </div>
+</div>
+
+<div class="method-tabs">
+  <button class="method-tab active" onclick="showMethod('methodcrm','tab1', this)">API Access</button>
+  <button class="method-tab" onclick="showMethod('methodcrm','tab2', this)">Manual Export</button>
+</div>
+
+<div class="method-panel active" id="methodcrm-tab1">
+
+  <h2 class="section-title"><span class="dot"></span>Obtaining API Credentials</h2>
+
+  <p>Method CRM provides a REST-based API that uses an API key for authentication. You will need to generate or retrieve your API key from within the Method CRM platform.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Log in to your <strong>Method CRM</strong> account with an administrator role.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Navigate to <strong>Customize &gt; API Configuration</strong> (or the equivalent API settings area). If you cannot locate this menu item, contact Method CRM support to confirm your plan includes API access and to locate the API configuration screen.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Generate or copy your <strong>API Key</strong>. This key authenticates all API requests made on behalf of your account.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        Note your <strong>Account URL / Instance Name</strong>, as this is typically used to construct the API base URL for your specific Method CRM instance.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>
+      <strong>Keep your API key secure.</strong> Do not share it in email or public channels. If you suspect your key has been compromised, regenerate it immediately from the API Configuration screen.
+    </div>
+  </div>
+
+  <div class="creds-box">
+    <span class="label">API Key</span>
+    <span class="placeholder">xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</span>
+    <span class="label">Instance / Account URL</span>
+    <span class="placeholder">https://[your-instance].methodintegration.com</span>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Data Available via API</h2>
+
+  <p>The Method CRM API allows you to programmatically access the core entities stored in your account. The following table outlines the key data types we will extract for migration:</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Data Type</th>
+        <th>API Entity</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Contacts / Customers</td>
+        <td>Contact records</td>
+        <td>Includes names, addresses, phone numbers, email addresses</td>
+      </tr>
+      <tr>
+        <td>Companies / Accounts</td>
+        <td>Company / Organization records</td>
+        <td>Parent-level customer records</td>
+      </tr>
+      <tr>
+        <td>Opportunities / Deals</td>
+        <td>Opportunity records</td>
+        <td>Pipeline data, stages, amounts, close dates</td>
+      </tr>
+      <tr>
+        <td>Activities</td>
+        <td>Activity records</td>
+        <td>Calls, meetings, tasks, notes linked to contacts</td>
+      </tr>
+      <tr>
+        <td>Cases / Support Tickets</td>
+        <td>Case records</td>
+        <td>If your Method instance includes a cases screen/app</td>
+      </tr>
+      <tr>
+        <td>Custom Tables</td>
+        <td>Custom entity records</td>
+        <td>Any custom screens/tables you've built in Method</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>
+      <strong>Custom Screens:</strong> Method CRM is highly customizable. If you've built custom screens or tables, these can also be accessed via the API. Provide us with a list of your custom entities so we can include them in the migration scope.
+    </div>
+  </div>
+
+</div>
+
+<div class="method-panel" id="methodcrm-tab2">
+
+  <h2 class="section-title"><span class="dot"></span>Exporting Data from Method CRM</h2>
+
+  <p>If API access is not available on your plan, or if you prefer a manual approach, you can export your data directly from Method CRM's grid views. Method CRM allows you to export list/grid data to Excel or CSV format from most screens.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        Log in to your <strong>Method CRM</strong> account with an administrator role.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        Navigate to the entity you want to export (e.g., <strong>Contacts</strong>, <strong>Opportunities</strong>, <strong>Activities</strong>) using the left-side navigation menu.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        Open the <strong>List / Grid view</strong> for that entity. Ensure the grid is showing <strong>all records</strong> — remove any active filters or set the view to display all items so no data is excluded.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        Add all relevant columns to the grid view. Click on column configuration or field selection options to ensure every field you want to migrate is visible in the grid. Only visible columns are included in the export.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        Look for an <strong>Export</strong> button (often labeled "Export to Excel" or represented by a download/spreadsheet icon) in the grid toolbar. Click it and save the file in <strong>.xlsx</strong> or <strong>.csv</strong> format.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        Repeat steps 2–5 for each data type listed in the table below.
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        Upload all exported files to the secure folder provided by your Rev.io PSA migration team.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>
+      <strong>Grid column visibility matters.</strong> Method CRM exports only the columns currently displayed in the grid. Before exporting, ensure you have added all necessary fields to the view — especially custom fields, IDs, and linked record references.
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Required Exports</h2>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Export File</th>
+        <th>Source Screen</th>
+        <th>Key Fields to Include</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Contacts</td>
+        <td>Contacts list view</td>
+        <td>Contact ID, Name, Company, Email, Phone, Address, Custom fields</td>
+      </tr>
+      <tr>
+        <td>Companies</td>
+        <td>Companies / Customers list view</td>
+        <td>Company ID, Name, Address, Phone, Website, Assigned rep</td>
+      </tr>
+      <tr>
+        <td>Opportunities</td>
+        <td>Opportunities list view</td>
+        <td>Opportunity ID, Name, Amount, Stage, Close Date, Linked Contact/Company</td>
+      </tr>
+      <tr>
+        <td>Activities / History</td>
+        <td>Activities list view</td>
+        <td>Activity ID, Type, Subject, Date, Linked Contact, Notes/Description</td>
+      </tr>
+      <tr>
+        <td>Cases (if applicable)</td>
+        <td>Cases / Support list view</td>
+        <td>Case ID, Subject, Status, Priority, Assigned To, Description</td>
+      </tr>
+      <tr>
+        <td>Custom Tables</td>
+        <td>Any custom screens you've built</td>
+        <td>All available fields — contact your migration team for guidance</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>
+      <strong>QuickBooks-synced data:</strong> If your Method CRM instance syncs data with QuickBooks (Customers, Invoices, etc.), you may also want to export relevant data directly from QuickBooks to capture financial records. Let your migration team know which QuickBooks entities are in scope.
+    </div>
+  </div>
+
+  <div class="callout note">
+    <div class="callout-icon">📋</div>
+    <div>
+      <strong>Can't find the Export button?</strong> Export functionality location may vary depending on your Method CRM version and customization. Contact Method CRM support to confirm the export process for your specific instance.
+    </div>
+  </div>
+
+</div>
+
+<h2 class="section-title"><span class="dot"></span>What Happens Next</h2>
+
+<div class="steps">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <strong>Credential handoff or file upload:</strong> Share your API credentials via the secure channel provided, or upload your export files to the designated folder.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <strong>Data audit:</strong> Our migration team will review the extracted data, identify any gaps or formatting issues, and provide a field-mapping document for your review.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <strong>Mapping approval:</strong> You'll review and approve how Method CRM fields map to Rev.io PSA fields, including any custom fields or unique data structures.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <strong>Test migration:</strong> We'll perform a trial import into a Rev.io PSA staging environment for you to validate before the final migration.
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <strong>Go live:</strong> Once validated, we execute the final migration and assist with post-migration verification.
+    </div>
+  </div>
+</div>
+
+<div class="callout tip">
+  <div class="callout-icon">💡</div>
+  <div>
+    <strong>Questions?</strong> Reach out to your Rev.io PSA migration specialist at any point during this process. We're here to ensure a smooth, complete transition from Method CRM.
+  </div>
 </div>
     </div>
   </div></div><!-- /main -->
@@ -7648,4 +7949,4 @@ window.addEventListener('load', function() {
     return await _origSave.apply(this, arguments);
   };
 });
-</script><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration><div id="rev_driver_sb" class="collapsed" style="transition: 0.4s;"><iframe src="chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/index.html" id="rev_driver" title="rev_driver_extension_in_page" name="revdriver_opened_by_user_false"></iframe><div id="nav_btns" style="top: 253px;"><span id="right_arr" title="Minimize">❯</span><span id="remove_sb" title="Remove" class="crossed"></span></div><div id="sidebar-logo" style="top: 253px;"><img id="sidebar-logo-img" src="chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/assets/images/sidebar-logo.png?v=4.6.1"></div></div><div id="settings_shadow"></div><div id="chrome-extension-pull-out-tab-host"></div><div id="chrome-extension-search-anywhere-popup-host" data-hidden=""></div><div role="status" aria-live="polite" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; border: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); white-space: nowrap;"></div><div role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; border: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); white-space: nowrap;"></div></body></html>
+</script><grammarly-desktop-integration data-grammarly-shadow-root="true" style="visibility: visible !important;"></grammarly-desktop-integration><div id="chrome-extension-pull-out-tab-host"></div><div id="chrome-extension-search-anywhere-popup-host" data-hidden=""></div><div role="status" aria-live="polite" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; border: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); white-space: nowrap;"></div><div role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0px; border: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); white-space: nowrap;"></div><div id="rev_driver_sb" class="collapsed" style="transition: 0.4s;"><iframe src="chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/index.html" id="rev_driver" title="rev_driver_extension_in_page" name="revdriver_opened_by_user_false"></iframe><div id="nav_btns" style="top: 142px;"><span id="right_arr" title="Minimize">❯</span><span id="remove_sb" title="Remove" class="crossed"></span></div><div id="sidebar-logo" style="top: 142px;"><img id="sidebar-logo-img" src="chrome-extension://ngdjlkacliphopkcgcffflancnlbebnc/assets/images/sidebar-logo.png?v=4.6.1"></div></div></body></html>
