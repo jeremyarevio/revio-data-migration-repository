@@ -850,7 +850,7 @@
     <button class="sidebar-request-btn" onclick="openRequestModal()">
       ＋ Request New System
     </button>
-    <div class="nav-item" onclick="showPanel('home', this)" style="margin-bottom:4px;">
+    <div class="nav-item active" onclick="showPanel('home', this)" style="margin-bottom:4px;">
       <span class="nav-icon">🏠</span> Overview
     </div>
     <div class="sidebar-section-label">Source Systems</div>
@@ -903,7 +903,7 @@
     </div><div class="nav-item" onclick="showPanel('qbd', this)">
       <span class="nav-icon">📋</span> QuickBooks Desktop
       <span class="nav-badge badge-export">Export</span>
-    </div><div class="nav-item active" onclick="showPanel('qbo', this)">
+    </div><div class="nav-item" onclick="showPanel('qbo', this)">
       <span class="nav-icon">📋</span> QuickBooks Online
       <span class="nav-badge badge-both">Both</span>
     </div><div class="nav-item" onclick="showPanel('quotewerks', this)">
@@ -936,7 +936,7 @@
   <!-- ─────────────────────────────────
        LANDING / HOME
   ──────────────────────────────────── -->
-  <div id="panel-home" class="panel">
+  <div id="panel-home" class="panel active">
     <div class="panel-header">
       <div class="panel-header-top">
         <div class="system-icon" style="background:var(--rev-orange);">📂</div>
@@ -1953,7 +1953,7 @@
   <!-- ─────────────────────────────────
        QUICKBOOKS ONLINE
   ──────────────────────────────────── -->
-  <div id="panel-qbo" class="panel active"><div class="print-brand-header">
+  <div id="panel-qbo" class="panel"><div class="print-brand-header">
         <div class="brand">Rev<span>.</span>io</div>
         <div class="meta">Data Access &amp; Migration Guide<br>August 28, 2026</div></div>
     <div class="panel-header">
@@ -7346,16 +7346,9 @@
 
 <span class="type-badge both">API + Export</span>
 
-<p class="lead">Method CRM is a customizable CRM platform built for QuickBooks users. It offers a public REST-style API for third-party integrations as well as manual data export capabilities. Below you'll find instructions for both approaches to extract your data for migration into Rev.io PSA.</p>
+<p class="lead">Method CRM is a customizable CRM platform built for QuickBooks users. Data can be extracted via Method's public API or through built-in export tools within the application. Below you'll find instructions for both approaches to ensure a complete migration into Rev.io PSA.</p>
 
-<h2 class="section-title"><span class="dot"></span>What You'll Need</h2>
-
-<div class="callout note">
-  <div class="callout-icon">📋</div>
-  <div>
-    <strong>Before you begin,</strong> confirm you have administrative access to your Method CRM account. API access is available on Method CRM plans that include the API add-on — check with your Method CRM account representative or visit Method's pricing page to confirm your plan includes API access.
-  </div>
-</div>
+<h2 class="section-title"><span class="dot"></span>Access Methods</h2>
 
 <div class="method-tabs">
   <button class="method-tab active" onclick="showMethod('methodcrm','tab1', this)">API Access</button>
@@ -7364,102 +7357,99 @@
 
 <div class="method-panel active" id="methodcrm-tab1">
 
-  <h2 class="section-title"><span class="dot"></span>Obtaining API Credentials</h2>
+  <h2 class="section-title"><span class="dot"></span>API Overview</h2>
 
-  <p>Method CRM provides a REST-based API that uses an API key for authentication. You will need to generate or retrieve your API key from within the Method CRM platform.</p>
+  <p>Method CRM provides a REST-based API that allows third-party applications to read and write data. API access is available on paid Method CRM plans. The API uses key-based authentication and returns data in JSON or XML format.</p>
+
+  <div class="callout note">
+    <div class="callout-icon">ℹ️</div>
+    <div>API access may vary depending on your Method CRM subscription tier. Contact Method CRM support or your account representative to confirm that API access is included in your current plan before proceeding.</div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Generating Your API Key</h2>
 
   <div class="steps">
     <div class="step">
       <div class="step-num">1</div>
-      <div class="step-body">
-        Log in to your <strong>Method CRM</strong> account with an administrator role.
-      </div>
+      <div class="step-body">Log in to your Method CRM account with an administrator role.</div>
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <div class="step-body">
-        Navigate to <strong>Customize &gt; API Configuration</strong> (or the equivalent API settings area). If you cannot locate this menu item, contact Method CRM support to confirm your plan includes API access and to locate the API configuration screen.
-      </div>
+      <div class="step-body">Navigate to the API configuration area. In most Method CRM instances, this is found by going to <strong>Customize</strong> (gear icon) and locating the <strong>API Access</strong> or <strong>API Keys</strong> section. If you cannot locate this setting, contact Method CRM support to confirm the exact navigation path for your account version.</div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <div class="step-body">
-        Generate or copy your <strong>API Key</strong>. This key authenticates all API requests made on behalf of your account.
-      </div>
+      <div class="step-body">Generate a new API key. Copy the key immediately — it may not be shown again.</div>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <div class="step-body">
-        Note your <strong>Account URL / Instance Name</strong>, as this is typically used to construct the API base URL for your specific Method CRM instance.
-      </div>
+      <div class="step-body">Note your Method CRM account URL or tenant identifier, as this is required to construct API requests.</div>
     </div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Credentials to Provide</h2>
+
+  <div class="creds-box">
+    <span class="label">Method CRM Account URL / Tenant ID:</span>
+    <span class="placeholder">e.g., yourcompany.methodcrm.com</span>
+  </div>
+  <div class="creds-box">
+    <span class="label">API Key:</span>
+    <span class="placeholder">xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</span>
   </div>
 
   <div class="callout warn">
     <div class="callout-icon">⚠️</div>
-    <div>
-      <strong>Keep your API key secure.</strong> Do not share it in email or public channels. If you suspect your key has been compromised, regenerate it immediately from the API Configuration screen.
-    </div>
+    <div>Treat your API key as a password. Share it only through a secure channel (such as an encrypted vault or secure file transfer) provided by your migration team. Never send credentials via unencrypted email.</div>
   </div>
 
-  <div class="creds-box">
-    <span class="label">API Key</span>
-    <span class="placeholder">xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</span>
-    <span class="label">Instance / Account URL</span>
-    <span class="placeholder">https://[your-instance].methodintegration.com</span>
-  </div>
-
-  <h2 class="section-title"><span class="dot"></span>Data Available via API</h2>
-
-  <p>The Method CRM API allows you to programmatically access the core entities stored in your account. The following table outlines the key data types we will extract for migration:</p>
+  <h2 class="section-title"><span class="dot"></span>Key Data Entities Available via API</h2>
 
   <table class="data-table">
     <thead>
       <tr>
-        <th>Data Type</th>
-        <th>API Entity</th>
-        <th>Notes</th>
+        <th>Entity</th>
+        <th>Description</th>
+        <th>Maps to Rev.io PSA</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Contacts / Customers</td>
-        <td>Contact records</td>
-        <td>Includes names, addresses, phone numbers, email addresses</td>
+        <td>Contacts</td>
+        <td>Customer and prospect contact records</td>
+        <td>Accounts / Contacts</td>
       </tr>
       <tr>
-        <td>Companies / Accounts</td>
-        <td>Company / Organization records</td>
-        <td>Parent-level customer records</td>
-      </tr>
-      <tr>
-        <td>Opportunities / Deals</td>
-        <td>Opportunity records</td>
-        <td>Pipeline data, stages, amounts, close dates</td>
+        <td>Companies / Organizations</td>
+        <td>Company-level records linked to contacts</td>
+        <td>Accounts</td>
       </tr>
       <tr>
         <td>Activities</td>
-        <td>Activity records</td>
-        <td>Calls, meetings, tasks, notes linked to contacts</td>
+        <td>Logged calls, meetings, tasks, and notes</td>
+        <td>Activities / Notes</td>
       </tr>
       <tr>
-        <td>Cases / Support Tickets</td>
-        <td>Case records</td>
-        <td>If your Method instance includes a cases screen/app</td>
+        <td>Opportunities</td>
+        <td>Sales pipeline and deal records</td>
+        <td>Opportunities</td>
+      </tr>
+      <tr>
+        <td>Cases</td>
+        <td>Support cases and service requests</td>
+        <td>Tickets</td>
       </tr>
       <tr>
         <td>Custom Tables</td>
-        <td>Custom entity records</td>
-        <td>Any custom screens/tables you've built in Method</td>
+        <td>Any custom-built tables in your Method instance</td>
+        <td>Custom fields (as applicable)</td>
       </tr>
     </tbody>
   </table>
 
   <div class="callout tip">
     <div class="callout-icon">💡</div>
-    <div>
-      <strong>Custom Screens:</strong> Method CRM is highly customizable. If you've built custom screens or tables, these can also be accessed via the API. Provide us with a list of your custom entities so we can include them in the migration scope.
-    </div>
+    <div>Method CRM is highly customizable. Your instance may contain custom tables and fields unique to your business. Provide your migration team with a list of all custom tables so they can be mapped appropriately to Rev.io PSA entities.</div>
   </div>
 
 </div>
@@ -7468,58 +7458,44 @@
 
   <h2 class="section-title"><span class="dot"></span>Exporting Data from Method CRM</h2>
 
-  <p>If API access is not available on your plan, or if you prefer a manual approach, you can export your data directly from Method CRM's grid views. Method CRM allows you to export list/grid data to Excel or CSV format from most screens.</p>
+  <p>Method CRM supports exporting data through its built-in grid views and reporting tools. Each entity type is typically exported individually as a CSV or Excel file.</p>
+
+  <h2 class="section-title"><span class="dot"></span>General Export Steps</h2>
 
   <div class="steps">
     <div class="step">
       <div class="step-num">1</div>
-      <div class="step-body">
-        Log in to your <strong>Method CRM</strong> account with an administrator role.
-      </div>
+      <div class="step-body">Log in to Method CRM with an administrator account.</div>
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <div class="step-body">
-        Navigate to the entity you want to export (e.g., <strong>Contacts</strong>, <strong>Opportunities</strong>, <strong>Activities</strong>) using the left-side navigation menu.
-      </div>
+      <div class="step-body">Navigate to the entity you want to export (e.g., <strong>Contacts</strong>, <strong>Companies</strong>, <strong>Opportunities</strong>, <strong>Cases</strong>) using the left-hand navigation menu.</div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <div class="step-body">
-        Open the <strong>List / Grid view</strong> for that entity. Ensure the grid is showing <strong>all records</strong> — remove any active filters or set the view to display all items so no data is excluded.
-      </div>
+      <div class="step-body">Open the list/grid view for that entity. Ensure all relevant columns are visible. If needed, customize the grid view to include all fields required for migration.</div>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <div class="step-body">
-        Add all relevant columns to the grid view. Click on column configuration or field selection options to ensure every field you want to migrate is visible in the grid. Only visible columns are included in the export.
-      </div>
+      <div class="step-body">Look for an <strong>Export</strong> or <strong>Download</strong> option — this is typically accessible from a toolbar button, right-click context menu, or an action menu within the grid view. If you cannot locate the export function, contact Method CRM support for guidance specific to your instance.</div>
     </div>
     <div class="step">
       <div class="step-num">5</div>
-      <div class="step-body">
-        Look for an <strong>Export</strong> button (often labeled "Export to Excel" or represented by a download/spreadsheet icon) in the grid toolbar. Click it and save the file in <strong>.xlsx</strong> or <strong>.csv</strong> format.
-      </div>
+      <div class="step-body">Select <strong>CSV</strong> or <strong>Excel (.xlsx)</strong> as the export format. CSV is preferred for migration processing.</div>
     </div>
     <div class="step">
       <div class="step-num">6</div>
-      <div class="step-body">
-        Repeat steps 2–5 for each data type listed in the table below.
-      </div>
+      <div class="step-body">Save the file to a local folder. Use a clear naming convention (e.g., <code>methodcrm_contacts_2024-01-15.csv</code>).</div>
     </div>
     <div class="step">
       <div class="step-num">7</div>
-      <div class="step-body">
-        Upload all exported files to the secure folder provided by your Rev.io PSA migration team.
-      </div>
+      <div class="step-body">Repeat the process for each entity type listed in the table below.</div>
     </div>
   </div>
 
-  <div class="callout warn">
-    <div class="callout-icon">⚠️</div>
-    <div>
-      <strong>Grid column visibility matters.</strong> Method CRM exports only the columns currently displayed in the grid. Before exporting, ensure you have added all necessary fields to the view — especially custom fields, IDs, and linked record references.
-    </div>
+  <div class="callout tip">
+    <div class="callout-icon">💡</div>
+    <div>Method CRM also has a built-in <strong>Report Builder</strong> that can be used to create custom reports spanning multiple entities. If a standard grid export doesn't capture all necessary fields, consider building a custom report and exporting from there.</div>
   </div>
 
   <h2 class="section-title"><span class="dot"></span>Required Exports</h2>
@@ -7528,7 +7504,7 @@
     <thead>
       <tr>
         <th>Export File</th>
-        <th>Source Screen</th>
+        <th>Source Location</th>
         <th>Key Fields to Include</th>
       </tr>
     </thead>
@@ -7536,92 +7512,121 @@
       <tr>
         <td>Contacts</td>
         <td>Contacts list view</td>
-        <td>Contact ID, Name, Company, Email, Phone, Address, Custom fields</td>
+        <td>Name, Email, Phone, Address, Company, Status, Custom Fields</td>
       </tr>
       <tr>
-        <td>Companies</td>
-        <td>Companies / Customers list view</td>
-        <td>Company ID, Name, Address, Phone, Website, Assigned rep</td>
+        <td>Companies / Organizations</td>
+        <td>Companies or Accounts list view</td>
+        <td>Company Name, Address, Phone, Website, Industry, Custom Fields</td>
       </tr>
       <tr>
         <td>Opportunities</td>
         <td>Opportunities list view</td>
-        <td>Opportunity ID, Name, Amount, Stage, Close Date, Linked Contact/Company</td>
+        <td>Opportunity Name, Amount, Stage, Close Date, Assigned To, Associated Contact/Company</td>
       </tr>
       <tr>
         <td>Activities / History</td>
-        <td>Activities list view</td>
-        <td>Activity ID, Type, Subject, Date, Linked Contact, Notes/Description</td>
+        <td>Activities or History list view</td>
+        <td>Activity Type, Subject, Date, Notes, Associated Contact/Company</td>
       </tr>
       <tr>
-        <td>Cases (if applicable)</td>
-        <td>Cases / Support list view</td>
-        <td>Case ID, Subject, Status, Priority, Assigned To, Description</td>
+        <td>Cases / Support Tickets</td>
+        <td>Cases list view</td>
+        <td>Case Number, Subject, Description, Status, Priority, Assigned To, Created Date</td>
       </tr>
       <tr>
         <td>Custom Tables</td>
-        <td>Any custom screens you've built</td>
-        <td>All available fields — contact your migration team for guidance</td>
+        <td>Any custom-built entity screens</td>
+        <td>All fields — consult with your migration team on mapping</td>
       </tr>
     </tbody>
   </table>
 
-  <div class="callout tip">
-    <div class="callout-icon">💡</div>
-    <div>
-      <strong>QuickBooks-synced data:</strong> If your Method CRM instance syncs data with QuickBooks (Customers, Invoices, etc.), you may also want to export relevant data directly from QuickBooks to capture financial records. Let your migration team know which QuickBooks entities are in scope.
-    </div>
+  <div class="callout warn">
+    <div class="callout-icon">⚠️</div>
+    <div>Ensure filters are cleared or set to <strong>"All Records"</strong> before exporting. Filtered views will result in incomplete data exports that can cause records to be missed during migration.</div>
   </div>
+
+  <h2 class="section-title"><span class="dot"></span>QuickBooks-Linked Data</h2>
+
+  <p>Method CRM syncs data bidirectionally with QuickBooks. Some financial records (invoices, estimates, payments) may reside primarily in QuickBooks rather than in Method CRM itself.</p>
 
   <div class="callout note">
-    <div class="callout-icon">📋</div>
-    <div>
-      <strong>Can't find the Export button?</strong> Export functionality location may vary depending on your Method CRM version and customization. Contact Method CRM support to confirm the export process for your specific instance.
+    <div class="callout-icon">ℹ️</div>
+    <div>If your migration scope includes financial data such as invoices, estimates, or payment history, these records should be exported directly from QuickBooks rather than from Method CRM. Notify your migration team so that a separate QuickBooks export can be planned.</div>
+  </div>
+
+  <h2 class="section-title"><span class="dot"></span>Uploading Exported Files</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">Verify each exported file by opening it and confirming the data looks complete (check row counts and that key fields are populated).</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">Upload all export files to the secure folder or file-sharing link provided by your Rev.io migration team.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">Notify your migration project manager once all files have been uploaded, and include a brief note listing which entities are included.</div>
     </div>
   </div>
 
 </div>
 
-<h2 class="section-title"><span class="dot"></span>What Happens Next</h2>
+<h2 class="section-title"><span class="dot"></span>Pre-Migration Checklist</h2>
 
-<div class="steps">
-  <div class="step">
-    <div class="step-num">1</div>
-    <div class="step-body">
-      <strong>Credential handoff or file upload:</strong> Share your API credentials via the secure channel provided, or upload your export files to the designated folder.
-    </div>
-  </div>
-  <div class="step">
-    <div class="step-num">2</div>
-    <div class="step-body">
-      <strong>Data audit:</strong> Our migration team will review the extracted data, identify any gaps or formatting issues, and provide a field-mapping document for your review.
-    </div>
-  </div>
-  <div class="step">
-    <div class="step-num">3</div>
-    <div class="step-body">
-      <strong>Mapping approval:</strong> You'll review and approve how Method CRM fields map to Rev.io PSA fields, including any custom fields or unique data structures.
-    </div>
-  </div>
-  <div class="step">
-    <div class="step-num">4</div>
-    <div class="step-body">
-      <strong>Test migration:</strong> We'll perform a trial import into a Rev.io PSA staging environment for you to validate before the final migration.
-    </div>
-  </div>
-  <div class="step">
-    <div class="step-num">5</div>
-    <div class="step-body">
-      <strong>Go live:</strong> Once validated, we execute the final migration and assist with post-migration verification.
-    </div>
-  </div>
-</div>
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>✓</th>
+      <th>Task</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>☐</td>
+      <td>Confirm API access (if using API method)</td>
+      <td>Verify your plan includes API access; generate and securely share your API key</td>
+    </tr>
+    <tr>
+      <td>☐</td>
+      <td>Identify all custom tables and fields</td>
+      <td>Document any customizations unique to your Method CRM instance</td>
+    </tr>
+    <tr>
+      <td>☐</td>
+      <td>Export all required entities</td>
+      <td>Contacts, Companies, Opportunities, Activities, Cases, and any custom tables</td>
+    </tr>
+    <tr>
+      <td>☐</td>
+      <td>Clear all grid filters before export</td>
+      <td>Ensure exports contain the complete dataset, not a filtered subset</td>
+    </tr>
+    <tr>
+      <td>☐</td>
+      <td>Identify QuickBooks-linked data</td>
+      <td>Determine if invoices, estimates, or payment data need to be exported separately from QuickBooks</td>
+    </tr>
+    <tr>
+      <td>☐</td>
+      <td>Upload files securely</td>
+      <td>Use the secure upload link provided by your Rev.io migration team</td>
+    </tr>
+    <tr>
+      <td>☐</td>
+      <td>Notify migration team</td>
+      <td>Confirm all files are uploaded and provide a summary of included entities</td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="callout tip">
   <div class="callout-icon">💡</div>
-  <div>
-    <strong>Questions?</strong> Reach out to your Rev.io PSA migration specialist at any point during this process. We're here to ensure a smooth, complete transition from Method CRM.
-  </div>
+  <div>If your Method CRM instance is heavily customized with custom screens, workflows, or tables, we recommend scheduling a brief screen-share session with your migration team. This helps ensure all critical data points are captured and properly mapped to Rev.io PSA.</div>
 </div>
     </div>
   </div></div><!-- /main -->
